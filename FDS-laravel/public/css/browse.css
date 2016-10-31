@@ -268,9 +268,18 @@ section#copyright{
 	width: 100%;
 	background: url(../images/top_bg.jpg);
 	background-size: cover;
-	background-position: left bottom;
+	background-position: 50% 50%;
 	box-shadow: inset 0px -14px 35px -11px rgba(84,84,84,1);
 }
+
+#trigger{
+	position: relative;
+	top: 0px;
+	height: 10px;
+	width: 10px;
+	background-color: transparent;
+}
+
 .navbar-inner.main-menu {	
 	position: absolute;
 	height: 80px;
@@ -406,30 +415,44 @@ section#copyright{
 }
 
 #menuList > .item{
-	height: 350px;
+	position: relative;
+	height: 330px;
 	margin-top: 10px;
 	margin-left: 10px;
-	background: #432E41;
-	transition: 500ms ease-out 1s;
+	background: transparent;
 }
 
-#menuList > .item img {
+#menuList > .item > .img-contain{
+	overflow: hidden;
+}
+
+#menuList > .item > .img-contain > img {
 	width: 100%;
 	height: 280px;
 }
 
 #menuList > .item > .item-text{
-	width: 100%;
-	height: 70px;
 	margin: 0;
 	padding: 5px 30px;
 	box-sizing: border-box;
 	color: white;
+	background: #432E41;
+}
+
+#menuList > .item > .triangle{
+	position: absolute;
+	bottom: 50px;
+	left: 10px;
+	z-index: 1;
+	border-left: 20px solid transparent;
+ 	border-right: 20px solid transparent;
+  	border-bottom: 20px solid #432E41;
 }
 
 #menuList > .item > .item-text h1{
 	font-size: 20px;
 	float: left;
+	margin: 0;
 }
 
 .basket{
