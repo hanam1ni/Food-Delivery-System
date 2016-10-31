@@ -1,0 +1,792 @@
+﻿/*!
+ * Flat & Scroll - Multipurpose One Page Theme
+ *
+ * Copyright 2013 
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Created by: Carlos Alvarez
+ * URL: http://www.basicoh.com
+ * Designed and built based on Twitter Bootstrap.
+ * Tags: multipurpose, agency theme, one page, single page, responsive, green, flat */
+
+
+
+@import url(http://fonts.googleapis.com/css-family=Open+Sans-300,400,700.css);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400);
+
+/* Global */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+	background: #ecf0f1;
+    color: #2d2d2d;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px; font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 22px;
+    /* margin-top: 60px; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+p {
+    margin: 0 10px 10px 0;
+}
+
+a {
+	color: #F1F1F1;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #F5F5F5;
+	text-decoration: none;
+}
+
+
+/* Navigation */
+
+#logo {
+    float: left;
+    margin: 12px 0 12px 18px;
+}
+
+#logo a {
+	display: block;
+}
+
+#sidebar {
+	background-color: #16a085;
+    height: 120%;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50px;
+    z-index: 2;
+}
+
+
+#nav {
+	margin-top: 80px;
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav ul li {
+	color: #F1F1F1;
+	cursor: pointer;
+    display: inline-block;
+    line-height: 22px;
+    filter: alpha(opacity=40);
+    font-size: 16px; font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 100;
+    opacity: .4;
+    padding: 8px 0 8px 15px;
+    text-transform: uppercase;
+    width: 70%;
+}
+
+#nav ul li.active {
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+#nav ul li.last {
+    padding-right: 0px;
+}
+
+#nav li span {
+	display: inline-block;
+	font-size: 14px; font-size: 1.4rem;
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	padding-left: 10px;
+	width: 0;
+}
+
+.btn-navbar {
+    cursor: pointer;
+    filter: alpha(opacity=40);
+    float: left;
+    margin: 20px 5px 10px;
+    opacity: .4;
+    padding: 7px 10px;
+}
+
+.btn-navbar .icon-bar {
+	background-color: #F5F5F5;
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: none;
+    display: block;
+    height: 2px;
+    width: 18px;
+}
+
+/* Expanded Nav Styling */
+
+.expanded #container {
+    left: 100px;
+    transform: translate3d(50px, 0px, 0px) scale3d(1, 1, 1);
+}
+
+.expanded #sidebar {
+	width: 150px;
+}
+
+.expanded #nav li {
+	width: 90%;
+}
+.expanded #nav li span {
+	display: inline-block;
+	height: auto;
+	opacity: 1;
+	overflow: visible;
+	width: auto;
+}
+
+/*
+.expanded #nav ul li.active:after {
+    content: ">";
+    display: block;
+    margin-top: -21px;
+    position: absolute;
+    right: -3px;
+    z-index: 2;
+}
+*/
+
+	
+
+/* General Styling */ 
+
+#wrapper {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+#container {
+	backface-visibility: hidden;
+    left: 50px;
+    position: relative;
+    transform: translate3d(0px, 0px, 0px);
+    transition: transform 500ms ease 0s;
+    width: 100%;
+}
+
+.section {
+	background-attachment: scroll;
+	background-position: center top;
+	margin-left: -50px;
+	position: relative;
+	padding: 150px 0 170px;
+}
+
+.section h2 {
+	display: inline-block;
+    font-size: 58px; font-size: 5.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 72px;
+}
+
+.section h4 {
+    font-size: 23px; font-size: 2.3rem;
+    font-weight: 500;
+    line-height: 28px;
+    margin: 0 0 20px;
+    padding-bottom: 5px;
+}
+
+.section h5 {
+    font-size: 19px; font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0 0 20px;
+    padding-bottom: 5px;
+}
+
+.section .title hr {
+	border-color: #151515;
+	border-width: 1px 0 0;
+	margin-top: 50px;
+	width: 100%;
+}
+
+.section .title .alt hr {
+	border-color: #F1F1F1;
+}
+
+.section .desc {
+	margin-top: 20px;
+}
+
+.section .content {
+	margin-top: 75px;
+}
+
+.container-fluid {
+	margin: 0 auto;
+    padding-right: 80px;
+    padding-left: 80px;
+}
+
+.control-group .controls input, .control-group .controls textarea {
+	background: #F1F1F1;
+	border-radius: 0px;
+	min-height: 36px;
+}
+
+.control-group .controls input:focus, .control-group .controls textarea:focus {
+	border-color: rgba(144, 144, 144, 0.9);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(144, 144, 144, 0.9);
+}
+
+.alert, .alert-error {
+	border-radius: 0px;
+}
+
+.btn-default {
+	background: none #F1F1F1;
+    color: #151515;
+    margin-top: 75px;
+}
+
+.btn-inverse {
+	background: none #16a085;
+    color: #F1F1F1;
+    margin-top: 25px;
+}
+
+.btn-default, .btn-inverse {
+	border: medium none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px; font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 20px;
+    padding: 8px 14px;
+    text-align: left;
+    text-transform: uppercase;
+    width: 190px;
+}
+
+.btn-inverse span, .btn-default span {
+	font-weight: 700;
+}
+
+.btn-inverse.alt, .btn-default.alt {
+	text-align: right;
+}
+
+.btn-inverse i, .btn-default i {
+	float: right;
+	line-height: 20px;
+}
+
+.btn-inverse.alt i, .btn-default.alt i {
+	float: left;
+}
+
+.read-more {
+	cursor: pointer;
+	font-weight: 500;
+	margin-top: 20px;
+	padding-right: 10px;
+}
+
+.table th, .table td {
+    border-top: 1px solid #151515;
+    line-height: 20px;
+    padding: 10px 2px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+	background-color: rgba(60, 60, 60, 0.4);
+}
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+	background-color: rgba(75, 75, 75, 0.4);
+}
+
+
+/* Section 1 */ 
+
+#section1 {
+	background:#7f8c8d;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+#section1 .intro {
+	margin: 130px 0;
+}
+
+#section1 .thumb {
+	display: none;
+}
+
+#section1 .intro h1 {
+	color: #F1F1F1;
+    font-size: 85px; font-size: 8.5rem;
+    font-weight: 500;
+    letter-spacing: -2px;
+    line-height: 85px;
+    margin-left: -5px;
+}
+
+#section1 .intro h3 {
+	color: #F1F1F1;
+    font-size: 26px; font-size: 2.6rem;
+    font-weight: 100;
+    line-height: 28px;
+    margin: 0px;
+    width: 80%;
+
+}
+
+/* Section 2 */ 
+
+#section2{
+}
+
+#section2 h6 {
+	padding:15px;
+}
+.toolbox-header {
+	font-weight: 500;
+	margin-top: 5px;
+	margin-bottom: -5px;
+}
+
+.toolbox-item {
+	height: 20px;
+}
+
+.skill {
+    text-align: center;
+}
+
+/* Section 3 */ 
+
+#section3 {
+	background-image:url(../img/project-bg.jpg);
+	color: #F1F1F1;
+}
+
+#section3 h2 {
+	margin-left: -5px;
+}
+
+
+#section3 .content img {
+	max-width: 96%;
+	padding: 2%;
+	background-color: #F1F1F1;
+}
+
+
+
+
+/* Section 4 */
+
+#section4  h2 {
+	margin-left: -4px;
+}
+
+#section4 .read-more a, #section4 .read-more a:hover {
+	color: #151515;
+}
+
+#section4 .content .span4, #section4 .content .span6 {
+	padding-right: 20px;
+}
+
+#section4 .content {
+	min-height: 300px;
+}
+
+#section4 .content .span8 {
+	display: none;
+}
+
+#section4 .content .span8.current {
+	display: block;
+}
+
+#section4 ul.article-tags {
+    border-top: 1px solid #151515;
+    margin: 40px 0 0;
+}
+
+#section4 ul.article-tags li {
+    border-bottom: 1px solid #151515;
+    cursor: pointer;
+    display: block;
+    font-size: 17px; font-size: 1.7rem;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    padding-left: 45px;
+    position: relative;
+}
+
+#section4 ul.article-tags li:hover, #section4 ul.article-tags li.current {
+    background-color: #1abc9c;
+    color:#ecf0f1;
+}
+
+#section4 ul.article-tags i {
+    left: 15px;
+    font-size: 16px; font-size: 1.6rem;
+    position: absolute;
+    top: 10px;
+}
+
+#section4 h4 {
+	border-bottom: 1px solid #151515;
+    height: 35px;
+    margin-bottom: 18px;
+}
+
+
+/* Section 5 */
+
+#section5 {
+	background:#1abc9c;
+	color: #F1F1F1;
+	padding-bottom: 0px;
+}
+
+#section5 h4.intro {
+	border-bottom: 1px solid #F1F1F1;
+    height: 35px;
+    margin-bottom: 18px;
+}
+
+#section5 .content {
+	position: relative;
+}
+
+#section5 .content .alt {
+	margin-top: 20px;
+}
+
+#section5 .content .alt h4 {
+	line-height: 24px;
+	margin: 0;
+	padding-right: 20px;
+}
+
+#section5 .content .alt h4, #section6 .content .alt span {
+	display: inline-block;
+}
+
+#section5 .content .alt h5 {
+	display: inline;
+    line-height: 20px;
+    margin: 0;
+    padding-right: 10px;
+}
+
+#section5 .content .span4 {
+	padding-right: 25px;
+}
+
+#section5 .btn-default {
+    margin-top: 15px;
+}
+
+#section5 #footer {
+	margin: 200px 0 40px;
+}
+
+#section5 #footer p {
+	font-size: 14px; font-size: 1.4rem;
+}
+
+
+
+
+
+/* Media Queries */
+
+
+@media screen and (min-width: 1800px) {
+	
+	#section1 {
+		padding: 300px 0 !important;
+	}
+}
+
+
+@media screen and (max-width: 1320px) {
+	
+	#section1 {
+		background-size: 1320px auto;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	
+	
+	#section1 {
+		padding: 170px 0;
+	}
+	
+	#section1 .intro h1 {
+	    font-size: 90px; font-size: 9.0rem;
+	    line-height: 100px;
+	    letter-spacing: -4px;
+	}
+
+	#section1 .intro h3 {
+	    font-size: 28px; font-size: 2.8rem;
+	    line-height: 34px;
+	    width: 90%;
+	}
+	
+	.section h2 {
+	    font-size: 67px; font-size: 6.7rem;
+	}
+			
+	.container-fluid {
+	    width: 1024px;
+	}
+}
+
+
+@media screen and (max-width: 1199px) {
+
+	.section{
+		margin-left: -50px;
+		padding: 135px 0;
+	}
+	
+	#section1 {
+		background-size: 1200px auto;
+	}
+	
+	#section1 .intro {
+		margin: 100px 0;
+	}		
+	
+	#section1 .intro h3 {
+		font-size: 24px; font-size: 2.4rem;
+		line-height: 24px;
+	}
+	
+	.section .content {
+	    margin-top: 50px;
+	}
+	
+	.container-fluid {
+	    padding-left: 105px;
+	    padding-right: 105px;
+    }
+	
+
+}
+
+@media screen and (max-width: 979px) {
+	
+	.section h2 {
+	    font-size: 48px; font-size: 4.8rem;
+	    line-height: 58px;
+	}
+	
+	.section .title hr {
+	    margin-top: 40px;
+	}
+	
+	.section .desc .span8 {
+    	width: 100%;
+	}
+	
+	#section1 .intro h1 {
+		font-size: 70px; font-size: 7.0rem;
+		line-height: 70px;
+	}	
+	
+	#section1 .intro h3 {
+		font-size: 22px; font-size: 2.2rem;
+		line-height: 22px;
+	}
+
+	#section5 .content .span4 {
+		padding-right: 0px;
+	}
+	
+	.container-fluid {
+	    padding-left: 75px;
+	    padding-right: 75px;
+	}	
+		
+}
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+
+	#section1 .intro h3 {
+		width: 85%;
+	}
+	
+	#section2 .content .expand {
+		width: 48.6188%;
+	}
+	
+	#section4 .content .expand {
+		width: 100%;
+	}
+
+}
+
+
+@media (max-width: 767px) {
+	
+	body {
+		padding: 0px;
+	}
+		
+	.section {
+		padding: 100px 0;
+	}
+	
+	.section .content {
+	    margin-top: 0;
+	}
+	
+	.section .content .pull-right {
+    	float:left;
+    }
+	
+	.section h4 {
+		margin-top: 30px;
+	}
+	
+	.section .title hr {
+		margin-left: 0px;
+	}
+		
+	#section1 {
+		background-size: 920px auto;
+	}
+	
+	#section1 .intro {
+		margin: 120px 0;
+	}
+	
+	#section1 .intro h3 {
+		width: 55%;
+	}
+	
+	#section3 .content img {
+    	margin-top: 30px;
+    	padding: 1.5%;
+    }
+        
+    #section3 .table th, #section3 .table td {
+    	font-size: 13px; font-size: 1.3rem;
+	}
+	
+	#section3 .table {
+		margin-top: 30px;
+	}
+		
+    #section5 .span8 {
+	    margin-top: 30px;
+    }
+    
+	
+}
+
+@media screen and (min-width: 481px) and (max-width: 649px) {
+
+	#section1 .intro h1 {
+		font-size: 60px; font-size: 6rem;
+		line-height: 60px;
+	}
+	
+	#section1 .intro h3 {
+		font-size: 20px; font-size: 2rem;
+	}
+
+}
+
+@media screen and (min-width: 481px) {
+	
+	#section1 {
+		background-image:url(../img/intro-bg.jpg);
+	}
+	
+}
+
+
+@media screen and (max-width: 480px) {
+	 
+	.section{
+		padding: 80px 0;
+	}
+	
+	#section1 {
+	    background-size: 1024px auto;
+	    padding: 60px 0;
+	}
+	
+	#section1 .intro {
+		margin: 50px 0;
+	}
+
+	#section1 .intro h1 {
+		font-size: 50px; font-size: 5rem;
+		line-height: 50px;
+	}
+	
+	#section1 .intro h3 {
+		font-size: 22px; font-size: 2.2rem;
+		line-height: 24px;
+		width: 100%;
+	}
+	
+	#section1 .thumb {
+		background: #95a5a6;
+	    display: block;
+	    margin-left: 3%;
+	    max-width: 80%;
+	    padding: 3%;
+	}
+	
+	#section3 .table th, #section3 .table td {
+    	font-size: 11px; font-size: 1.1rem;
+	}
+	
+	#section4 h4 {
+	    height: auto;
+	}    
+
+
+}
+
+
+
+
