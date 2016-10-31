@@ -35,27 +35,29 @@
     <body>		
 		<div class="top container">
 			<div id="trigger"></div>
-			<div class="navbar-inner main-menu span12">
-				<a href="#"><img src="images/logo.png" class="logo pull-left"></a>
-				<nav id="menu" class="pull-right">
-					<ul>
-						<li><a href="./products.html">Type</a>					
-							<ul>
-								<li><a href="./products.html">Type1</a></li>									
-								<li><a href="./products.html">Type2</a></li>
-								<li><a href="./products.html">Type3</a></li>								
-							</ul>
-						</li>															
-						<li><a href="./products.html">Place</a></li>
-						<li><a href="./products.html">Search</a>
-							<ul>
-								<li><input type="text"></li>																
-							</ul>
-						</li>
-						<li><a href="#">Login</a></li>					
-						<li><a href="register.html">Sign Up</a></li>				
-					</ul>
-				</nav>
+			<div class="navbar navbar-fixed-top">		
+				<div class="navbar-inner main-menu span12">
+					<a href="#"><img src="images/logo.png" class="logo pull-left"></a>
+					<nav id="menu" class="pull-right">
+						<ul>
+							<li><a href="./products.html">Type</a>					
+								<ul>
+									<li><a href="./products.html">Type1</a></li>									
+									<li><a href="./products.html">Type2</a></li>
+									<li><a href="./products.html">Type3</a></li>								
+								</ul>
+							</li>															
+							<li><a href="./products.html">Place</a></li>
+							<li><a href="./products.html">Search</a>
+								<ul>
+									<li><input type="text"></li>																
+								</ul>
+							</li>
+							<li><a href="#">Login</a></li>					
+							<li><a href="register.html">Sign Up</a></li>				
+						</ul>
+					</nav>
+				</div>
 			</div>
 			<div id="hightlight" class="span6">
 				<h1>Food Delivery</h1>
