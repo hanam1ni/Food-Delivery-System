@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('browse');
 });
+
+Route::get('/payment', function () {
+    return view('payment');
+});
