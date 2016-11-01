@@ -11,7 +11,10 @@
 		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 		
 		<link href="css/bootstrappage.css" rel="stylesheet"/>
-		
+			
+	    <!-- Loading Flat UI -->
+	    <link href="css/flat-ui.css" rel="stylesheet">
+
 		<!-- global styles -->
 		<link href="css/flexslider.css" rel="stylesheet"/>
 		<link href="css/browse.css" rel="stylesheet"/>
@@ -19,7 +22,7 @@
 
 		<!-- scripts -->
 		<script src="js/jquery-1.7.2.min.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>				
+		<script src="js/bootstrap.min.js"></script>				
 		<script src="js/superfish.js"></script>	
 		<!--[if lt IE 9]>			
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -58,21 +61,24 @@
 
 		<div class="container">
 			<div class="payment content">
-			<!--
+			
 				<label class="radio">
 	            	<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
-	            		Radio is off
+	            	Address one
 		        </label>
 	          	<label class="radio">
 	            	<input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio" checked="">
-	            		Radio is on
+	            	Address two
 	          	</label>
 			</div>
-			-->
+			
 		</div>
 		<div class="footer container">
 
 		</div>
 		<script src="js/common.js"></script>
+	    <script src="js/jquery.min.js"></script>
+		<script src="js/flat-ui.min.js"></script>
+	    <script src="js/application.js"></script>
     </body>
 </html>
