@@ -4,4 +4,26 @@
 }
 .pic{
 	margin-top: 5%;
+	margin-bottom: 3%;
+}
+.menundetail{
+	margin-left: 5%;
+}
+#tab .nav-tabs > li > a{
+	border-radius: 5px 5px 0 0;
+}
+#tab .nav-pills > li > a{
+	border-radius: 5px 5px 0 0;
+}
+#tab .tab-content{
+	color: black;
+	background-color: white;
+	padding: 15px 15px;
+}
+#content-header{
+	height: 100px;
+	line-height: 100px;
+	font-weight: 700;
+	font-size: 40px;
+	border-bottom: medium solid #CCCCCC;
 }
