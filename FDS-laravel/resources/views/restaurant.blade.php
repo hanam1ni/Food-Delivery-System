@@ -15,6 +15,8 @@
 		<link href="css/flexslider.css" rel="stylesheet"/>
 		<link href="css/browse.css" rel="stylesheet"/>
 
+		<link href="css/restaurant.css" rel="stylesheet"/>
+
 		<!-- scripts -->
 		<script src="js/jquery-1.7.2.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>				
@@ -61,4 +63,27 @@
 				<h2>We provide food that customers love, day after day after day. People just want more of it.</h2>
 			</div>
 		</div>
+
+		<div class="container">
+			<div class="content">
+				<div class="row">
+					<div id="content-header" class="span12">
+						Restaurant 8
+					</div>
+					<div class="span12 pic">
+						<div class="span4">
+							<img src="images/restaurants/res8.jpg">
+						</div>
+						<div class="span4 header-detail">
+							<div class="span8">
+								<h3>Rating : <img src="image/rating.jpg"></h3>
+							</div>
+							<div class="span8">
+								<h3>Detail : </h3>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
 		</html>
