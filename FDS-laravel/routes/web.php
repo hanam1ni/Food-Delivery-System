@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('browse');
 });
 
-Route::get('/payment', function () {
-    return view('payment');
+Route::get('/payment', 'paymentcontroller@index');
+
+Route::get('/foo', function () {
+    return 'hello world';
 });
