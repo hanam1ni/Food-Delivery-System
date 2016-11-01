@@ -66,6 +66,10 @@
       </div>
     </div>
 
+<!--End Header-->
+
+<!--Start Detail-->
+
     <div class="container">
       <div class="content">
         <div class="row">
@@ -78,13 +82,19 @@
             </div>
             <div class="span4 header-detail">
               <div class="span8">
-                <h3>Rating : <img src="image/rating.jpg"></h3>
+                <h3>Rating : <img width="40" height="40" src="images/rating.png">
+                <img width="40" height="40" src="images/rating.png">
+            	<img width="40" height="40" src="images/rating.png"></h3>
+
               </div>
               <div class="span8">
                 <h3>Detail </h3><p>The best restaurant ever</p>
               </div>
             </div>
           </div>
+
+<!--Start Menu and Comment-->
+
           <div class="container" id="tab">
               <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#Menu">Menu</a></li>
@@ -93,10 +103,69 @@
 
               <div class="tab-content clearfix">
                 <div class="tab-pane fade in active" id="Menu">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<!--Menu-->
+                	 <div class="row">
+					<div id="list" class="span12">
+						<div class="span4 item">
+							<div class="img-contain">
+								<img src="images/menu/menu1.jpg">
+							</div>
+							<div class="span4 item-text">
+								<h1>Menu 1</h1>
+							</div>
+						</div>
+						<div class="span4 item">
+							<div class="img-contain">
+								<img src="images/menu/menu2.jpg">
+							</div>
+							<div class="span4 item-text">
+								<h1>Menu 2</h1>
+							</div>
+						</div>
+						<div class="span4 item">
+							<div class="img-contain">
+								<img src="images/menu/menu3.jpg">
+							</div>
+							<div class="span4 item-text">
+								<h1>Menu 3</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div id="list" class="span12">
+						<div class="span4 item">
+							<div class="img-contain">
+								<img src="images/menu/menu4.jpg">
+							</div>
+							<div class="span4 item-text">
+								<h1>Menu 4</h1>
+							</div>
+						</div>
+						<div class="span4 item">
+							<div class="img-contain">
+								<img src="images/menu/menu5.jpg">
+							</div>
+							<div class="span4 item-text">
+								<h1>Menu 5</h1>
+							</div>
+						</div>
+						<div class="span4 item">
+							<div class="img-contain">
+								<img src="images/menu/menu6.jpg">
+							</div>
+							<div class="span4 item-text">
+								<h1>Menu 6</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+<!--endMenu-->
                 </div>
                 <div class="tab-pane fade" id="Comment">
+
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
                 </div>
               </div>
           </div>
