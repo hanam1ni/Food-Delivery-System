@@ -7,6 +7,7 @@
 		<meta name="description" content="">
 		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
 		<!-- bootstrap -->
+		<link href="css/bootstrap.css" rel="stylesheet">   
 		<link href="css/bootstrap.min.css" rel="stylesheet">      
 		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 		
@@ -61,15 +62,34 @@
 
 		<div class="container">
 			<div class="payment content">
-			
-				<label class="radio">
-	            	<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
-	            	Address one
-		        </label>
-	          	<label class="radio">
-	            	<input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio" checked="">
-	            	Address two
-	          	</label>
+				<div class="row payment-address">
+					<div class="span12">
+						<label class="span2 item radio">
+							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+							<span class="thumbnail address-option">888/7 ซอย ร่มเกล้า 21/8 แขวง คลองสามประเวศ เขต ลาดกระบัง กรุงเทพมหานคร 10520</span>
+						</label>
+						<label class="span2 item radio">
+							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+							<span class="thumbnail address-option">New Address</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="payment-option">
+					<div>
+						<h3>Account information</h3>
+					</div>
+					<div>
+						<label class="radio">
+							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+							<h6>cash</h6>
+						</label>
+						<label class="radio">
+							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+							<h6>transfer</h6>
+						</label>
+					</div>
+				</div>
 			</div>
 			
 		</div>
