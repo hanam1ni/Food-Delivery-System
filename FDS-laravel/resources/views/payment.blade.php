@@ -31,7 +31,7 @@
 		<![endif]-->
 	</head>
     <body>		
-		<div class="container">
+		<div class="top container">
 			<div class="navbar-inner main-menu span12">
 				<a href="#"><img src="images/logo.png" class="logo pull-left"></a>
 				<nav id="menu" class="pull-right">
@@ -54,32 +54,51 @@
 					</ul>
 				</nav>
 			</div>
-			<!--<div id="hightlight" class="span6">
+			<div id="hightlight" class="span6">
 				<h1>Food Delivery</h1>
 				<h2>We provide food that customers love, day after day after day. People just want more of it.</h2>
-			</div>-->
+			</div>
 		</div>
+
+
 
 		<div class="container">
 			<div class="payment content">
-				<div class="row payment-address">
-					<div class="span12">
-						<label class="span2 item radio">
+				<div class="payment-header" class="span12">
+					<h3>Choose Destination</h3>
+				</div>
+				<div class="row">
+					<div class="span12 address-choose">
+						<label class="span2 item radio" style="margin-top:10px;">
 							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
-							<span class="thumbnail address-option">888/7 ซอย ร่มเกล้า 21/8 แขวง คลองสามประเวศ เขต ลาดกระบัง กรุงเทพมหานคร 10520</span>
+							<span class="thumbnail address-option">8233 Burwell Circle, Port Charlotte, FL 33981 USA
+							</span>
 						</label>
 						<label class="span2 item radio">
 							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
-							<span class="thumbnail address-option">New Address</span>
+							<span class="thumbnail address-option Quote">New Address</span>
 						</label>
 					</div>
 				</div>
 
 				<div class="payment-option">
-					<div>
-						<h3>Account information</h3>
+					<div class="payment-header">
+						<h3>Account information :</h3>
 					</div>
 					<div>
+						<div class="row">
+							<h6 class="span3">First Name</h6>
+							<h6 class="span3">eiei</h6>
+						</div>
+						<div class="row">
+							<h6 class="span3">Last Name</h6>
+							<h6 class="span3">eueu</h6>
+						</div>
+					</div>
+					<div class="payment-header">
+						<h3>Account information :</h3>
+					</div>
+					<div class="span12">
 						<label class="radio">
 							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
 							<h6>cash</h6>

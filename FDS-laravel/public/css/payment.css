@@ -1,9 +1,14 @@
 .payment{
-	margin-top: 120px;
+	margin-top: 0px;
 }
-.payment .payment-address{
+.payment-header{
+	margin-top: 30px;
 	border-bottom: medium solid #CCCCCC;
 }
+.address-choose{
+	margin-top: 20px;
+}
+
 .address-option{
 	height: 100px;
 }
