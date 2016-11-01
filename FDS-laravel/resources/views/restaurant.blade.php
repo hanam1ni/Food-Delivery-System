@@ -163,9 +163,28 @@
 <!--endMenu-->
                 </div>
                 <div class="tab-pane fade" id="Comment">
+<!--Start Comment-->
+					<div class="row commentText">
+						<div class="span12">
+                    		<h4>User1</h4>
+                    	</div>
+                    	<div class="span12">
+                    		<p>Good Good</p>
+                    	</div>
 
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+                    	<div class="span12">
+                    		<h4>User2</h4>
+                    	</div>
+                    	<div class="span12">
+                    		Good Good Good
+                    	</div>
+					</div>
+                    <div class="form-group">
+  						<label for="comment1">Comment:</label>
+  						<textarea class="form-control" rows="5" id="comment1"></textarea>
+					</div>
+					<button type="button" class="btn btn-success">Submit</button>
+<!--End Comment-->
                 </div>
               </div>
           </div>

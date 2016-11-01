@@ -59,3 +59,9 @@
 	float: left;
 	margin: 0;
 }
+
+#Comment .commentText{
+	margin-left: 20%;
+	line-height: 100px;
+	border-bottom: medium solid #CCCCCC;
+}
