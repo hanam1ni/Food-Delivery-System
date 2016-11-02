@@ -126,7 +126,7 @@
 							<div class="img-contain">
 								<img src="images/menu/menu3.jpg">
 							</div>
-							<div class="span4 item-text">
+							<div class="span3 item-text">
 								<h1>Menu 3</h1>
 							</div>
 						</div>
@@ -154,7 +154,7 @@
 							<div class="img-contain">
 								<img src="images/menu/menu6.jpg">
 							</div>
-							<div class="span4 item-text">
+							<div class="span3 item-text">
 								<h1>Menu 6</h1>
 							</div>
 						</div>
@@ -164,26 +164,86 @@
                 </div>
                 <div class="tab-pane fade" id="Comment">
 <!--Start Comment-->
-					<div class="row commentText">
-						<div class="span12">
+
+				<form>
+					<div class="form-group commentBox">
+  						<label for="comment1">Comment:</label>
+  						<textarea class="form-control span10" rows="6" id="comment1"></textarea>
+					</div>
+					<div class="span2"></div>
+				</form>
+					<div class="span6"></div>
+					<label class="checkbox-inline span2"><input type="checkbox" value="">Show name</label>
+					<button type="button" class="btn btn-success span1">Submit</button>
+
+
+
+<div class="container">
+<div class="row">
+<div class="span12 commentHead">
+<h3>User Comment</h3>
+</div><!-- /col-sm-12 -->
+</div><!-- /row -->
+<div class="row commentForm">
+<div class="span1">
+<div class="thumbnail">
+<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+</div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+
+<div class="span5">
+<div class="panel panel-default">
+<div class="panel-heading">
+<strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+</div>
+<div class="panel-body">
+Panel content
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->
+</div><!-- /row -->
+
+<div class="row commentForm">
+<div class="span1">
+<div class="thumbnail">
+<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+</div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+
+<div class="span5">
+<div class="panel panel-default">
+<div class="panel-heading">
+<strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+</div>
+<div class="panel-body">
+Panel content
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->
+</div><!-- /row -->
+
+</div><!-- /container -->
+
+
+					<!--<div class="row">
+						<div class="span11">
                     		<h4>User1</h4>
                     	</div>
-                    	<div class="span12">
-                    		<p>Good Good</p>
+                    	<div class="span11 commentText">
+                    		Good Good
                     	</div>
+                    	<div class="span11 commentLine"></div>
+					</div>
 
-                    	<div class="span12">
+					<div class="row">
+                    	<div class="span11">
                     		<h4>User2</h4>
                     	</div>
-                    	<div class="span12">
+                    	<div class="span11 commentText">
                     		Good Good Good
                     	</div>
-					</div>
-                    <div class="form-group">
-  						<label for="comment1">Comment:</label>
-  						<textarea class="form-control" rows="5" id="comment1"></textarea>
-					</div>
-					<button type="button" class="btn btn-success">Submit</button>
+                    	<div class="span11 commentLine"></div>
+					</div>-->
 <!--End Comment-->
                 </div>
               </div>
