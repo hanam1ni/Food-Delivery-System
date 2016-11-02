@@ -63,7 +63,7 @@
                 <th>Menu</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>X</th>    
+                <th></th>    
               </tr>
               <tr class="text-center">
                 <td class="text-left">Jill</td>
@@ -75,7 +75,11 @@
                     </div>
                 </td>
                 <td>50</td>
-                <td></td>
+                <td>
+                <a class="bth bth-delete bth-danger">
+                    Delete
+                </a>
+                </td>
               </tr>
               <tr class="text-center">
                 <td class="text-left">Eve</td>
@@ -106,8 +110,7 @@
                 </font>
             </form> 
         </div>
-
-
+               
         <script src="js/common.js"></script>
     </body>
 </html>

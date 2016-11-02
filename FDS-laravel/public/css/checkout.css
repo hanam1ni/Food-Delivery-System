@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 .mar-left10{
     margin-left: 10%;
 }
@@ -59,3 +58,10 @@ table#t01 th {
     color: white;
 }
 
+.quantity-remove, .quantity-add {
+    cursor: pointer;
+}
+.quantity-add.glyphicon, .quantity-remove.glyphicon {
+    display: block;
+    cursor: pointer;
+}
