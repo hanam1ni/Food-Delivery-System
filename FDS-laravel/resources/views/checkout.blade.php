@@ -53,20 +53,20 @@
             </div>
         </div>
 
-        <div> 
+        <div class="mar-left10"> 
             <h1>Restaurant Name</h1>
         </div>
 
         <div>
-            <table id="t01" style="width:100%">        
+            <table id="t01" style="width:80%">        
               <tr>
-                <th width="20%">Menu</th>
-                <th width="40%">Quantity</th>
-                <th width="20%">Price</th>
-                <th width="20%">Delete</th>    
+                <th>Menu</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>X</th>    
               </tr>
-              <tr>
-                <td>Jill</td>
+              <tr class="text-center">
+                <td class="text-left">Jill</td>
                 <td>
                     <div>
                         <div class="qty-changer">
@@ -75,10 +75,10 @@
                     </div>
                 </td>
                 <td>50</td>
-                <td>50</td>
+                <td></td>
               </tr>
-              <tr>
-                <td>Eve</td>
+              <tr class="text-center">
+                <td class="text-left">Eve</td>
                 <td>
                     <div>
                         <div class="qty-changer">
@@ -87,19 +87,25 @@
                     </div>
                 </td>
                 <td>44</td>
-                <td>94</td>
+                <td></td>
               </tr>
             </table>
         </div>
         <br>
-        <br>
-
-        <form>
-            <input type="radio" name="gender" value="male" checked> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-            <input type="radio" name="gender" value="other"> Other
-        </form>
-
+        <div class="mar-left10">
+            <form>
+                <font size="5.5">
+                <strong> Delivery Methods </strong>
+                </font>
+                <font size="5">
+                <br><br>
+                <input type="radio" name="gender" value="male" checked> Delivery
+                <br><br>
+                <input type="radio" name="gender" value="female"> Fast Delivery (+50 baht)
+                <br>
+                </font>
+            </form> 
+        </div>
 
 
         <script src="js/common.js"></script>

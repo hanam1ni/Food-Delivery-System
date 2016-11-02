@@ -1,9 +1,10 @@
 @charset "utf-8";
 
-.container{
-    margin-top: 20px;
-    margin-left: 30px;
+
+.mar-left10{
+    margin-left: 10%;
 }
+
 button.qty-change{
     height: 35px;
     width: 40px;
@@ -20,8 +21,8 @@ button.qty-change{
 table {
     display: table;
     border-collapse: separate;
-    border-collapse: separate;
-    border-color: grey; 		
+    border-color: grey; 
+    margin-left: 10%;		
 }
 /*table, th, td {
     border: 1px solid black;
@@ -35,6 +36,7 @@ tr {
 }
 th {
     width: 35px;
+    height: 40px;
     font-size: 25px;
     font-weight: bold;
     text-align: -internal-center;
@@ -56,3 +58,4 @@ table#t01 th {
     background-color: black;
     color: white;
 }
+
