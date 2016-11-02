@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,7 @@ Route::get('/payment', 'paymentcontroller@index');
 Route::get('/foo', function () {
     return 'hello world';
 });
+
+
+
+Route::post('/task', 'customerController@index');

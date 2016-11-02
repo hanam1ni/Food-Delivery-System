@@ -14,7 +14,8 @@
 		<link href="css/bootstrappage.css" rel="stylesheet"/>
 			
 	    <!-- Loading Flat UI -->
-	    <link href="css/flat-ui.css" rel="stylesheet">
+	    <!--<link href="css/flat-ui.css" rel="stylesheet">-->
+		
 
 		<!-- global styles -->
 		<link href="css/flexslider.css" rel="stylesheet"/>
@@ -31,6 +32,7 @@
 		<![endif]-->
 	</head>
     <body>		
+    	<!-- class top contain picture-->
 		<div class="top container">
 			<div class="navbar-inner main-menu span12">
 				<a href="#"><img src="images/logo.png" class="logo pull-left"></a>
@@ -54,6 +56,7 @@
 					</ul>
 				</nav>
 			</div>
+			<!--web banner-->
 			<div id="hightlight" class="span6">
 				<h1>Food Delivery</h1>
 				<h2>We provide food that customers love, day after day after day. People just want more of it.</h2>
@@ -61,60 +64,103 @@
 		</div>
 
 
-
-		<div class="container">
-			<div class="payment content">
-				<div class="payment-header" class="span12">
-					<h3>Choose Destination</h3>
-				</div>
-				<div class="row">
-					<div class="span12 address-choose">
-						<label class="span2 item radio" style="margin-top:10px;">
-							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
-							<span class="thumbnail address-option">8233 Burwell Circle, Port Charlotte, FL 33981 USA
-							</span>
-						</label>
-						<label class="span2 item radio">
-							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
-							<span class="thumbnail address-option Quote">New Address</span>
-						</label>
+		<!-- content of payment page-->
+		<div class="container payment content">
+				<!--	Address information	-->
+				<div>
+					<div class="payment-header" class="span12">
+						<h2>Choose Your Address</h2>
 					</div>
-				</div>
-
-				<div class="payment-option">
-					<div class="payment-header">
-						<h3>Account information :</h3>
-					</div>
-					<div>
-						<div class="row">
-							<h6 class="span3">First Name</h6>
-							<h6 class="span3">eiei</h6>
-						</div>
-						<div class="row">
-							<h6 class="span3">Last Name</h6>
-							<h6 class="span3">eueu</h6>
+					<div class="row">
+						<div class="span12 address-choose">
+							<label class="span2 item radio" style="margin-top:10px;">
+								<input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" data-toggle="radio">
+								<span class="thumbnail address-option">8233 Burwell Circle, Port Charlotte, FL 33981 USA
+								</span>
+							</label>
+							<label class="span2 item radio">
+								<input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" data-toggle="radio">
+								<span class="thumbnail address-option Quote">465 minburee, Port sengsab, 10510 Bangkok</span>
+							</label>
 						</div>
 					</div>
-					<div class="payment-header">
-						<h3>Account information :</h3>
-					</div>
-					<div class="span12">
-						<label class="radio">
-							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
-							<h6>cash</h6>
-						</label>
-						<label class="radio">
-							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
-							<h6>transfer</h6>
-						</label>
+				</div>
+
+				<!--	Personal information	-->
+				<div>
+					<div class="payment-option">
+						<div class="payment-header">
+							<h2>Personal Infomation :</h2>
+						</div>
+						<div>
+							<div class="row">
+								<h4 class="span4">First Name :</h4>
+								<h4 class="span8">eiei</h4>
+							</div>
+							<div class="row">
+								<h4 class="span4">Last Name :</h4>
+								<h4 class="span8">eueu</h4>
+							</div>
+							<div class="row">
+								<h4 class="span4">Phone :</h4>
+								<h4 class="span8">0899899969</h4>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<!--	Payment information	-->
+				<div>
+					<div class="payment-header">
+						<h2>Payment Information :</h2>
+					</div>
+					<div class=payment-info>
+						<div class="row">
+							<label class="radio">
+								<input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2" data-toggle="radio">
+								<h4>Cash on delivery</h4>
+							</label>
+						</div>
+
+						<div class="row">
+							<label class="radio">
+								<input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2" data-toggle="radio">
+								<h4>Transfer to US</h4>
+							</label>
+						</div>
+					</div>
+				</div>
+
+			<form action="{{ url('task') }}" method="POST">
+				{{ csrf_field() }}
+
+			  	User name: <input type="text" name="username"><br>
+			  	Email: <input type="text" name="email"><br>
+			  	password: <input type="text" name="password"><br>
+			  	address: <input type="text" name="address"><br>
+			  	phone: <input type="text" name="phone"><br>
+	        	<button type="submit" class="btn btn-default">
+	                <i class="fa fa-plus"></i> Add Task
+	            </button>
+			</form>
+
+
+			<div class="span4 btn-accept">
+	  			<a href="#fakelink" class="btn btn-block btn-lg btn-info">Place Order</a>
 			</div>
-			
-		</div>
-		<div class="footer container">
 
+			<br><br><br><br>
 		</div>
+
+
+			<!-- Place Order btn-->
+
+<!-- Button trigger modal -->
+
+
+
+		<div class="footer container"></div>
+
 		<script src="js/common.js"></script>
 	    <script src="js/jquery.min.js"></script>
 		<script src="js/flat-ui.min.js"></script>

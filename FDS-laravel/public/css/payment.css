@@ -1,18 +1,46 @@
 .payment{
-	margin-top: 0px;
+	margin-top: 120px;
 }
 .payment-header{
 	margin-top: 30px;
 	border-bottom: medium solid #CCCCCC;
 }
 .address-choose{
-	margin-top: 20px;
+	/*margin-top: 20px;*/
 }
 
 .address-option{
 	height: 100px;
 }
 
+.new-address{
+	width:500px;
+}
 .payment-option{
 	margin-top: 20px;
 }
+.payment-option h3{
+	font-family: inherit;
+	font-weight: 700;
+	line-height: 1.1;
+	color: inherit;
+}
+.payment-option h5{
+	font-family: inherit;
+	font-weight: 700;
+	line-height: 1.1;
+	color: inherit;
+}
+.payment-info{
+	margin-left: 5%;
+}
+
+
+.btn-accept{
+	position: absolute;
+	left:45%;
+	margin-left:-99px;
+}
+.btn-accept .btn-block{
+	padding-top: 15px;
+	padding-bottom: 15px;
