@@ -35,7 +35,7 @@
 	position: relative;
 	height: 330px;
 	margin-top: 10px;
-	margin-left: 10px;
+	margin-left: 35px;
 	background: transparent;
 }
 
@@ -44,13 +44,13 @@
 }
 
 #list > .item > .img-contain > img {
-	width: 80%;
+	width: 300px;
 	height: 200px;
 }
 #list > .item > .item-text{
 	margin: 0;
 	padding: 5px 10px;
-	width: 276px;
+	width: 250px;
 	color: white;
 	background: #432E41;
 }

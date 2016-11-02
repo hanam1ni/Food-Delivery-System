@@ -101,28 +101,28 @@
                 <li><a data-toggle="tab" href="#Comment">Comment</a></li>
               </ul>
 
-              <div class="tab-content clearfix">
-                <div class="tab-pane fade in active" id="Menu">
+              <div class="tab-content">
+                <div class=" tab-pane fade in active" id="Menu">
 <!--Menu-->
-                	 <div class="row">
-					<div id="list" class="span12">
-						<div class="span4 item">
+                	<div class="row">
+					<div id="list"  style="margin-left: 8%" class="span11">
+						<div class="span3 item">
 							<div class="img-contain">
 								<img src="images/menu/menu1.jpg">
 							</div>
-							<div class="span4 item-text">
+							<div class="span3 item-text">
 								<h1>Menu 1</h1>
 							</div>
 						</div>
-						<div class="span4 item">
+						<div class="span3 item">
 							<div class="img-contain">
 								<img src="images/menu/menu2.jpg">
 							</div>
-							<div class="span4 item-text">
+							<div class="span3 item-text">
 								<h1>Menu 2</h1>
 							</div>
 						</div>
-						<div class="span4 item">
+						<div class="span3 item">
 							<div class="img-contain">
 								<img src="images/menu/menu3.jpg">
 							</div>
@@ -133,24 +133,24 @@
 					</div>
 				</div>
 				<div class="row">
-					<div id="list" class="span12">
-						<div class="span4 item">
+					<div id="list" style="margin-left: 8%" class="span11">
+						<div class="span3 item">
 							<div class="img-contain">
 								<img src="images/menu/menu4.jpg">
 							</div>
-							<div class="span4 item-text">
+							<div class="span3 item-text">
 								<h1>Menu 4</h1>
 							</div>
 						</div>
-						<div class="span4 item">
+						<div class="span3 item">
 							<div class="img-contain">
 								<img src="images/menu/menu5.jpg">
 							</div>
-							<div class="span4 item-text">
+							<div class="span3 item-text">
 								<h1>Menu 5</h1>
 							</div>
 						</div>
-						<div class="span4 item">
+						<div class="span3 item">
 							<div class="img-contain">
 								<img src="images/menu/menu6.jpg">
 							</div>
