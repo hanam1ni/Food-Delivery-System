@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('browse');
 });
+
+Route::get('/checkout', function () {
+    return view('checkout');
+});
