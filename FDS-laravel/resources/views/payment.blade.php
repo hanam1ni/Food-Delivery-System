@@ -121,29 +121,24 @@
 				    </label>
 				    <!-- new address -->
 		    	    <div class="new-address">
-	                    <button type="button" class="btn btn-danger btn-new-address" data-toggle="modal" data-target="#myModal">add</button>
+	                    <button type="button" class="btn btn-danger btn-new-address" id="btn-add" onclick="toAddAddr();">add</button>
 	                </div>
 	                <!-- add new address model -->
 					<!-- Modal -->
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        	<h4 class="modal-title" id="myModalLabel">Enter Your Address</h4>
-						      	</div>
-						  		<div class="modal-body">
-							        <textarea rows="6" style="width:97%;" id="newAddress"></textarea><br>
-						      	</div>
-						      	<div class="modal-footer">
-							        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeNewAddr()">Close</button>
-							        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="addNewAddr()">Save changes</button>
-						        </div>
-							</div>
-						</div>
+
+					<div class="modal-content" style="display:none;" id="addModal">
+						<div class="modal-header">
+				        	<h4 class="modal-title" id="myModalLabel">Enter Your New Address</h4>
+				      	</div>
+				  		<div class="modal-body">
+					        <textarea rows="6" style="width:97%;" id="newAddress"></textarea><br>
+				      	</div>
+				      	<div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeNewAddr()">Close</button>
+					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="addNewAddr()">Save changes</button>
+				        </div>
 					</div>
 
-				</div>
 
 				<!--	Personal information	-->
 				<div>
@@ -232,7 +227,7 @@
 
 	    	document.getElementById("address1").innerHTML = address1;
 	    	document.getElementById("address2").innerHTML = address2;
-
+	    	document.getElementById("address3").innerHTML = address3;
 
 
 	    	if(address1 === null){
@@ -247,15 +242,42 @@
 	    		document.getElementById("divAddr3").style.display = 'none';
 	    	}
 
+
+
+	    	function toAddAddr(){
+	    		if(address3 === null){
+		    		document.getElementById("addModal").style.display = 'block';
+		    		document.getElementById("btn-add").style.display = 'none';
+		    	}
+		    	else{
+		    		window.alert("Slot Address is FULL");
+		    	}
+	    	}
+
+	    	function closeNewAddr(){
+	    		document.getElementById("newAddress").value = "";
+	    		document.getElementById("addModal").style.display = 'none';
+	    		document.getElementById("btn-add").style.display = 'block';
+	    	}
+
+	    	function addNewAddr(){
+	    		address3 = document.getElementById("newAddress").value;
+
+				document.getElementById("address1").innerHTML = address1;
+				document.getElementById("address2").innerHTML = address2;
+				document.getElementById("address3").innerHTML = address3;
+
+	    		document.getElementById("newAddress").value = "";
+	    		document.getElementById("addModal").style.display = 'none';
+	    		document.getElementById("btn-add").style.display = 'block';
+	    		document.getElementById("divAddr3").style.display = 'block';
+	    	}
+
 	    	function placeOrder(){
 	    		window.alert("place order!!!");
 	    	}
 
-	    	function closeNewAddr(){
-	    	}
 
-	    	function addNewAddr(){
-	    	}
 	    </script>
     </body>
 </html>
