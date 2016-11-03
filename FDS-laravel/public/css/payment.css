@@ -14,7 +14,13 @@
 }
 
 .new-address{
-	width:500px;
+	position: relative;
+	left:3%;
+}
+.btn-new-address{
+	width: 80px;
+	height: 30px;
+
 }
 .payment-option{
 	margin-top: 20px;
@@ -35,9 +41,16 @@
 	margin-left: 5%;
 }
 
+.radio input{
+	margin-top: 30px;
+}
+.mark-as-default input{
+	margin-top: 35px;
+}
+
 
 .btn-accept{
-	position: absolute;
+	position: relative;
 	left:45%;
 	margin-left:-99px;
 }

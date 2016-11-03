@@ -32,12 +32,12 @@ class customerController extends Controller
     $task = new \App\customer;       //app/customer -> model
     $task->username = $request->input('username');
     $task->email = $request->input('email');
-    $task->address = $request->input('address');
+    $task->address = 'null';
     $task->password = $request->input('password');
     $task->phone = $request->input('phone');
     $task->save();
 
-    return Redirect('/');
+    return Redirect::back();
 
     }
 

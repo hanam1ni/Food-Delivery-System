@@ -65,25 +65,73 @@
 
 
 		<!-- content of payment page-->
-		<div class="container payment content">
+		<div class="container content"> <!--class payment-->
 				<!--	Address information	-->
 				<div>
 					<div class="payment-header" class="span12">
 						<h2>Choose Your Address</h2>
 					</div>
-					<div class="row">
-						<div class="span12 address-choose">
-							<label class="span2 item radio" style="margin-top:10px;">
-								<input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" data-toggle="radio">
-								<span class="thumbnail address-option">8233 Burwell Circle, Port Charlotte, FL 33981 USA
-								</span>
-							</label>
-							<label class="span2 item radio">
-								<input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" data-toggle="radio">
-								<span class="thumbnail address-option Quote">465 minburee, Port sengsab, 10510 Bangkok</span>
-							</label>
-						</div>
+
+				    <!-- address1 -->
+				    <label class="row">
+				        <div class="mark-as-default span1">
+				            <input type="radio" name="defaultAddress" id="payOption1" data-toggle="radio" value="4000500003636379" checked>
+				        </div>
+				        <div class="span8">
+				            <div class="address-name">
+				                <h4>Address 1</h4>
+				            </div>
+				            <div class="address-details">
+				                <p id="address1"></p>
+				                <a href="javascript:void(0)" data-id="4000500003636379" class="address-delete">Delete Address</a>
+				            </div>
+				        </div>
+				    </label>
+
+				    <!-- address2 -->
+				    <label class="row">
+				        <div class="mark-as-default span1">
+				            <input type="radio" name="defaultAddress" value="4000500003636379" >
+				        </div>
+				        <div class="span8">
+				            <div class="address-name">
+				                <h4>Address 2</h4>
+				            </div>
+				            <div class="address-details">
+				                <p id="address2"></p>
+				                <a href="javascript:void(0)" data-id="4000500003636379" class="address-delete">Delete Address</a>
+				            </div>
+				        </div>
+				    </label>
+
+				    <!-- new address -->
+		    	    <div class="new-address">
+	                    <button type="button" class="btn btn-danger btn-new-address" data-toggle="modal" data-target="#myModal">add</button>
+	                </div>
+	                <!-- add new address model -->
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+						      <form>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">Enter Your Address</h4>
+						      </div>
+						      <div class="modal-body">
+						        <textarea rows="4" style="width:97%;" id="newAddress"></textarea><br>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Save changes</button>
+					      	</form>
+					      </div>
+					    </div>
+					  </div>
 					</div>
+
+
+
 				</div>
 
 				<!--	Personal information	-->
@@ -95,15 +143,19 @@
 						<div>
 							<div class="row">
 								<h4 class="span4">First Name :</h4>
-								<h4 class="span8">eiei</h4>
+								<h4 class="span8" id="firstname"></h4>
 							</div>
 							<div class="row">
 								<h4 class="span4">Last Name :</h4>
-								<h4 class="span8">eueu</h4>
+								<h4 class="span8" id="lastname"></h4>
 							</div>
 							<div class="row">
 								<h4 class="span4">Phone :</h4>
-								<h4 class="span8">0899899969</h4>
+								<h4 class="span8" id="phone"></h4>
+							</div>
+							<div class="row">
+								<h4 class="span4">E-mail :</h4>
+								<h4 class="span8" id="email"></h4>
 							</div>
 						</div>
 					</div>
@@ -117,47 +169,30 @@
 					<div class=payment-info>
 						<div class="row">
 							<label class="radio">
-								<input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2" data-toggle="radio">
+								<input type="radio" name="optionsRadios2" id="payOption1" value="option2" data-toggle="radio" checked>
 								<h4>Cash on delivery</h4>
 							</label>
 						</div>
 
 						<div class="row">
 							<label class="radio">
-								<input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2" data-toggle="radio">
+								<input type="radio" name="optionsRadios2" id="payOption2" value="option2" data-toggle="radio">
 								<h4>Transfer to US</h4>
 							</label>
 						</div>
 					</div>
 				</div>
+			
 
-			<form action="{{ url('task') }}" method="POST">
-				{{ csrf_field() }}
-
-			  	User name: <input type="text" name="username"><br>
-			  	Email: <input type="text" name="email"><br>
-			  	password: <input type="text" name="password"><br>
-			  	address: <input type="text" name="address"><br>
-			  	phone: <input type="text" name="phone"><br>
-	        	<button type="submit" class="btn btn-default">
-	                <i class="fa fa-plus"></i> Add Task
-	            </button>
-			</form>
-
-
+			<!-- Place Order btn-->
 			<div class="span4 btn-accept">
-	  			<a href="#fakelink" class="btn btn-block btn-lg btn-info">Place Order</a>
+	  			<button class="btn btn-block btn-lg btn-danger" id="placeOrder" onclick="placeOrder()">Place Order</button> 
 			</div>
 
-			<br><br><br><br>
 		</div>
 
 
-			<!-- Place Order btn-->
-
-<!-- Button trigger modal -->
-
-
+			
 
 		<div class="footer container"></div>
 
@@ -165,5 +200,33 @@
 	    <script src="js/jquery.min.js"></script>
 		<script src="js/flat-ui.min.js"></script>
 	    <script src="js/application.js"></script>
+
+
+
+
+	    <!-- javascript -->
+	    <script type="text/javascript">
+	    	var firstname = "Peter";
+	    	var lastname = "Jackson";
+	    	var phone = "0899999999";
+	    	var email = "testmail@hotmail.com"
+
+	    	var address1 = "23 ตีทอง แขวง วัดราชบพิตร เขต พระนคร กรุงเทพมหานคร 10200";
+	    	var address2 = "818 ซอย ภาณุรังษี แขวง วังบูรพาภิรมย์ เขต พระนคร กรุงเทพมหานคร 10200";
+	    	var address3 = "";
+
+	    	document.getElementById("firstname").innerHTML = firstname;
+	    	document.getElementById("lastname").innerHTML = lastname;
+	    	document.getElementById("phone").innerHTML = phone;
+	    	document.getElementById("email").innerHTML = email;
+
+
+	    	document.getElementById("address1").innerHTML = address1;
+	    	document.getElementById("address2").innerHTML = address2;
+
+	    	function placeOrder(){
+	    		window.alert("place order!!!");
+	    	}
+	    </script>
     </body>
 </html>
