@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
         <!-- bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">      
+              
         <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
         
         <link href="css/bootstrappage.css" rel="stylesheet"/>
@@ -26,6 +26,10 @@
         <![endif]-->
          <link href="css/checkout.css" rel="stylesheet">
          <script src="js/checkout.js"></script> 
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>      
         <div class="top container">
@@ -53,12 +57,12 @@
             </div>
         </div>
 
-        <div class="mar-left10"> 
+        <div class="mar-left20"> 
             <h1>Restaurant Name</h1>
         </div>
 
-        <div>
-            <table id="t01" style="width:80%">        
+        <div class="mar-left20">
+            <table id="t01" style="width:70%" class="span12">        
               <tr>
                 <th>Menu</th>
                 <th>Quantity</th>
@@ -76,9 +80,7 @@
                 </td>
                 <td>50</td>
                 <td>
-                <a class="bth bth-delete bth-danger">
-                    Delete
-                </a>
+                    <span class="glyphicon glyphicon-remove btn-danger"></span>
                 </td>
               </tr>
               <tr class="text-center">
@@ -91,12 +93,14 @@
                     </div>
                 </td>
                 <td>44</td>
-                <td></td>
+                <td>
+                    <span class="glyphicon glyphicon-remove btn-danger"></span>
+                </td>
               </tr>
             </table>
         </div>
-        <br>
-        <div class="mar-left10">
+        <br><br><br><br><br><br><br>
+        <div class="mar-left20">
             <form>
                 <font size="5.5">
                 <strong> Delivery Methods </strong>
@@ -110,7 +114,10 @@
                 </font>
             </form> 
         </div>
-               
+        <br>
+        <div align="center">
+            <button type="button" class="btn btn-default">Confirm</button>
+        </div>    
         <script src="js/common.js"></script>
     </body>
 </html>
