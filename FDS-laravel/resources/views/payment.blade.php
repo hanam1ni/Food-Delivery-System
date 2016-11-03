@@ -73,7 +73,7 @@
 					</div>
 
 				    <!-- address1 -->
-				    <label class="row">
+				    <label class="row" id="divAddr1">
 				        <div class="mark-as-default span1">
 				            <input type="radio" name="defaultAddress" id="payOption1" data-toggle="radio" value="4000500003636379" checked>
 				        </div>
@@ -89,7 +89,7 @@
 				    </label>
 
 				    <!-- address2 -->
-				    <label class="row">
+				    <label class="row" id="divAddr2">
 				        <div class="mark-as-default span1">
 				            <input type="radio" name="defaultAddress" value="4000500003636379" >
 				        </div>
@@ -104,6 +104,21 @@
 				        </div>
 				    </label>
 
+				    <!-- address3 -->
+				    <label class="row" id="divAddr3" >
+				        <div class="mark-as-default span1">
+				            <input type="radio" name="defaultAddress" id="payOption3" data-toggle="radio" value="4000500003636379">
+				        </div>
+				        <div class="span8">
+				            <div class="address-name">
+				                <h4>Address 3</h4>
+				            </div>
+				            <div class="address-details">
+				                <p id="address3"></p>
+				                <a href="javascript:void(0)" data-id="4000500003636379" class="address-delete">Delete Address</a>
+				            </div>
+				        </div>
+				    </label>
 				    <!-- new address -->
 		    	    <div class="new-address">
 	                    <button type="button" class="btn btn-danger btn-new-address" data-toggle="modal" data-target="#myModal">add</button>
@@ -111,26 +126,22 @@
 	                <!-- add new address model -->
 					<!-- Modal -->
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-					  <div class="modal-dialog" role="document">
-					    <div class="modal-content">
-					      <div class="modal-header">
-						      <form>
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">Enter Your Address</h4>
-						      </div>
-						      <div class="modal-body">
-						        <textarea rows="4" style="width:97%;" id="newAddress"></textarea><br>
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						        <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Save changes</button>
-					      	</form>
-					      </div>
-					    </div>
-					  </div>
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        	<h4 class="modal-title" id="myModalLabel">Enter Your Address</h4>
+						      	</div>
+						  		<div class="modal-body">
+							        <textarea rows="6" style="width:97%;" id="newAddress"></textarea><br>
+						      	</div>
+						      	<div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeNewAddr()">Close</button>
+							        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="addNewAddr()">Save changes</button>
+						        </div>
+							</div>
+						</div>
 					</div>
-
-
 
 				</div>
 
@@ -182,12 +193,12 @@
 						</div>
 					</div>
 				</div>
-			
-
 			<!-- Place Order btn-->
 			<div class="span4 btn-accept">
 	  			<button class="btn btn-block btn-lg btn-danger" id="placeOrder" onclick="placeOrder()">Place Order</button> 
 			</div>
+
+
 
 		</div>
 
@@ -202,8 +213,6 @@
 	    <script src="js/application.js"></script>
 
 
-
-
 	    <!-- javascript -->
 	    <script type="text/javascript">
 	    	var firstname = "Peter";
@@ -213,7 +222,7 @@
 
 	    	var address1 = "23 ตีทอง แขวง วัดราชบพิตร เขต พระนคร กรุงเทพมหานคร 10200";
 	    	var address2 = "818 ซอย ภาณุรังษี แขวง วังบูรพาภิรมย์ เขต พระนคร กรุงเทพมหานคร 10200";
-	    	var address3 = "";
+	    	var address3 = null;
 
 	    	document.getElementById("firstname").innerHTML = firstname;
 	    	document.getElementById("lastname").innerHTML = lastname;
@@ -224,8 +233,28 @@
 	    	document.getElementById("address1").innerHTML = address1;
 	    	document.getElementById("address2").innerHTML = address2;
 
+
+
+	    	if(address1 === null){
+	    		document.getElementById("divAddr1").style.display = 'none';
+	    	}
+
+	    	if(address2 === null){
+	    		document.getElementById("divAddr2").style.display = 'none';
+	    	}
+
+	    	if(address3 === null){
+	    		document.getElementById("divAddr3").style.display = 'none';
+	    	}
+
 	    	function placeOrder(){
 	    		window.alert("place order!!!");
+	    	}
+
+	    	function closeNewAddr(){
+	    	}
+
+	    	function addNewAddr(){
 	    	}
 	    </script>
     </body>
