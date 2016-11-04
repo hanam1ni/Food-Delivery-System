@@ -67,7 +67,7 @@
 		<!-- content of payment page-->
 		<div class="container content"> <!--class payment-->
 				<!--	Address information	-->
-				<div>
+				<div style="padding-bottom:50px;">
 					<div class="payment-header" class="span12">
 						<h2>Choose Your Address</h2>
 					</div>
@@ -82,8 +82,10 @@
 				                <h4>Address 1</h4>
 				            </div>
 				            <div class="address-details">
-				                <p id="address1"></p>
-				                <a href="javascript:void(0)" data-id="4000500003636379" class="address-delete">Delete Address</a>
+				                <h5 id="address1"></h5>
+				                <a class="address-delete" onclick="editAddr('divAddr3',3)">Edit Address</a>
+				                &emsp;
+				                <a class="address-delete" onclick="deleteAddr('divAddr1',1)">Delete Address</a>		<!--can't delete now !?!?!-->
 				            </div>
 				        </div>
 				    </label>
@@ -98,8 +100,10 @@
 				                <h4>Address 2</h4>
 				            </div>
 				            <div class="address-details">
-				                <p id="address2"></p>
-				                <a href="javascript:void(0)" data-id="4000500003636379" class="address-delete">Delete Address</a>
+				                <h5 id="address2"></h5>
+				                <a class="address-delete" onclick="editAddr('divAddr3',3)">Edit Address</a>
+				                &emsp;
+				                <a class="address-delete" onclick="deleteAddr('divAddr2',2)">Delete Address</a>
 				            </div>
 				        </div>
 				    </label>
@@ -114,8 +118,11 @@
 				                <h4>Address 3</h4>
 				            </div>
 				            <div class="address-details">
-				                <p id="address3"></p>
-				                <a href="javascript:void(0)" data-id="4000500003636379" class="address-delete">Delete Address</a>
+				                <h5 id="address3"></h5>
+				                <a class="address-delete" onclick="editAddr('divAddr3',3)">Edit Address</a>
+				                &emsp;
+				                <a class="address-delete" onclick="deleteAddr('divAddr3',3)">Delete Address</a>
+				                
 				            </div>
 				        </div>
 				    </label>
@@ -200,7 +207,7 @@
 
 			
 
-		<div class="footer container"></div>
+		<div class="footer container" style="width:100%"></div>
 
 		<script src="js/common.js"></script>
 	    <script src="js/jquery.min.js"></script>
@@ -210,7 +217,7 @@
 
 	    <!-- javascript -->
 	    <script type="text/javascript">
-	    	var firstname = "Peter";
+	    	var firstname = "Tipakorn";
 	    	var lastname = "Jackson";
 	    	var phone = "0899999999";
 	    	var email = "testmail@hotmail.com"
@@ -242,7 +249,49 @@
 	    		document.getElementById("divAddr3").style.display = 'none';
 	    	}
 
+	    	function editAddr(id,addr){
+	    		window.alert("Edit Address");
+	    	}
 
+	    	function deleteAddr(id,addr){
+
+	    		//document.getElementById(id).style.display = 'none';
+	    		console.log(addr);
+	    		console.log(address1);
+	    		console.log(address2);
+	    		console.log(address3);
+
+
+	    		if(addr === 1){
+	    			address1 = address2;
+	    			address2 = address3;
+	    			address3 = null;
+	    		}
+	    		if(addr === 2){
+	    			address2 = address3;
+	    			address3 = null;
+	    		}
+	    		if(addr === 3){
+	    			address3 = null;
+	    		}
+
+
+	    		if(address1 === null){
+	    			document.getElementById("divAddr1").style.display = 'none';
+	    		}
+	    		else if(address2 === null){
+	    			document.getElementById("divAddr2").style.display = 'none';
+	    		}
+	    		console.log("new address");
+	    		console.log(address1);
+	    		console.log(address2);
+	    		console.log(address3);
+
+				document.getElementById("address1").innerHTML = address1;
+				document.getElementById("address2").innerHTML = address2;
+	    		
+	    		document.getElementById("divAddr3").style.display = 'none';
+	    	}
 
 	    	function toAddAddr(){
 	    		if(address3 === null){
@@ -261,8 +310,20 @@
 	    	}
 
 	    	function addNewAddr(){
-	    		address3 = document.getElementById("newAddress").value;
+	    		if(address1 === null){
+	    			address1 = document.getElementById("newAddress").value;
+	    			document.getElementById("divAddr1").style.display = 'block';
+	    		}
+	    		else if(address2 === null){
+	    			address2 = document.getElementById("newAddress").value;
+	    			document.getElementById("divAddr2").style.display = 'block';
+	    		}
+	    		else if(address3 === null){
+	    			address3 = document.getElementById("newAddress").value;
+	    			document.getElementById("divAddr3").style.display = 'block';
+	    		}
 
+	    	
 				document.getElementById("address1").innerHTML = address1;
 				document.getElementById("address2").innerHTML = address2;
 				document.getElementById("address3").innerHTML = address3;
@@ -270,7 +331,6 @@
 	    		document.getElementById("newAddress").value = "";
 	    		document.getElementById("addModal").style.display = 'none';
 	    		document.getElementById("btn-add").style.display = 'block';
-	    		document.getElementById("divAddr3").style.display = 'block';
 	    	}
 
 	    	function placeOrder(){
