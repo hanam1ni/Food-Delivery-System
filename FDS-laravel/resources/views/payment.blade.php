@@ -83,12 +83,24 @@
 				            </div>
 				            <div class="address-details">
 				                <h5 id="address1"></h5>
-				                <a class="address-delete" onclick="editAddr('divAddr3',3)">Edit Address</a>
+				                <a class="address-delete" onclick="toEditAddr('divEdit1','divAddr1','address1','editField1')">Edit Address</a>
 				                &emsp;
 				                <a class="address-delete" onclick="deleteAddr('divAddr1',1)">Delete Address</a>		<!--can't delete now !?!?!-->
 				            </div>
 				        </div>
 				    </label>
+					<div class="modal-content" style="display:none;" id="divEdit1">
+						<div class="modal-header">
+				        	<h4 class="modal-title" id="myModalLabel">Edit Your Address</h4>
+				      	</div>
+				  		<div class="modal-body">
+					        <textarea rows="6" style="width:97%;" id="editField1"></textarea><br>
+				      	</div>
+				      	<div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeEditAddr('divEdit1','divAddr1','address1','editField1')">Cancel</button>
+					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="editAddr('divAddr1','divEdit1','address1','editField1',1)">Save changes</button>
+				        </div>
+					</div>
 
 				    <!-- address2 -->
 				    <label class="row" id="divAddr2">
@@ -101,12 +113,24 @@
 				            </div>
 				            <div class="address-details">
 				                <h5 id="address2"></h5>
-				                <a class="address-delete" onclick="editAddr('divAddr3',3)">Edit Address</a>
+				                <a class="address-delete" onclick="toEditAddr('divEdit2','divAddr2','address2','editField2')">Edit Address</a>
 				                &emsp;
 				                <a class="address-delete" onclick="deleteAddr('divAddr2',2)">Delete Address</a>
 				            </div>
 				        </div>
 				    </label>
+					<div class="modal-content" style="display:none;" id="divEdit2">
+						<div class="modal-header">
+				        	<h4 class="modal-title" id="myModalLabel">Edit Your Address</h4>
+				      	</div>
+				  		<div class="modal-body">
+					        <textarea rows="6" style="width:97%;" id="editField2"></textarea><br>
+				      	</div>
+				      	<div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeEditAddr('divEdit2','divAddr2','address2','editField2')">Cancel</button>
+					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="editAddr('divAddr2','divEdit2','address2','editField2',2)">Save changes</button>
+				        </div>
+					</div>
 
 				    <!-- address3 -->
 				    <label class="row" id="divAddr3" >
@@ -119,13 +143,26 @@
 				            </div>
 				            <div class="address-details">
 				                <h5 id="address3"></h5>
-				                <a class="address-delete" onclick="editAddr('divAddr3',3)">Edit Address</a>
+				                <a class="address-delete" onclick="toEditAddr('divEdit3','divAddr3','address3','editField3')">Edit Address</a>
 				                &emsp;
 				                <a class="address-delete" onclick="deleteAddr('divAddr3',3)">Delete Address</a>
 				                
 				            </div>
 				        </div>
 				    </label>
+					<div class="modal-content" style="display:none;" id="divEdit3">
+						<div class="modal-header">
+				        	<h4 class="modal-title" id="myModalLabel">Edit Your Address</h4>
+				      	</div>
+				  		<div class="modal-body">
+					        <textarea rows="6" style="width:97%;" id="editField3"></textarea><br>
+				      	</div>
+				      	<div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeEditAddr('divEdit3','divAddr3','address3','editField3')">Cancel</button>
+					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="editAddr('divAddr3','divEdit3','address3','editField3',3)">Save changes</button>
+				        </div>
+					</div>
+
 				    <!-- new address -->
 		    	    <div class="new-address">
 	                    <button type="button" class="btn btn-danger btn-new-address" id="btn-add" onclick="toAddAddr();">add</button>
@@ -141,7 +178,7 @@
 					        <textarea rows="6" style="width:97%;" id="newAddress"></textarea><br>
 				      	</div>
 				      	<div class="modal-footer">
-					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeNewAddr()">Close</button>
+					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeNewAddr()">Cancel</button>
 					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="addNewAddr()">Save changes</button>
 				        </div>
 					</div>
@@ -249,8 +286,39 @@
 	    		document.getElementById("divAddr3").style.display = 'none';
 	    	}
 
-	    	function editAddr(id,addr){
-	    		window.alert("Edit Address");
+	    	function toEditAddr(id2,id1,addr,editField){
+	    		document.getElementById(editField).value = document.getElementById(addr).innerHTML;
+	    		document.getElementById(id1).style.display = 'none'
+	    		document.getElementById(id2).style.display = 'block'
+	    	}
+
+	    	function editAddr(id2,id1,addr,editField,count){
+	    		if(count === 1){
+	    			address1 = document.getElementById(editField).value;
+	    			document.getElementById(addr).innerHTML = address1;
+	    		}
+	    		else if(count === 2){
+	    			address2 = document.getElementById(editField).value;
+	    			document.getElementById(addr).innerHTML = address2;
+	    		}
+	    		else{
+    				address3 = document.getElementById(editField).value;
+	    			document.getElementById(addr).innerHTML = address3;
+	    		}
+
+	    		document.getElementById(id1).style.display = 'none'
+	    		document.getElementById(id2).style.display = 'block'	    
+
+	    		console.log(addr);
+	    		console.log(address1);
+	    		console.log(address2);
+	    		console.log(address3);
+	    	}
+
+	    	function closeEditAddr(id2,id1,addr,editField){
+	    		document.getElementById(editField).value = '';
+	    		document.getElementById(id1).style.display = 'block'
+	    		document.getElementById(id2).style.display = 'none'
 	    	}
 
 	    	function deleteAddr(id,addr){
@@ -261,13 +329,15 @@
 	    		console.log(address2);
 	    		console.log(address3);
 
-
-	    		if(addr === 1){
+	    		if(addr === 1 && address2 !== null){
 	    			address1 = address2;
 	    			address2 = address3;
 	    			address3 = null;
 	    		}
-	    		if(addr === 2){
+	    		else if(addr === 1 && address2 === null){
+	    			window.alert("you must have less one address!!");
+	    		}
+				else if(addr === 2){
 	    			address2 = address3;
 	    			address3 = null;
 	    		}
