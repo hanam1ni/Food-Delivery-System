@@ -6,4 +6,5 @@ function starLeave(){
 	TweenMax.to($(this).find('img'), 0.2, {scale: (1.0)});
 }
 
-$(".item").hover(starIn,starLeave);
+$(".item").hover(starIn);
+$(".item").mouseout(starLeave);

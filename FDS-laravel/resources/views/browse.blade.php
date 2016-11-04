@@ -18,7 +18,7 @@
 
 		<!-- scripts -->
 		<script src="js/jquery-1.7.2.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>				
+		<script src="bootstrap/js/bootstrap.min.js"></script>				
 		<script src="js/superfish.js"></script>	
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
