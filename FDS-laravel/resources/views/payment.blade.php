@@ -293,6 +293,11 @@
 	    	}
 
 	    	function editAddr(id2,id1,addr,editField,count){
+	    		if(document.getElementById(editField).value === ''){
+	    			window.alert("address is empty!!");
+	    			return;
+	    		}
+
 	    		if(count === 1){
 	    			address1 = document.getElementById(editField).value;
 	    			document.getElementById(addr).innerHTML = address1;
