@@ -33,6 +33,7 @@ a:hover{
 	background: url(../images/top_bg.jpg);
 	background-size: cover;
 	background-position: 50% 50%;
+	overflow: hidden;
 	box-shadow: inset 0px -14px 35px -11px rgba(84,84,84,1);
 }
 
@@ -152,13 +153,13 @@ a:hover{
 	left: 18%;
 }
 #hightlight > h1{
-	font-size: 68px;
+	font-size: 62px;
 	line-height: 105px;
 }
 #hightlight >h2{
-	font-size: 28px;
+	font-size: 24px;
 	word-wrap: break-word;
-	color: #726F6F;
+	color: #EB524A;
 }
 
 #content-header{
@@ -166,7 +167,7 @@ a:hover{
 	line-height: 100px;
 	font-weight: 900;
 	font-size: 48px;
-	border-bottom: medium solid #CCCCCC;
+	border-bottom: medium solid #EB524A;
 }
 
 /*-------TEMP------*/
