@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('browse');
 });
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::post('/register', array('uses' => 'RegisterController@doRegister'));
