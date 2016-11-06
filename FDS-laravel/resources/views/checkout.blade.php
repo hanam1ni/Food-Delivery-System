@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
         <!-- bootstrap -->
-        <!-- <link href="css/bootstrap.min.css" rel="stylesheet">  -->     
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
         
         <link href="css/bootstrappage.css" rel="stylesheet"/>
@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>      
-        <div class="top container">
+        <div class="container">
             <div id="trigger"></div>
             <div class="navbar navbar-fixed-top">       
                 <div class="navbar-inner main-menu span12">
@@ -60,13 +60,13 @@
                     </nav>
                 </div>
             </div>
-            <div id="hightlight" class="span6">
+            <!-- <div id="hightlight" class="span6">
                 <h1>Food Delivery</h1>
                 <h2>We provide food that customers love, day after day after day. People just want more of it.</h2>
-            </div>
+            </div> -->
         </div>
 
-        <div class="container">
+        <div class="container" style="margin-top: 100px; ">
             <div class="content">
                 <div class="row">
                     <div id="content-header" class="span12">
@@ -74,12 +74,12 @@
                     </div>
                 </div>
                 <div>
-                    <table id="t01" style="width:70%" class="span12">        
+                    <table id="t01" style="width:100%" class="span12">        
                         <tr>
-                            <th>Menu</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th></th>    
+                            <th style="width:60%">Menu</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center"></th>    
                         </tr>
                         <tr class="text-center">
                             <td class="text-left">Jill</td>
@@ -111,7 +111,7 @@
                         </tr>
                     </table>
                     <br><br><br><br><br><br><br>
-                    <form>
+                    <form align="left">
                         <font size="4">
                             <strong> Delivery Methods </strong>
                         </font>
@@ -124,8 +124,13 @@
                         </font>
                     </form>
                     <div align="right">
+                        <h4>Total : 00</h4>
+                        <br>
+                    </div>
+                    <div align="center">
+                        <br>
                         <button type="button" class="btn btn-default">Confirm</button>
-                    </div>    
+                    </div>       
                 </div>       
             </div>
         </div>
