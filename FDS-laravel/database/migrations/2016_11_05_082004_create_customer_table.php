@@ -22,6 +22,7 @@ class CreateCustomerTable extends Migration {
 			$table->text('address2', 65535)->nullable();
 			$table->text('address3', 65535)->nullable();
 			$table->string('phone', 16)->nullable();
+			$table->char('remember_token', 100)->nullable();
 		});
 	}
 

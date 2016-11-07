@@ -7,19 +7,19 @@
 		<meta name="description" content="">
 		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
 		<!-- bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">      
-		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">      
+		<link href="{{ asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
 		
-		<link href="css/bootstrappage.css" rel="stylesheet"/>
+		<link href="{{ asset('css/bootstrappage.css') }}" rel="stylesheet"/>
 		
 		<!-- global styles -->
-		<link href="css/flexslider.css" rel="stylesheet"/>
-		<link href="css/browse.css" rel="stylesheet"/>
+		<link href="{{ asset('css/flexslider.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('css/browse.css') }}" rel="stylesheet"/>
 
 		<!-- scripts -->
-		<script src="js/jquery-1.7.2.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>				
-		<script src="js/superfish.js"></script>	
+		<script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap.min.js') }}"></script>				
+		<script src="{{ asset('js/superfish.js') }}"></script>	
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
@@ -37,7 +37,7 @@
 			<div id="trigger"></div>
 			<div class="navbar navbar-fixed-top">		
 				<div class="navbar-inner main-menu span12">
-					<a href="#"><img src="images/logo.png" class="logo pull-left"></a>
+					<a href="#"><img src="{{ asset('images/logo.png') }}" class="logo pull-left"></a>
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="./products.html">Type</a>					
@@ -53,8 +53,28 @@
 									<li><input type="text"></li>																
 								</ul>
 							</li>
-							<li><a href="#">Login</a></li>					
-							<li><a href="register.html">Sign Up</a></li>				
+							<li>
+							@if (Auth::check())
+							 	<a href="#">{{Auth::user()->username}}</a></li>	
+							@else
+							 	<a href="./register">Sign Up</a></li>	
+							@endif
+								
+							<li>
+							 @if (Auth::check())
+							 	<a href="{{ url('/logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+							 @else
+							 	<a href="./login">Login</a>
+							 @endif
+							</li>						
 						</ul>
 					</nav>
 				</div>
@@ -68,119 +88,22 @@
 			<div class="content">
 				<div class="row">
 					<div id="content-header" class="span12">
-						Main Meal
+						{{ $type }}
 					</div>
 				</div>
 				<div class="row">
 					<div id="menuList" class="span12">
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res2.jpg">
+						@foreach ($restaurants as $restaurant)
+							<div class="span4 item">
+								<div class="img-contain">
+									<img src="{{ asset('images/restaurants/res'.$restaurant->restaurant_id.'.jpg') }}">
+								</div>
+								<div class="span4 item-text">
+									<h1>{{ $restaurant->restaurant_name }}</h1>
+								</div>
+								<div class="triangle"></div>
 							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 1</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res3.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 2</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res4.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 3</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res5.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 4</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res6.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 1</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res7.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 2</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res2.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 3</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res4.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 4</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res3.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 1</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res4.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 2</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res5.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 3</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
-						<div class="span4 item">
-							<div class="img-contain">
-								<img src="images/restaurants/res6.jpg">
-							</div>
-							<div class="span4 item-text">
-								<h1>Restaurant 4</h1>
-							</div>
-							<div class="triangle"></div>
-						</div>
+						@endforeach
 					</div>
 				</div>
 			</div>
@@ -188,8 +111,8 @@
 		<div class="footer container">
 
 		</div>
-		<script src="js/common.js"></script>
-		<script src="js/browse.js"></script>
-		<script src="js/scroll.js"></script>
+		<script src="{{ asset('js/common.js') }}"></script>
+		<script src="{{ asset('js/browse.js') }}"></script>
+		<script src="{{ asset('js/scroll.js') }}"></script>
     </body>
 </html>

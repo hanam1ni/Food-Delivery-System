@@ -36,12 +36,11 @@ class RegisterController extends Controller
                 'user_id'    =>  "000000",
                 'username'     => Input::get('username'),
                 'email'     => Input::get('email'),
-                'password'  => Hash::make(Input::get('password')),
-                'address'   => Input::get('address')
+                'address'   => Input::get('address'),
+                'password'  => Hash::make(Input::get('password'))
              );
 
-            $customer = new Customer;
-            $customer = Customer::create($userdata);
+            Customer::create($userdata);
         }
     }
 }

@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+use App\Restaurant;
+use App\Food;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +16,88 @@
 */
 
 Route::get('/', function () {
-    return view('browse');
+	$restaurants = Restaurant::orderBy('restaurant_id', 'asc')->get();
+
+    return view('browse' , [
+    	'type' => 'Browse Restaurant',
+    	'restaurants' => $restaurants
+    ]);
 });
 
-Route::get('/register', function () {
-    return view('register');
+Route::get('/browse', function () {
+    $restaurants = Restaurant::orderBy('restaurant_id', 'asc')->get();
+
+    return view('browse' , [
+    	'type' => 'Browse Restaurant',
+    	'restaurants' => $restaurants
+    ]);
 });
 
-Route::post('/register', array('uses' => 'RegisterController@doRegister'));
+Route::get('/browse/meal', function () {
+    $restaurants = DB::table('restaurant')
+                     ->join('food_menu', 'food_menu.restaurant_id', '=', 'restaurant.restaurant_id')
+                     ->where('food_menu.meal', '=', 1)
+                     ->groupBy('restaurant.restaurant_id')
+                     ->get();
+
+    return view('browse' , [
+    	'type' => 'Main Meal',
+    	'restaurants' => $restaurants
+    ]);
+});
+
+Route::get('/browse/vegan', function () {
+    $restaurants = DB::table('restaurant')
+                     ->join('food_menu', 'food_menu.restaurant_id', '=', 'restaurant.restaurant_id')
+                     ->where('food_menu.vegan', '=', 1)
+                     ->groupBy('restaurant.restaurant_id')
+                     ->get();
+
+    return view('browse' , [
+    	'type' => 'Vegetarian Food',
+    	'restaurants' => $restaurants
+    ]);
+});
+
+Route::get('/browse/islamic', function () {
+    $restaurants = DB::table('restaurant')
+                     ->join('food_menu', 'food_menu.restaurant_id', '=', 'restaurant.restaurant_id')
+                     ->where('food_menu.islamic', '=', 1)
+                     ->groupBy('restaurant.restaurant_id')
+                     ->get();
+
+    return view('browse' , [
+    	'type' => 'Islamic Food',
+    	'restaurants' => $restaurants
+    ]);
+});
+
+Route::get('/browse/dessert', function () {
+    $restaurants = DB::table('restaurant')
+                     ->join('food_menu', 'food_menu.restaurant_id', '=', 'restaurant.restaurant_id')
+                     ->where('food_menu.dessert', '=', 1)
+                     ->groupBy('restaurant.restaurant_id')
+                     ->get();
+
+    return view('browse' , [
+    	'type' => 'Dessert',
+    	'restaurants' => $restaurants
+    ]);
+});
+
+Route::get('/browse/drink', function () {
+    $restaurants = DB::table('restaurant')
+                     ->join('food_menu', 'food_menu.restaurant_id', '=', 'restaurant.restaurant_id')
+                     ->where('food_menu.drink', '=', 1)
+                     ->groupBy('restaurant.restaurant_id')
+                     ->get();
+
+    return view('browse' , [
+    	'type' => 'Drink',
+    	'restaurants' => $restaurants
+    ]);
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
