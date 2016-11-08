@@ -31,7 +31,8 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
             <script src="js/respond.min.js"></script>
         <![endif]-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">\
+        <link rel="stylesheet" href="css/checkout.css">
     </head>
     <body>      
         <div class="container">
@@ -65,7 +66,6 @@
                 <h2>We provide food that customers love, day after day after day. People just want more of it.</h2>
             </div> -->
         </div>
-
         <div class="container" style="margin-top: 100px; ">
             <div class="content">
                 <div class="row">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div>
-                    <table id="t01" style="width:100%" class="span12">        
+                    <table  style="width:100%" id="t01"class="span12">        
                         <tr>
                             <th style="width:60%">Menu</th>
                             <th class="text-center">Quantity</th>
@@ -112,9 +112,9 @@
                     </table>
                     <br><br><br><br><br><br><br>
                     <form align="left">
-                        <font size="4">
-                            <strong> Delivery Methods </strong>
-                        </font>
+                        <th>
+                            Delivery Methods 
+                        </th>
                         <font size="3">
                             <br><br>
                             <input type="radio" name="gender" value="male" checked> Delivery

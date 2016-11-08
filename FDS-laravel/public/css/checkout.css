@@ -45,7 +45,7 @@ th {
     width: 35px;
     height: 40px;
     font-size: 25px;
-    /*font-weight: bold;*/
+    font-weight: bold;
     text-align: -internal-center;
 }
 td{
@@ -56,12 +56,12 @@ td, th {
     vertical-align: inherit;
 }
 table#t01 tr:nth-child(even) {
-    background-color: #eee;
+    background: #eee;
 }
 table#t01 tr:nth-child(odd) {
     background-color:#fff;
 }
-table#t01 th {
+table#t01 {
     background-color: black;
     color: white;
 }
