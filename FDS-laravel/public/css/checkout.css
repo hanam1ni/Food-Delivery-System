@@ -13,16 +13,16 @@
 }
 
 button.qty-change{
-    height: 35px;
-    width: 40px;
-    border-radius: 30%;
+    height: 40px;
+    width: 50px;
+    border-radius: 50%;
     background: #fff;
     border: 1px solid #e3e3e3;
 }
 
 .qty-input{
     height: 25px;
-    width: 30px;
+    width: 100px;
     text-align: center;
 }
 table {
@@ -63,7 +63,7 @@ table#t01 tr:nth-child(odd) {
 }
 table#t01 {
     background-color: black;
-    color: white;
+    color: black;
 }
 
 .btn.glyphicon { // override .glyphicon style if it's set on a .btn

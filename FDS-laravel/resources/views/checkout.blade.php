@@ -86,7 +86,7 @@
                             <td>
                                 <div>
                                     <div class="qty-changer">
-                                        <input class="qty-input form-group" type="number" value="1"/>
+                                        <input class="qty-input form-group" type="number" min="1" value="1"/>
                                     </div>
                                 </div>
                             </td>
@@ -100,7 +100,7 @@
                             <td>
                                 <div>
                                     <div class="qty-changer">
-                                        <input class="qty-input form-group" type="number" value="1"/>
+                                        <input class="qty-input form-group" type="number" min="1" value="1"/>
                                     </div>
                                 </div>
                             </td>
