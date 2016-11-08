@@ -9,35 +9,37 @@
         <!-- bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-        
+       
         <link href="css/bootstrappage.css" rel="stylesheet"/>
-        
+       
         <!-- global styles -->
         <link href="css/flexslider.css" rel="stylesheet"/>
         <link href="css/browse.css" rel="stylesheet"/>
-
+ 
         <!-- scripts -->
         <script src="js/jquery-1.7.2.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>             
-        <script src="js/superfish.js"></script> 
-
+        <script src="js/bootstrap.min.js"></script>            
+        <script src="js/superfish.js"></script>
+ 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-
+ 
         <!-- scorll magic -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-        <!--[if lt IE 9]>           
+        <!--[if lt IE 9]>          
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
             <script src="js/respond.min.js"></script>
         <![endif]-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">\
+
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
         <link rel="stylesheet" href="css/checkout.css">
+       
     </head>
     <body>      
         <div class="container">
             <div id="trigger"></div>
-            <div class="navbar navbar-fixed-top">       
+            <div class="navbar navbar-fixed-top">      
                 <div class="navbar-inner main-menu span12">
                     <a href="#"><img src="images/logo.png" class="logo pull-left"></a>
                     <nav id="menu" class="pull-right">
@@ -48,7 +50,7 @@
                                     <li><a href="./products.html">Type2</a></li>
                                     <li><a href="./products.html">Type3</a></li>                                
                                 </ul>
-                            </li>                                                           
+                            </li>                                                          
                             <li><a href="./products.html">Place</a></li>
                             <li><a href="./products.html">Search</a>
                                 <ul>
@@ -69,77 +71,79 @@
         <div class="container" style="margin-top: 100px; ">
             <div class="content">
                 <div class="row">
-                    <div id="content-header" class="span12">
+                    <div id="content-header">
                         Restaurant Name
                     </div>
                 </div>
                 <div>
-                    <table  style="width:100%" id="t01"class="span12">        
-                        <tr>
-                            <th style="width:60%">Menu</th>
-                            <th class="text-center">Quantity</th>
-                            <th class="text-center">Price</th>
-                            <th class="text-center"></th>    
-                        </tr>
-                        <tr class="text-center">
-                            <td class="text-left">Jill</td>
-                            <td>
-                                <div>
-                                    <div class="qty-changer">
-                                        <input class="qty-input form-group" type="number" min="1" value="1"/>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>50</td>
-                            <td>
-                                <span class="glyphicon glyphicon-remove btn-danger"></span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="text-left">Eve</td>
-                            <td>
-                                <div>
-                                    <div class="qty-changer">
-                                        <input class="qty-input form-group" type="number" min="1" value="1"/>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>44</td>
-                            <td>
-                                <span class="glyphicon glyphicon-remove btn-danger"></span>
-                            </td>
-                        </tr>
+                    <table style="width:95%">
+                        <div class="column-labels">
+                            <label class="product-details">Product</label>
+                            <label class="product-removal">Remove</label>
+                            <label class="product-price">Price</label>
+                            <label class="product-quantity">Quantity</label>
+                            <label class="product-line-price">Total</label>
+                        </div>
+                        <div class="product">
+                            <div class="product-details">
+                                <div class="product-title">Dingo Dog Bones</div>
+                            </div>
+                            <div class="product-removal">
+                                <button class="remove-product">
+                                        Remove
+                                </button>
+                            </div>
+                            <div class="product-price">12.99</div>
+                            <div class="product-quantity">
+                                <input type="number" value="2" min="1">
+                            </div>
+                            <div class="product-line-price">25.98</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-details">
+                                <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
+                            </div>
+                            <div class="product-removal">
+                                <button class="remove-product">
+                                    Remove
+                                </button>
+                            </div>
+                            <div class="product-price">45.99</div>
+                            <div class="product-quantity">
+                            <input type="number" value="1" min="1">
+                            </div>
+                            
+                            <div class="product-line-price">45.99</div>
+                        </div>
                     </table>
-                    <br><br><br><br><br><br><br>
-                    <form align="left">
-                        <th>
-                            Delivery Methods 
-                        </th>
-                        <font size="3">
-                            <br><br>
-                            <input type="radio" name="gender" value="male" checked> Delivery
-                            <br><br>
-                            <input type="radio" name="gender" value="female"> Fast Delivery (+50 baht)
-                            <br><br>
-                        </font>
-                    </form>
-                    <div align="right">
-                        <h4>Total : 00</h4>
-                        <br>
+                    <div class="totals">
+                        <div class="totals-item">
+                            <label>Subtotal</label>
+                            <div class="totals-value" id="cart-subtotal">71.97</div>
+                        </div>
+                        <div class="totals-item">
+                            <label>Tax (5%)</label>
+                            <div class="totals-value" id="cart-tax">3.60</div>
+                        </div>
+                        <div class="totals-item">
+                            <label>Shipping</label>
+                            <div class="totals-value" id="cart-shipping">15.00</div>
+                        </div>
+                        <div class="totals-item totals-item-total">
+                            <label>Grand Total</label>
+                            <div class="totals-value" id="cart-total">90.57</div>
+                        </div>
                     </div>
-                    <div align="center">
-                        <br>
-                        <button type="button" class="btn btn-default">Confirm</button>
-                    </div>       
-                </div>       
+                    <button class="checkout">Checkout</button>
+                </div>      
             </div>
         </div>
-
+ 
         <div class="footer container">
-
+ 
         </div>
-        <script src="js/common.js"></script>
-        <script src="js/browse.js"></script>
-        <script src="js/scroll.js"></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <!-- <script src="js/browse.js"></script> -->
+        <script src="js/checkout.js"></script>
     </body>
 </html>
