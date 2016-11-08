@@ -182,7 +182,7 @@
 					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="addNewAddr()">Save changes</button>
 				        </div>
 					</div>
-
+				</div>
 
 				<!--	Personal information	-->
 				<div>
@@ -236,15 +236,9 @@
 			<div class="span4 btn-accept">
 	  			<button class="btn btn-block btn-lg btn-danger" id="placeOrder" onclick="placeOrder()">Place Order</button> 
 			</div>
+		</div>			
 
-
-
-		</div>
-
-
-			
-
-		<div class="footer container" style="width:100%"></div>
+		<div class="footer container"></div>
 
 		<script src="js/common.js"></script>
 	    <script src="js/jquery.min.js"></script>
@@ -410,6 +404,7 @@
 
 	    	function placeOrder(){
 	    		window.alert("place order!!!");
+	    		window.location.replace("./");
 	    	}
 
 
