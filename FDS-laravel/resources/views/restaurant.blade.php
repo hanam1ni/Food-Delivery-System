@@ -170,17 +170,16 @@
   						<label for="comment1">Comment:</label>
   						<textarea class="form-control span10" rows="6" id="comment1"></textarea>
 					</div>
-					<div class="span2"></div>
+
 				</form>
-					<div class="span6"></div>
-					<label class="checkbox-inline span2"><input type="checkbox" value="">Show name</label>
-					<button type="button" class="btn btn-success span1">Submit</button>
+					<div class="span8"></div>
+					<button type="submit" id="submit" value="Send" class="btn btn-success span1">Submit</button>
 
 
 
 <div class="container">
 <div class="row">
-<div class="span12 commentHead">
+<div class="span10 commentHead">
 <h3>User Comment</h3>
 </div><!-- /col-sm-12 -->
 </div><!-- /row -->
