@@ -1,4 +1,12 @@
 @charset "utf-8";
+
+.content-header{
+    height: 100px;
+    line-height: 100px;
+    font-weight: 900;
+    font-size: 30px;
+    border-bottom: medium solid #EB524A;
+}
  
 .product-image {
   float: left;
@@ -230,14 +238,14 @@ label {
   }
 }
  
-.btn.glyphicon { // override .glyphicon style if it's set on a .btn
+/*.btn.glyphicon { // override .glyphicon style if it's set on a .btn
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 1.428571429;
 }
 .btn.glyphicon::first-letter { // keep the Glyphicon font for the first letter
     font-family: 'Glyphicons Halflings';
     line-height: 1;
-}
+}*/
  
  
 /* browse.css */

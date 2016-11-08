@@ -32,9 +32,7 @@
             <script src="js/respond.min.js"></script>
         <![endif]-->
 
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-        <link rel="stylesheet" href="css/checkout.css">
-       
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->       
     </head>
     <body>      
         <div class="container">
@@ -68,7 +66,7 @@
                 <h2>We provide food that customers love, day after day after day. People just want more of it.</h2>
             </div> -->
         </div>
-        <div class="container" style="margin-top: 100px; ">
+        <div class="container" style="margin-top: 100px;">
             <div class="content">
                 <div class="row">
                     <div id="content-header">
@@ -76,7 +74,7 @@
                     </div>
                 </div>
                 <div>
-                    <table style="width:95%">
+                    <table style="width:20%">
                         <div class="column-labels">
                             <label class="product-details">Product</label>
                             <label class="product-removal">Remove</label>
@@ -143,7 +141,9 @@
  
         </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <!-- <script src="js/browse.js"></script> -->
+        <script src="js/browse.js"></script>
         <script src="js/checkout.js"></script>
+        <link rel="stylesheet" href="css/checkout.css">
+        <link rel="stylesheet" href="js/css/stylecheckout.css">
     </body>
 </html>
