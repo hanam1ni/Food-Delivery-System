@@ -51,7 +51,7 @@
 								<li><input type="text"></li>																
 							</ul>
 						</li>
-						<li><a href="#">Login</a></li>					
+						<li><a href="#">{{Auth::user()->username}}</a></li>					
 						<li><a href="register.html">Sign Up</a></li>				
 					</ul>
 				</nav>
@@ -82,7 +82,7 @@
 				                <h4>Address 1</h4>
 				            </div>
 				            <div class="address-details">
-				                <h5 id="address1"></h5>
+				                <h5 id="address1">{{Auth::user()->address}}</h5>
 				                <a class="address-delete" onclick="toEditAddr('divEdit1','divAddr1','address1','editField1')">Edit Address</a>
 				                &emsp;
 				                <a class="address-delete" onclick="deleteAddr('divAddr1',1)">Delete Address</a>		<!--can't delete now !?!?!-->
@@ -112,7 +112,7 @@
 				                <h4>Address 2</h4>
 				            </div>
 				            <div class="address-details">
-				                <h5 id="address2"></h5>
+				                <h5 id="address2">{{Auth::user()->address2}}</h5>
 				                <a class="address-delete" onclick="toEditAddr('divEdit2','divAddr2','address2','editField2')">Edit Address</a>
 				                &emsp;
 				                <a class="address-delete" onclick="deleteAddr('divAddr2',2)">Delete Address</a>
@@ -142,7 +142,7 @@
 				                <h4>Address 3</h4>
 				            </div>
 				            <div class="address-details">
-				                <h5 id="address3"></h5>
+				                <h5 id="address3">{{Auth::user()->address3}}</h5>
 				                <a class="address-delete" onclick="toEditAddr('divEdit3','divAddr3','address3','editField3')">Edit Address</a>
 				                &emsp;
 				                <a class="address-delete" onclick="deleteAddr('divAddr3',3)">Delete Address</a>
@@ -192,12 +192,8 @@
 						</div>
 						<div>
 							<div class="row">
-								<h4 class="span4">First Name :</h4>
-								<h4 class="span8" id="firstname"></h4>
-							</div>
-							<div class="row">
-								<h4 class="span4">Last Name :</h4>
-								<h4 class="span8" id="lastname"></h4>
+								<h4 class="span4">username :</h4>
+								<h4 class="span8">{{Auth::user()->username}}</h4>
 							</div>
 							<div class="row">
 								<h4 class="span4">Phone :</h4>
@@ -205,7 +201,7 @@
 							</div>
 							<div class="row">
 								<h4 class="span4">E-mail :</h4>
-								<h4 class="span8" id="email"></h4>
+								<h4 class="span8" id="email">{{Auth::user()->email}}</h4>
 							</div>
 						</div>
 					</div>
@@ -248,29 +244,23 @@
 
 	    <!-- javascript -->
 	    <script type="text/javascript">
-	    	var firstname = "Tipakorn";
-	    	var lastname = "Jackson";
-	    	var phone = "0899999999";
-	    	var email = "testmail@hotmail.com"
 
-	    	var address1 = "23 ตีทอง แขวง วัดราชบพิตร เขต พระนคร กรุงเทพมหานคร 10200";
-	    	var address2 = "818 ซอย ภาณุรังษี แขวง วังบูรพาภิรมย์ เขต พระนคร กรุงเทพมหานคร 10200";
-	    	var address3 = null;
+	    	var address2 = document.getElementById("address2").innerHTML;
+	    	var address3 = document.getElementById("address3").innerHTML;
+	    	console.log(address3);
 
-	    	document.getElementById("firstname").innerHTML = firstname;
-	    	document.getElementById("lastname").innerHTML = lastname;
-	    	document.getElementById("phone").innerHTML = phone;
-	    	document.getElementById("email").innerHTML = email;
+	    	if(address2 == ''){
+	    		address2 = null;
+	    	}
+	    	if(address3 == ''){
+	    		console.log("address3 null");
+	    		address3 = null;
+	    	}
+	    	console.log(address2);
+	    	console.log(address3);
 
-
-	    	document.getElementById("address1").innerHTML = address1;
 	    	document.getElementById("address2").innerHTML = address2;
 	    	document.getElementById("address3").innerHTML = address3;
-
-
-	    	if(address1 === null){
-	    		document.getElementById("divAddr1").style.display = 'none';
-	    	}
 
 	    	if(address2 === null){
 	    		document.getElementById("divAddr2").style.display = 'none';

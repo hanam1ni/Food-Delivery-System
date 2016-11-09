@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class paymentController extends Controller
 {
@@ -13,7 +14,8 @@ class paymentController extends Controller
      */
     public function index()
     {
-         return view('payment');
+        return view('payment',[
+        ]);
         /*$tasks = Task::orderBy('created_at', 'asc')->get();
 
         return view('payment',[

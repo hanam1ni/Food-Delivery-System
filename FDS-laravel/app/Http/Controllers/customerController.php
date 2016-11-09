@@ -17,27 +17,7 @@ class customerController extends Controller
     public function index(Request $request)
     {
         //
-
-         $validator = Validator::make($request->all(), [
-        'username' => 'required|max:255',
-        'email' => 'required|max:255',
-    ]);
-
-    if ($validator->fails()) {
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
-
-    $task = new \App\customer;       //app/customer -> model
-    $task->username = $request->input('username');
-    $task->email = $request->input('email');
-    $task->address = 'null';
-    $task->password = $request->input('password');
-    $task->phone = $request->input('phone');
-    $task->save();
-
-    return Redirect::back();
+        
 
     }
 

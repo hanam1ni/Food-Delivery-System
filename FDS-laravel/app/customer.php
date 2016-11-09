@@ -3,9 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 
-class customer extends Model
+class Customer extends Model implements Authenticatable
 {
-    //
-    protected $table = 'customer';
+	use AuthenticableTrait;
+	protected $table = 'customer';
+	public $timestamps = false;
+    protected $fillable = ['user_id','username','email','address','password'];
+    protected $hidden = ['password', 'remember_token'];
 }
