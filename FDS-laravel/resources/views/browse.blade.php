@@ -7,19 +7,27 @@
 		<meta name="description" content="">
 		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
 		<!-- bootstrap -->
-		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">      
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		
+
 		<link href="{{ asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
 		
 		<link href="{{ asset('css/bootstrappage.css') }}" rel="stylesheet"/>
 		
 		<!-- global styles -->
 		<link href="{{ asset('css/flexslider.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('css/nav.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/browse.css') }}" rel="stylesheet"/>
 
 		<!-- scripts -->
-		<script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>
-		<script src="{{ asset('js/bootstrap.min.js') }}"></script>				
+		<script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>			
 		<script src="{{ asset('js/superfish.js') }}"></script>	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
@@ -116,14 +124,20 @@
 						@else
 							@foreach ($foods as $food)
 								<a href="#">
-									<div class="span4 item">
-										<div class="img-contain">
+									<div class="span4 item-food">
+										<div class="img-contain-food">
 											<img src="{{ asset('images/food/food'.$food->food_id.'.jpg') }}">
 										</div>
-										<div class="span4 item-text">
-											<h1>{{ $food->food_name }}</h1>
+										<div class="img-contain-blur">
+											<span class="glyphicon glyphicon-shopping-cart"></span>
+											<span class="glyphicon glyphicon-plus-sign"></span>
+											<div class="img-contain-order">Order me</div>
+											<div class="img-contain-extra">Extra for {{ $food->price_extra }} &#3647</div>
 										</div>
-										<div class="triangle"></div>
+										<div class="span4 item-text-food">
+											<h1>{{ $food->food_name }}</h1>
+											<h2>{{ $food->price }} &#3647</h2>
+										</div>
 									</div>
 								</a>
 							@endforeach

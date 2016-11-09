@@ -118,7 +118,15 @@ Route::get('/browse/filter/{restaurant_id}/{restaurant_name}/{type}', function (
             'foods' => $foods
         ]);
     }else{
-        echo "All";
+        $foods = DB::table('food_menu')
+                ->where('restaurant_id','=',$restaurant_id)
+                ->get(); 
+
+        return view('browse' , [
+            'head' => $restaurant_name,
+            'type' => 'filter',
+            'foods' => $foods
+        ]);
     }
 });
 
