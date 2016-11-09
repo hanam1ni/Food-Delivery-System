@@ -119,7 +119,7 @@
 				            </div>
 				        </div>
 				    </label>
-					<div class="modal-content" style="display:none;" id="divEdit2">
+					<form class="modal-content" style="display:none;" id="divEdit2">
 						<div class="modal-header">
 				        	<h4 class="modal-title" id="myModalLabel">Edit Your Address</h4>
 				      	</div>
@@ -130,7 +130,7 @@
 					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeEditAddr('divEdit2','divAddr2','address2','editField2')">Cancel</button>
 					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="editAddr('divAddr2','divEdit2','address2','editField2',2)">Save changes</button>
 				        </div>
-					</div>
+					</form>
 
 				    <!-- address3 -->
 				    <label class="row" id="divAddr3" >
@@ -150,7 +150,7 @@
 				            </div>
 				        </div>
 				    </label>
-					<div class="modal-content" style="display:none;" id="divEdit3">
+					<form class="modal-content" style="display:none;" id="divEdit3">
 						<div class="modal-header">
 				        	<h4 class="modal-title" id="myModalLabel">Edit Your Address</h4>
 				      	</div>
@@ -161,7 +161,7 @@
 					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeEditAddr('divEdit3','divAddr3','address3','editField3')">Cancel</button>
 					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="editAddr('divAddr3','divEdit3','address3','editField3',3)">Save changes</button>
 				        </div>
-					</div>
+					</form>
 
 				    <!-- new address -->
 		    	    <div class="new-address">
@@ -170,18 +170,20 @@
 	                <!-- add new address model -->
 					<!-- Modal -->
 
-					<div class="modal-content" style="display:none;" id="addModal">
+					<form class="modal-content" style="display:none;" id="addModal" action="{{ url('/payment/addAddress1') }}" method="POST">
+						{{ csrf_field() }}
 						<div class="modal-header">
 				        	<h4 class="modal-title" id="myModalLabel">Enter Your New Address</h4>
 				      	</div>
 				  		<div class="modal-body">
-					        <textarea rows="6" style="width:97%;" id="newAddress"></textarea><br>
+					        <textarea rows="6" style="width:97%;" id="newAddress" name="name2"></textarea><br>
 				      	</div>
 				      	<div class="modal-footer">
 					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeNewAddr()">Cancel</button>
-					        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="addNewAddr()">Save changes</button>
+					        <button type="submit" class="btn btn-danger" onclick="addNewAddr()">Save changes</button>
+					        <!-- data-toggle="modal" data-target="#myModal" onclick="addNewAddr()"-->
 				        </div>
-					</div>
+					</form>
 				</div>
 
 				<!--	Personal information	-->
@@ -197,7 +199,7 @@
 							</div>
 							<div class="row">
 								<h4 class="span4">Phone :</h4>
-								<h4 class="span8" id="phone"></h4>
+								<h4 class="span8" id="phone">{{Auth::user()->phone}}</h4>
 							</div>
 							<div class="row">
 								<h4 class="span4">E-mail :</h4>
@@ -244,7 +246,7 @@
 
 	    <!-- javascript -->
 	    <script type="text/javascript">
-
+	    	var address1 = document.getElementById("address1").innerHTML;
 	    	var address2 = document.getElementById("address2").innerHTML;
 	    	var address3 = document.getElementById("address3").innerHTML;
 	    	console.log(address3);
@@ -256,8 +258,6 @@
 	    		console.log("address3 null");
 	    		address3 = null;
 	    	}
-	    	console.log(address2);
-	    	console.log(address3);
 
 	    	document.getElementById("address2").innerHTML = address2;
 	    	document.getElementById("address3").innerHTML = address3;
@@ -390,13 +390,20 @@
 	    		document.getElementById("newAddress").value = "";
 	    		document.getElementById("addModal").style.display = 'none';
 	    		document.getElementById("btn-add").style.display = 'block';
+
+
 	    	}
 
 	    	function placeOrder(){
-	    		window.alert("place order!!!");
-	    		window.location.replace("./");
+	    		//window.alert("place order!!!");
+				/*            $.post('http://plentypeeps.app:8000/testhuhu', {
+                 _token: $('meta[name=csrf-token]').attr('content'),
+                 newLat: newLat,
+                 newLng: newLng
+             }
+            )*/
+	    		window.location.replace("./payment/addAddress1");
 	    	}
-
 
 	    </script>
     </body>

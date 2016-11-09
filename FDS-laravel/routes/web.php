@@ -64,11 +64,6 @@ Route::get('/browse/vegan', function () {
 });
 
 
-Route::get('/payment', 'paymentcontroller@index');
-
-Route::get('/foo', function () {
-    return 'hello world';
-});
 
 Route::get('/browse/islamic', function () {
     $restaurants = DB::table('restaurant')
@@ -108,6 +103,18 @@ Route::get('/browse/drink', function () {
     	'restaurants' => $restaurants
     ]);
 });
+
+
+Route::get('/payment', 'paymentcontroller@index');
+
+Route::get('/payment/addAddress1', 'paymentcontroller@addAddress1');
+
+
+Route::get('/foo', function () {
+	$email = DB::table('users')->where('username', 'test3')->value('email');
+	echo $email;
+});
+
 
 Auth::routes();
 

@@ -14,8 +14,7 @@ class paymentController extends Controller
      */
     public function index()
     {
-        return view('payment',[
-        ]);
+        return view('payment');
         /*$tasks = Task::orderBy('created_at', 'asc')->get();
 
         return view('payment',[
@@ -64,6 +63,7 @@ class paymentController extends Controller
     public function edit($id)
     {
         //
+
     }
 
     /**
@@ -87,5 +87,11 @@ class paymentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addAddress1()
+    {
+        echo "hello world";
+        //echo $request->name2;
     }
 }
