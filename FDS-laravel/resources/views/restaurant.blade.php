@@ -34,6 +34,7 @@
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
   </head>
     <body>    
     <div class="top container">
@@ -82,13 +83,7 @@
             </div>
             <div class="span4 header-detail">
               <div class="span8">
-                <h3>Rating : <img width="40" height="40" src="images/rating.png">
-                <img width="40" height="40" src="images/rating.png">
-            	<img width="40" height="40" src="images/rating.png"></h3>
-
-              </div>
-              <div class="span8">
-                <h3>Detail </h3><p>The best restaurant ever</p>
+                <h3>Address </h3><p>The best restaurant ever</p>
               </div>
             </div>
           </div>
@@ -172,77 +167,68 @@
 					</div>
 
 				</form>
-					<div class="span8"></div>
+        <div class="span6"></div>
+        <div class="span2">
+            <label>Rating
+                    <select class="form-control select2" name="Rating" style="width: 40%;">
+                    <option selected="selected">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>No</option>
+                  </select>
+            </label>
+        </div>
+        <div class="span2">
 					<button type="submit" id="submit" value="Send" class="btn btn-success span1">Submit</button>
+        </div>
 
 
+                    <div class="container">
+                        <div class="row">
+                            <div class="span10 commentHead">
+                                <h3>User Comment</h3>
+                            </div><!-- /col-sm-12 -->
+                        </div><!-- /row -->
+                        <div class="row commentForm">
+                            <div class="span1">
+                                <div class="thumbnail">
+                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                </div><!-- /thumbnail -->
+                            </div><!-- /col-sm-1 -->
 
-<div class="container">
-<div class="row">
-<div class="span10 commentHead">
-<h3>User Comment</h3>
-</div><!-- /col-sm-12 -->
-</div><!-- /row -->
-<div class="row commentForm">
-<div class="span1">
-<div class="thumbnail">
-<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-</div><!-- /thumbnail -->
-</div><!-- /col-sm-1 -->
+                            <div class="span5">
+                                <div class="panel panel-default">
+                                    <div >
+                                        <strong>myusername</strong> 
+                                    </div>
+                                    <div>
+                                        Panel content
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel panel-default -->
+                            </div><!-- /col-sm-5 -->
+                        </div><!-- /row -->
 
-<div class="span5">
-<div class="panel panel-default">
-<div class="panel-heading">
-<strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
-</div>
-<div class="panel-body">
-Panel content
-</div><!-- /panel-body -->
-</div><!-- /panel panel-default -->
-</div><!-- /col-sm-5 -->
-</div><!-- /row -->
+                        <div class="row commentForm">
+                            <div class="span1">
+                                <div class="thumbnail">
+                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                </div><!-- /thumbnail -->
+                            </div><!-- /col-sm-1 -->
 
-<div class="row commentForm">
-<div class="span1">
-<div class="thumbnail">
-<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-</div><!-- /thumbnail -->
-</div><!-- /col-sm-1 -->
-
-<div class="span5">
-<div class="panel panel-default">
-<div class="panel-heading">
-<strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
-</div>
-<div class="panel-body">
-Panel content
-</div><!-- /panel-body -->
-</div><!-- /panel panel-default -->
-</div><!-- /col-sm-5 -->
-</div><!-- /row -->
-
-</div><!-- /container -->
-
-
-					<!--<div class="row">
-						<div class="span11">
-                    		<h4>User1</h4>
-                    	</div>
-                    	<div class="span11 commentText">
-                    		Good Good
-                    	</div>
-                    	<div class="span11 commentLine"></div>
-					</div>
-
-					<div class="row">
-                    	<div class="span11">
-                    		<h4>User2</h4>
-                    	</div>
-                    	<div class="span11 commentText">
-                    		Good Good Good
-                    	</div>
-                    	<div class="span11 commentLine"></div>
-					</div>-->
+                            <div class="span5">
+                                <div class="panel panel-default">
+                                    <div>
+                                        <strong>myusername</strong> 
+                                    </div>
+                                    <div>
+                                        Panel content
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel panel-default -->
+                            </div><!-- /col-sm-5 -->
+                        </div><!-- /row -->
+                    </div><!-- /container -->
 <!--End Comment-->
                 </div>
               </div>
