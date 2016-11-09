@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div>
-                    <table style="width:20%">
+                    <table>
                         <div class="column-labels">
                             <label class="product-details">Product</label>
                             <label class="product-removal">Remove</label>

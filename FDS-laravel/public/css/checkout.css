@@ -8,34 +8,29 @@
     border-bottom: medium solid #EB524A;
 }
  
-.product-image {
-  float: left;
-  width: 20%;
-}
- 
 .product-details {
-  float: left;
-  width: 37%;
+  float: center;
+  width: 10%;
 }
  
 .product-price {
-  float: left;
-  width: 12%;
+  float: center;
+  width: 10%;
 }
  
 .product-quantity {
-  float: left;
+  float: center;
   width: 10%;
 }
  
 .product-removal {
-  float: left;
-  width: 9%;
+  float: center;
+  width: 10%;
 }
  
 .product-line-price {
-  float: left;
-  width: 12%;
+  float: center;
+  width: 10%;
   text-align: right;
 }
  
@@ -176,10 +171,6 @@ label {
  
   .column-labels {
     display: none;
-  }
- 
-  .product-image img {
-    margin: 0 0 10px 10px;
   }
  
   .product-details {
