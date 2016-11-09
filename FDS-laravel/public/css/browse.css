@@ -20,9 +20,22 @@ ul li a,a{
 a{
 	color:#eb4800;
 }
+
+a:link {
+    text-decoration: none;
+}
+
 a:hover{
 	color:#fd4004;
 	text-decoration:none;
+}
+
+a:visited{
+	text-decoration: none;
+}
+
+a:active{
+	text-decoration: none;
 }
 
 /* top navigation
@@ -97,7 +110,7 @@ a:hover{
 #menu .current{color: #eb4800 !important;}
 
 #menu ul ul {
-    background: none repeat scroll 0 0 #eee;
+    background: none repeat scroll 0 0 #F5F5F5;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
     padding: 0px;
     position: absolute;
@@ -106,14 +119,14 @@ a:hover{
 }
 #menu > ul > li > ul{
     margin-left:10px;
-	border:1px solid #ddd;
+	border:1px solid #CCCCCC;
 	border-top:0;
 }
 #menu ul ul li {
     list-style: none outside none;
     position: relative;
 	border-top:1px solid #fff;
-	border-bottom:1px solid #ddd;
+	border-bottom:1px solid #CCCCCC;
 }
 #menu ul ul li:last-child{
     border-bottom: none !important
@@ -132,7 +145,7 @@ a:hover{
 #menu li:hover ul,
 #menu li.sfHover ul {
     left: -10px;
-    top: 52px;
+    top: 80px;
     z-index: 2299;
 }
 #menu li li:hover ul,
@@ -145,6 +158,15 @@ a:hover{
 }
 #menu .sf-sub-indicator{
 	display:none;
+}
+
+#search {
+	margin: 0;
+	color: transparent;
+}
+
+#search input{
+	margin: 0;
 }
 
 #hightlight{
@@ -179,7 +201,7 @@ a:hover{
 	
 }
 
-#menuList > .item{
+#menuList > a > .item{
 	position: relative;
 	height: 330px;
 	margin-top: 10px;
@@ -187,16 +209,16 @@ a:hover{
 	background: transparent;
 }
 
-#menuList > .item > .img-contain{
+#menuList > a > .item > .img-contain{
 	overflow: hidden;
 }
 
-#menuList > .item > .img-contain > img {
+#menuList > a > .item > .img-contain > img {
 	width: 100%;
 	height: 280px;
 }
 
-#menuList > .item > .item-text{
+#menuList > a > .item > .item-text{
 	margin: 0;
 	padding: 5px 30px;
 	box-sizing: border-box;
@@ -204,7 +226,7 @@ a:hover{
 	background: #432E41;
 }
 
-#menuList > .item > .triangle{
+#menuList > a > .item > .triangle{
 	position: absolute;
 	bottom: 50px;
 	left: 10px;
@@ -214,7 +236,7 @@ a:hover{
   	border-bottom: 20px solid #432E41;
 }
 
-#menuList > .item > .item-text h1{
+#menuList > a > .item > .item-text h1{
 	font-size: 20px;
 	float: left;
 	margin: 0;

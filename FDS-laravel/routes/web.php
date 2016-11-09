@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Restaurant;
 use App\Food;
 
@@ -19,7 +20,8 @@ Route::get('/', function () {
 	$restaurants = Restaurant::orderBy('restaurant_id', 'asc')->get();
 
     return view('browse' , [
-    	'type' => 'Browse Restaurant',
+        'head' => 'Browse Restaurant',
+    	'type' => 'all',
     	'restaurants' => $restaurants
     ]);
 });
@@ -28,7 +30,8 @@ Route::get('/browse', function () {
     $restaurants = Restaurant::orderBy('restaurant_id', 'asc')->get();
 
     return view('browse' , [
-    	'type' => 'Browse Restaurant',
+        'head' => 'Browse Restaurant',
+    	'type' => 'all',
     	'restaurants' => $restaurants
     ]);
 });
@@ -41,7 +44,8 @@ Route::get('/browse/meal', function () {
                      ->get();
 
     return view('browse' , [
-    	'type' => 'Main Meal',
+        'head' => 'Main Meal',
+    	'type' => 'meal',
     	'restaurants' => $restaurants
     ]);
 });
@@ -54,7 +58,8 @@ Route::get('/browse/vegan', function () {
                      ->get();
 
     return view('browse' , [
-    	'type' => 'Vegetarian Food',
+        'head' => 'Vegetarian Food',
+    	'type' => 'vegan',
     	'restaurants' => $restaurants
     ]);
 });
@@ -67,7 +72,8 @@ Route::get('/browse/islamic', function () {
                      ->get();
 
     return view('browse' , [
-    	'type' => 'Islamic Food',
+        'head' => 'Islamic Food',
+    	'type' => 'islamic',
     	'restaurants' => $restaurants
     ]);
 });
@@ -80,7 +86,8 @@ Route::get('/browse/dessert', function () {
                      ->get();
 
     return view('browse' , [
-    	'type' => 'Dessert',
+        'head' => 'Dessert',
+    	'type' => 'dessert',
     	'restaurants' => $restaurants
     ]);
 });
@@ -93,10 +100,47 @@ Route::get('/browse/drink', function () {
                      ->get();
 
     return view('browse' , [
-    	'type' => 'Drink',
+        'head' => 'Drink',
+    	'type' => 'drink',
     	'restaurants' => $restaurants
     ]);
 });
+
+Route::get('/browse/filter/{restaurant_id}/{restaurant_name}/{type}', function ($restaurant_id,$restaurant_name,$type) {
+    if($type != "all"){
+        $foods = DB::table('food_menu')
+                ->where('restaurant_id','=',$restaurant_id,'AND',$type,'=',1)
+                ->get(); 
+
+        return view('browse' , [
+            'head' => $restaurant_name,
+            'type' => 'filter',
+            'foods' => $foods
+        ]);
+    }else{
+        echo "All";
+    }
+});
+
+Route::get('/browse/search/', function (Request $request) {
+    $keyword = $request->input('search', 'Blank');
+
+    $restaurants = DB::table('restaurant')
+                     ->join('food_menu', 'food_menu.restaurant_id', '=', 'restaurant.restaurant_id')
+                     ->where('food_menu.food_name', 'LIKE', '%'.$keyword.'%')
+                     ->orWhere('restaurant.restaurant_name','LIKE','%'.$keyword.'%')
+                     ->groupBy('restaurant.restaurant_id')
+                     ->get();
+
+    return view('browse' , [
+            'head' => 'Search Result for '.$keyword,
+            'type' => 'search',
+            'restaurants' => $restaurants
+    ]);               
+});
+
+Route::get('/sessionAdd', 'SessionController@add');
+Route::get('/sessionShow', 'SessionController@show');
 
 Auth::routes();
 

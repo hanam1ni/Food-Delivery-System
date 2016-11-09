@@ -40,41 +40,47 @@
 					<a href="#"><img src="{{ asset('images/logo.png') }}" class="logo pull-left"></a>
 					<nav id="menu" class="pull-right">
 						<ul>
-							<li><a href="./products.html">Type</a>					
+							<li><a href="{{ url('browse') }}">Browse</a></li>
+							<li><a href="#">Meal</a>					
 								<ul>
-									<li><a href="./products.html">Type1</a></li>									
-									<li><a href="./products.html">Type2</a></li>
-									<li><a href="./products.html">Type3</a></li>								
+									<li><a href="{{ url('/browse/vegan') }}">Vegan</a></li>									
+									<li><a href="{{ url('/browse/islamic') }}">Isalmic</a></li>
+									<li><a href="{{ url('/browse/meal') }}">All Meal</a></li>								
 								</ul>
 							</li>															
-							<li><a href="./products.html">Place</a></li>
-							<li><a href="./products.html">Search</a>
+							<li><a href="{{ url('/browse/dessert') }}">Dessert</a></li>
+							<li><a href="{{ url('/browse/drink') }}">Drink</a></li>
+							<li><a href="#">Search</a>
 								<ul>
-									<li><input type="text"></li>																
+									<li id="search">
+									<form method="get" action="{{ url('/browse/search/') }}">
+										<input type="search" name="search" placeholder="search">
+										<input type="submit" style="display:none;"/>
+									</form>
+									</li>
+
 								</ul>
 							</li>
 							<li>
 							@if (Auth::check())
-							 	<a href="#">{{Auth::user()->username}}</a></li>	
-							@else
-							 	<a href="./register">Sign Up</a></li>	
-							@endif
-								
-							<li>
-							 @if (Auth::check())
-							 	<a href="{{ url('/logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
+							 	<a href="#">{{Auth::user()->username}}</a>
+							 	<ul>
+							 		<li>
+							 			<a href="{{ url('logout') }}"
+		                                    onclick="event.preventDefault();
+		                                             document.getElementById('logout-form').submit();">
+		                                    Logout
+		                                </a>
 
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-							 @else
-							 	<a href="./login">Login</a>
-							 @endif
-							</li>						
+		                                <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
+		                                    {{ csrf_field() }}
+		                                </form>
+							 		</li>
+							 	</ul>
+							 </li>	
+							@else
+							 	<a href="{{ url('login') }}">Login</a></li>
+							@endif					
 						</ul>
 					</nav>
 				</div>
@@ -88,22 +94,40 @@
 			<div class="content">
 				<div class="row">
 					<div id="content-header" class="span12">
-						{{ $type }}
+						{{ $head }}
 					</div>
 				</div>
 				<div class="row">
 					<div id="menuList" class="span12">
-						@foreach ($restaurants as $restaurant)
-							<div class="span4 item">
-								<div class="img-contain">
-									<img src="{{ asset('images/restaurants/res'.$restaurant->restaurant_id.'.jpg') }}">
-								</div>
-								<div class="span4 item-text">
-									<h1>{{ $restaurant->restaurant_name }}</h1>
-								</div>
-								<div class="triangle"></div>
-							</div>
-						@endforeach
+						@if ($type != 'filter')
+							@foreach ($restaurants as $restaurant)
+								<a href="{{ url('/browse/filter/'.$restaurant->restaurant_id.'/'.$restaurant->restaurant_name.'/'.$type) }}">
+									<div class="span4 item">
+										<div class="img-contain">
+											<img src="{{ asset('images/restaurants/res'.$restaurant->restaurant_id.'.jpg') }}">
+										</div>
+										<div class="span4 item-text">
+											<h1>{{ $restaurant->restaurant_name }}</h1>
+										</div>
+										<div class="triangle"></div>
+									</div>
+								</a>
+							@endforeach
+						@else
+							@foreach ($foods as $food)
+								<a href="#">
+									<div class="span4 item">
+										<div class="img-contain">
+											<img src="{{ asset('images/food/food'.$food->food_id.'.jpg') }}">
+										</div>
+										<div class="span4 item-text">
+											<h1>{{ $food->food_name }}</h1>
+										</div>
+										<div class="triangle"></div>
+									</div>
+								</a>
+							@endforeach
+						@endif
 					</div>
 				</div>
 			</div>
