@@ -69,12 +69,13 @@
         <div class="container" style="margin-top: 100px;">
             <div class="content">
                 <div class="row">
-                    <div id="content-header">
+                    <div id="content-header" style="margin-left: 3%">
                         Restaurant Name
                     </div>
                 </div>
                 <div>
                     <table>
+                        <br>
                         <div class="column-labels">
                             <label class="product-details">Product</label>
                             <label class="product-removal">Remove</label>
@@ -82,6 +83,7 @@
                             <label class="product-quantity">Quantity</label>
                             <label class="product-line-price">Total</label>
                         </div>
+
                         <div class="product">
                             <div class="product-details">
                                 <div class="product-title">Dingo Dog Bones</div>
@@ -99,7 +101,7 @@
                         </div>
                         <div class="product">
                             <div class="product-details">
-                                <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
+                                <div class="product-title">Nutro Adult Lamb and Rice Dog Food</div>
                             </div>
                             <div class="product-removal">
                                 <button class="remove-product">

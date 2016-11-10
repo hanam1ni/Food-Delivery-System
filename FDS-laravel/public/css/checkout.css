@@ -9,27 +9,27 @@
 }
  
 .product-details {
-  float: center;
-  width: 10%;
+  float: left;
+  width: 60%;
 }
  
 .product-price {
-  float: center;
+  float: left;
   width: 10%;
 }
  
 .product-quantity {
-  float: center;
+  float: left;
   width: 10%;
 }
  
 .product-removal {
-  float: center;
+  float: left;
   width: 10%;
 }
  
 .product-line-price {
-  float: center;
+  float: left;
   width: 10%;
   text-align: right;
 }
