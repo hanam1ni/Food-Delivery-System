@@ -7,3 +7,11 @@ var headParallaxScene = new ScrollMagic.Scene({
     })
     .setTween(TweenMax.to(".top", 5, {backgroundPosition: '10% 0%'}))
     .addTo(controller);
+
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+    $('nav').addClass('shrink');
+  } else {
+    $('nav').removeClass('shrink');
+  }
+});
