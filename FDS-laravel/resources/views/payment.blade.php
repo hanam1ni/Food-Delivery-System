@@ -76,7 +76,7 @@
 				    <!-- address1 -->
 				    <label class="row" id="divAddr1">
 				        <div class="mark-as-default span1">
-				            <input type="radio" name="defaultAddress" id="payOption1" data-toggle="radio" value="4000500003636379" checked>
+				            <input type="radio" name="defaultAddress" id="addressOption1" data-toggle="radio" value="4000500003636379" checked>
 				        </div>
 				        <div class="span8">
 				            <div class="address-name">
@@ -106,7 +106,7 @@
 				    <!-- address2 -->
 				    <label class="row" id="divAddr2">
 				        <div class="mark-as-default span1">
-				            <input type="radio" name="defaultAddress" value="4000500003636379" >
+				            <input type="radio" name="defaultAddress" id="addressOption2" value="4000500003636379" >
 				        </div>
 				        <div class="span8">
 				            <div class="address-name">
@@ -136,7 +136,7 @@
 				    <!-- address3 -->
 				    <label class="row" id="divAddr3" >
 				        <div class="mark-as-default span1">
-				            <input type="radio" name="defaultAddress" id="payOption3" data-toggle="radio" value="4000500003636379">
+				            <input type="radio" name="defaultAddress" id="addressOption3" data-toggle="radio" value="4000500003636379">
 				        </div>
 				        <div class="span8">
 				            <div class="address-name">
@@ -218,7 +218,7 @@
 					<div class=payment-info>
 						<div class="row">
 							<label class="radio">
-								<input type="radio" name="optionsRadios2" id="payOption1" value="option2" data-toggle="radio" checked>
+								<input type="radio" name="optionsRadios2" id="payOption1" value="option1" data-toggle="radio" checked="checked">
 								<h4>Cash on delivery</h4>
 							</label>
 						</div>
@@ -422,11 +422,31 @@
 	    		);
 	    	}
 	    	function placeOrder(){
-	    		var phone = "0800000000";
+	    		var addressOption1 = document.getElementById('addressOption1').checked;
+	    		var addressOption2 = document.getElementById('addressOption2').checked;
+	    		var addressOption3 = document.getElementById('addressOption3').checked;
+	    		//var address3 = document.getElementById('addressOption2').checked;
+	    		var payOption = document.getElementById('payOption1').checked;
+	    		
+	    		var address;
+	    		if(addressOption3){
+	    			address = address3;
+	    		}
+	    		else if(addressOption2){
+	    			address = address2;
+	    		}
+	    		else{
+	    			address = address1;
+	    		}
 
-	    		$.post('./test',{name:"0800000000"},function(){
-	    			console.log('response');
-	    		});
+	    		console.log(address);
+
+	    		if(payOption){ //payOption1
+	    			console.log("option1");
+	    		}
+	    		else{
+	    			console.log("option2");
+	    		}
 	    	}
 
 	    </script>

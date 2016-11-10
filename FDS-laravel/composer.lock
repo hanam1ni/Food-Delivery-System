@@ -4,13 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-
-    "hash": "4cb3a57f523d50175ae23299f71bf19c",
-    "content-hash": "76036da3b5b55b91dbe1e1affa01bf9e",
-
     "hash": "8f61d3d49cc566a7fda1fb5df537d8df",
     "content-hash": "2a0271980305d321328ec2147d100394",
-
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -3940,12 +3935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Xethron/migrations-generator.git",
-                "reference": "e5e86efb5731e6859ea0d96a806159f9f2c26ce1"
+                "reference": "b7539dcad0ae072a4891340f679c8df5605aba2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Xethron/migrations-generator/zipball/e5e86efb5731e6859ea0d96a806159f9f2c26ce1",
-                "reference": "e5e86efb5731e6859ea0d96a806159f9f2c26ce1",
+                "url": "https://api.github.com/repos/Xethron/migrations-generator/zipball/b7539dcad0ae072a4891340f679c8df5605aba2a",
+                "reference": "b7539dcad0ae072a4891340f679c8df5605aba2a",
                 "shasum": ""
             },
             "require": {
@@ -3984,7 +3979,7 @@
                 "migration",
                 "migrations"
             ],
-            "time": "2015-02-23 05:43:08"
+            "time": "2016-11-07 06:24:16"
         }
     ],
     "aliases": [],
