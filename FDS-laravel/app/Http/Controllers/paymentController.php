@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
+use log;
 
 class paymentController extends Controller
 {
@@ -91,7 +93,41 @@ class paymentController extends Controller
 
     public function addAddress1()
     {
-        echo "hello world";
+        DB::table('users')
+            ->where('id', 1)
+            ->update(['phone' => "0851234567"]);
+        //console.log("hello world");
+        //echo "hello";
         //echo $request->name2;
+    }
+
+    public function addAddress2(Request $request)
+    {
+        DB::table('users')
+            ->where('id', 1)
+            ->update(['phone' => "0812345678"]);
+        //echo $request->name2;
+    }
+
+
+
+    public function testfunction(Request $request)
+    {
+        /*DB::table('users')
+            ->where('id', 2)
+            ->update(['phone' => '0851234567']);*/
+        if ($request->isMethod('post')){
+            DB::table('users')
+                ->where('username', $request->username)
+                ->update([
+                    'address' => $request->address1, 
+                    'address2' => $request->address2,
+                    'address3' => $request->address3]);
+            return response()->json(['response' => 'This is post method']); 
+        }
+        DB::table('users')
+            ->where('id', 2)
+            ->update(['phone' => "0851234567"]);
+        return response()->json(['response' => 'This is get method']);
     }
 }

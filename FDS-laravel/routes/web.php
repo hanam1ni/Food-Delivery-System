@@ -107,7 +107,9 @@ Route::get('/browse/drink', function () {
 
 Route::get('/payment', 'paymentcontroller@index');
 
-Route::get('/payment/addAddress1', 'paymentcontroller@addAddress1');
+Route::post('/test', 'paymentController@testfunction');
+
+Route::post('/payment/addAddress2', 'paymentController@addAddress2');
 
 
 Route::get('/foo', function () {

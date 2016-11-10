@@ -5,6 +5,7 @@
 		<title>Software Engineer</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
 		<!-- bootstrap -->
 		<link href="css/bootstrap.css" rel="stylesheet">   
@@ -170,7 +171,7 @@
 	                <!-- add new address model -->
 					<!-- Modal -->
 
-					<form class="modal-content" style="display:none;" id="addModal" action="{{ url('/payment/addAddress1') }}" method="POST">
+					<form class="modal-content" style="display:none;" id="addModal">
 						{{ csrf_field() }}
 						<div class="modal-header">
 				        	<h4 class="modal-title" id="myModalLabel">Enter Your New Address</h4>
@@ -180,7 +181,7 @@
 				      	</div>
 				      	<div class="modal-footer">
 					        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeNewAddr()">Cancel</button>
-					        <button type="submit" class="btn btn-danger" onclick="addNewAddr()">Save changes</button>
+					        <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="addNewAddr()">Save changes</button>
 					        <!-- data-toggle="modal" data-target="#myModal" onclick="addNewAddr()"-->
 				        </div>
 					</form>
@@ -195,7 +196,7 @@
 						<div>
 							<div class="row">
 								<h4 class="span4">username :</h4>
-								<h4 class="span8">{{Auth::user()->username}}</h4>
+								<h4 class="span8" id="username">{{Auth::user()->username}}</h4>
 							</div>
 							<div class="row">
 								<h4 class="span4">Phone :</h4>
@@ -246,6 +247,14 @@
 
 	    <!-- javascript -->
 	    <script type="text/javascript">
+
+			$.ajaxSetup({
+			    headers: {
+			        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			    }
+			});
+
+			var username = document.getElementById("username").innerHTML;
 	    	var address1 = document.getElementById("address1").innerHTML;
 	    	var address2 = document.getElementById("address2").innerHTML;
 	    	var address3 = document.getElementById("address3").innerHTML;
@@ -369,6 +378,7 @@
 	    	}
 
 	    	function addNewAddr(){
+
 	    		if(address1 === null){
 	    			address1 = document.getElementById("newAddress").value;
 	    			document.getElementById("divAddr1").style.display = 'block';
@@ -382,7 +392,8 @@
 	    			document.getElementById("divAddr3").style.display = 'block';
 	    		}
 
-	    	
+	    		updateAddress(address1,address2,address3);
+
 				document.getElementById("address1").innerHTML = address1;
 				document.getElementById("address2").innerHTML = address2;
 				document.getElementById("address3").innerHTML = address3;
@@ -390,19 +401,29 @@
 	    		document.getElementById("newAddress").value = "";
 	    		document.getElementById("addModal").style.display = 'none';
 	    		document.getElementById("btn-add").style.display = 'block';
-
-
 	    	}
 
+	    	function updateAddress(addr1, addr2 ,addr3){
+	    		console.log(username);
+
+	    		$.post('./test',
+	    			{
+	    				username	: username,
+	    				address1 	: addr1,
+	    				address2 	: addr2,
+	    				address3	: addr3
+	    			},
+	    			function(){
+	    				console.log('response');
+	    			}
+	    		);
+	    	}
 	    	function placeOrder(){
-	    		//window.alert("place order!!!");
-				/*            $.post('http://plentypeeps.app:8000/testhuhu', {
-                 _token: $('meta[name=csrf-token]').attr('content'),
-                 newLat: newLat,
-                 newLng: newLng
-             }
-            )*/
-	    		window.location.replace("./payment/addAddress1");
+	    		var phone = "0800000000";
+
+	    		$.post('./test',{name:"0800000000"},function(){
+	    			console.log('response');
+	    		});
 	    	}
 
 	    </script>
