@@ -1,7 +1,5 @@
 @charset "utf-8";
-body{
-  background: #FFFFFF;
-}
+
 .content-header{
     height: 100px;
     line-height: 100px;
@@ -40,7 +38,13 @@ body{
   width: 10%;
   text-align: right;
 }
- 
+
+.product-note {
+  text-decoration: underline;
+  color: #0039e6
+}
+
+ .product-
 /* This is used as the traditional .clearfix class */
 .group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
 .group:after,
@@ -70,8 +74,8 @@ body{
 /* Body/Header stuff */
 body {
   padding: 0px 30px 30px 20px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-weight: 70;
 }
  
 h1 {
@@ -122,7 +126,7 @@ label {
 .product .remove-product {
   border: 0;
   padding: 4px 8px;
-  background-color: #c66;
+  background-color: #cc0000;
   color: #fff;
   /*font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";*/
   font-size: 12px;
@@ -156,21 +160,60 @@ label {
  
 .checkout {
   float: right;
-  border: 0;
+  /*border: 0;
   margin-top: 20px;
   padding: 6px 25px;
   background-color: #6b6;
-  color: #fff;
-  font-size: 25px;
-  border-radius: 3px;
+  color: #FFFFFF;
+  font-size: 20px;
+  border-radius: 3px;*/
+
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#cc0000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
- 
+
+.checkout span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.checkout span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -50px;
+  transition: 0.5s;
+}
+
 .checkout:hover {
   background-color: #494;
+  padding-right: 20px;
 }
  
+.checkout:hover span {
+  padding-right: 25px;
+}
+
+.checkout:hover span:after {
+  opacity: 10;
+  right: 0;
+}
 /* Make adjustments for tablet */
-@media screen and (max-width: 650px) {
+
+/*@media screen and (max-width: 650px) {
   .shopping-cart {
     margin: 0;
     padding-top: 20px;
@@ -211,9 +254,11 @@ label {
     float: right;
     width: 12%;
   }
-}
+}*/
+
 /* Make more adjustments for phone */
-@media screen and (max-width: 350px) {
+
+/*@media screen and (max-width: 350px) {
   .product-removal {
     float: right;
   }
@@ -235,7 +280,7 @@ label {
   .totals .totals-item .totals-value {
     width: 40%;
   }
-}
+}*/
  
 /*.btn.glyphicon { // override .glyphicon style if it's set on a .btn
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;

@@ -93,6 +93,9 @@
                             </div>
                             <div class="product-details">
                                 <div class="product-title">Dingo Dog Bones</div>
+                                <div class="product-note">
+                                    Notation
+                                </div>
                             </div>
                             <div class="product-removal">
                                 <button class="remove-product">
@@ -143,7 +146,9 @@
                             <div class="totals-value" id="cart-total">90.57</div>
                         </div>
                     </div>
-                    <button class="checkout">Checkout</button>
+                    <button class="checkout" style="vertical-align:middle">
+                        <span>Checkout  </span>
+                    </button>
                 </div>      
             </div>
         </div>
