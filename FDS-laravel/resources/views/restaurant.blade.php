@@ -70,12 +70,12 @@
 <!--End Header-->
 
 <!--Start Detail-->
-
+@foreach ($restaurants as $restaurant)
     <div class="container">
       <div class="content">
         <div class="row">
           <div id="content-header" class="span12">
-            Restaurant 8
+            {{$restaurant->restaurant_name}}
           </div>
           <div class="span12 pic">
             <div class="span4">
@@ -83,11 +83,11 @@
             </div>
             <div class="span4 header-detail">
               <div class="span8">
-                <h3>Address </h3><p>The best restaurant ever</p>
+                <h3>Address </h3><p>{{$restaurant->restaurant_address}}</p>
               </div>
             </div>
           </div>
-
+@endForeach
 <!--Start Menu and Comment-->
 
           <div class="container" id="tab">

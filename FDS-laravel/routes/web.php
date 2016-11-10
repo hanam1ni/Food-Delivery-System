@@ -158,5 +158,5 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/restaurant','restaurantController@index');
 
-Route::get('/restaurant/{restaurant_id}','restaurantController@index');
+Route::get('/restaurant/{restaurant_id}','restaurantController@restaurant');
 
