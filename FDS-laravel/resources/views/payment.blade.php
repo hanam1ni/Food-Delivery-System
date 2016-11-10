@@ -311,6 +311,8 @@
 	    		console.log(address1);
 	    		console.log(address2);
 	    		console.log(address3);
+
+	    		updateAddress(address1,address2,address3);
 	    	}
 
 	    	function closeEditAddr(id2,id1,addr,editField){
@@ -356,9 +358,10 @@
 	    		console.log(address3);
 
 				document.getElementById("address1").innerHTML = address1;
-				document.getElementById("address2").innerHTML = address2;
-	    		
+				document.getElementById("address2").innerHTML = address2;	
 	    		document.getElementById("divAddr3").style.display = 'none';
+
+	    		updateAddress(address1,address2,address3);
 	    	}
 
 	    	function toAddAddr(){
