@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+body{
+  background: #FFFFFF;
+}
 .content-header{
     height: 100px;
     line-height: 100px;
@@ -7,10 +9,15 @@
     font-size: 30px;
     border-bottom: medium solid #EB524A;
 }
+
+.product-image {
+  float: left;
+  width: 20%;
+}
  
 .product-details {
   float: left;
-  width: 60%;
+  width: 40%;
 }
  
 .product-price {
@@ -56,7 +63,8 @@
 /* Apply clearfix in a few places */
 /* Apply dollar signs */
 .product .product-price:before, .product .product-line-price:before, .totals-value:before {
-  content: '$';
+  /*comment baht  */
+  content: ' '; 
 }
  
 /* Body/Header stuff */
@@ -102,7 +110,7 @@ label {
 }
 .product .product-details .product-title {
   margin-right: 20px;
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  /*font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";*/
 }
 .product .product-details .product-description {
   margin: 5px 20px 5px 0;
@@ -116,7 +124,7 @@ label {
   padding: 4px 8px;
   background-color: #c66;
   color: #fff;
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  /*font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";*/
   font-size: 12px;
   border-radius: 3px;
 }
@@ -143,7 +151,7 @@ label {
   text-align: right;
 }
 .totals .totals-item-total {
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  /*font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";*/
 }
  
 .checkout {

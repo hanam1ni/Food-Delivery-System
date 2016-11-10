@@ -15,6 +15,8 @@
         <!-- global styles -->
         <link href="css/flexslider.css" rel="stylesheet"/>
         <link href="css/browse.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/checkout.css">
+        <!-- <link rel="stylesheet" href="js/css/stylecheckout.css"> -->
  
         <!-- scripts -->
         <script src="js/jquery-1.7.2.min.js"></script>
@@ -70,13 +72,14 @@
             <div class="content">
                 <div class="row">
                     <div id="content-header" style="margin-left: 3%">
-                        Restaurant Name
+                        Shopping Cart
                     </div>
                 </div>
                 <div>
                     <table>
                         <br>
                         <div class="column-labels">
+                            <label class="product-image">Image</label>
                             <label class="product-details">Product</label>
                             <label class="product-removal">Remove</label>
                             <label class="product-price">Price</label>
@@ -85,6 +88,9 @@
                         </div>
 
                         <div class="product">
+                            <div class="product-image">
+                                <img src="http://s.cdpn.io/3/dingo-dog-bones.jpg">
+                            </div>
                             <div class="product-details">
                                 <div class="product-title">Dingo Dog Bones</div>
                             </div>
@@ -95,11 +101,14 @@
                             </div>
                             <div class="product-price">12.99</div>
                             <div class="product-quantity">
-                                <input type="number" value="2" min="1">
+                                <input type="number" value="1" min="1">
                             </div>
                             <div class="product-line-price">25.98</div>
                         </div>
                         <div class="product">
+                            <div class="product-image">
+                                <img src="http://s.cdpn.io/3/dingo-dog-bones.jpg">
+                            </div>
                             <div class="product-details">
                                 <div class="product-title">Nutro Adult Lamb and Rice Dog Food</div>
                             </div>
@@ -122,7 +131,7 @@
                             <div class="totals-value" id="cart-subtotal">71.97</div>
                         </div>
                         <div class="totals-item">
-                            <label>Tax (5%)</label>
+                            <label>Service (10%)</label>
                             <div class="totals-value" id="cart-tax">3.60</div>
                         </div>
                         <div class="totals-item">
@@ -145,7 +154,6 @@
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="js/browse.js"></script>
         <script src="js/checkout.js"></script>
-        <link rel="stylesheet" href="css/checkout.css">
-        <link rel="stylesheet" href="js/css/stylecheckout.css">
+
     </body>
 </html>
