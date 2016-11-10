@@ -75,3 +75,9 @@ function removeItem(removeButton)
     recalculateCart();
   });
 }
+
+function add() {
+  var input = document.getElementById('message-text')
+  var div = document.getElementById('myContent');
+  div.innerHTML = input.value;
+}

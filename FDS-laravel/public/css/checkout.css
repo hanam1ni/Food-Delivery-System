@@ -126,7 +126,7 @@ label {
 .product .remove-product {
   border: 0;
   padding: 4px 8px;
-  background-color: #cc0000;
+  background-color: #EB524A;
   color: #fff;
   /*font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";*/
   font-size: 12px;
@@ -170,7 +170,7 @@ label {
 
   display: inline-block;
   border-radius: 4px;
-  background-color:#cc0000;
+  background-color:#EB524A;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -199,7 +199,7 @@ label {
 }
 
 .checkout:hover {
-  background-color: #494;
+  background-color: #27D0B9;
   padding-right: 20px;
 }
  
