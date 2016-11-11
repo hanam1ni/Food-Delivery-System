@@ -16,9 +16,10 @@ class bankAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {  
-        return view('bankAccout',['address' => $request]);
+        return view('bankAccout');
+        //return view('bankAccout',['address' => $request]);
     }
 
     /**

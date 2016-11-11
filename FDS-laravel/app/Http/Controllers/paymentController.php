@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
@@ -129,5 +131,10 @@ class paymentController extends Controller
             ->where('id', 2)
             ->update(['phone' => "0851234567"]);
         return response()->json(['response' => 'This is get method']);
+    }
+    public function transfer(Request $request)
+    {
+        //how to change page from this controller?
+        return redirect()->route('Withdraw');
     }
 }

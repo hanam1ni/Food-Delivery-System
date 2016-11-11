@@ -90,7 +90,7 @@
 						</div>
 						<div class="row">
 							<h4 class="span4">Address :</h4>
-							<h4 class="span8" id="address">{{$address}}</h4>
+							<h4 class="span8" id="address">address</h4>
 						</div>						
 					</div>
 				</div>

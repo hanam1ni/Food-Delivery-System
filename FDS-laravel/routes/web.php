@@ -111,7 +111,17 @@ Route::post('/test', 'paymentController@testfunction');
 
 Route::post('/payment/addAddress2', 'paymentController@addAddress2');
 
-Route::get('/bank','bankAccountController@index');
+Route::post('/payment/transfer','paymentController@transfer');
+
+Route::get('/bank',[
+	'uses'=>'bankAccountController@index',	
+	'as'=> 'bank',
+]);
+
+Route::post('/Withdraw',[
+        'uses'=>'bankAccountController@index',
+        'as'=>'Withdraw',
+]);
 
 Route::get('/foo', function () {
 	$email = DB::table('users')->where('username', 'test3')->value('email');

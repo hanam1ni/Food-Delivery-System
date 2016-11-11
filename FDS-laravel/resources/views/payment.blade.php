@@ -451,13 +451,13 @@
 	    		else{
 	    			console.log("option2");
 
-		    		$.get('./bank',
+		    		$.post('./bank',
 		    			{
 		    				address : address
 		    			},
 		    			function(){
 		    				console.log("call bank controller");
-		    				window.location.replace('./bank');
+		    				//window.location.replace('./bank');
 		    			}
 		    		);
 	    		}
