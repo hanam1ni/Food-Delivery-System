@@ -111,6 +111,7 @@ Route::post('/test', 'paymentController@testfunction');
 
 Route::post('/payment/addAddress2', 'paymentController@addAddress2');
 
+Route::get('/bank','bankAccountController@index');
 
 Route::get('/foo', function () {
 	$email = DB::table('users')->where('username', 'test3')->value('email');

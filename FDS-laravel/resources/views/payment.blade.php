@@ -34,7 +34,7 @@
 	</head>
     <body>		
     	<!-- class top contain picture-->
-		<div class="top container">
+		<div class="container">
 			<div class="navbar-inner main-menu span12">
 				<a href="#"><img src="images/logo.png" class="logo pull-left"></a>
 				<nav id="menu" class="pull-right">
@@ -53,20 +53,24 @@
 							</ul>
 						</li>
 						<li><a href="#">{{Auth::user()->username}}</a></li>					
-						<li><a href="register.html">Sign Up</a></li>				
+						<li><a href="{{ url('/logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>				
 					</ul>
 				</nav>
 			</div>
-			<!--web banner-->
-			<div id="hightlight" class="span6">
-				<h1>Food Delivery</h1>
-				<h2>We provide food that customers love, day after day after day. People just want more of it.</h2>
-			</div>
+
 		</div>
 
 
 		<!-- content of payment page-->
-		<div class="container content"> <!--class payment-->
+		<div class="container content payment"> <!--class payment-->
 				<!--	Address information	-->
 				<div style="padding-bottom:50px;">
 					<div class="payment-header" class="span12">
@@ -446,7 +450,20 @@
 	    		}
 	    		else{
 	    			console.log("option2");
+
+		    		$.get('./bank',
+		    			{
+		    				address : address
+		    			},
+		    			function(){
+		    				console.log("call bank controller");
+		    				window.location.replace('./bank');
+		    			}
+		    		);
 	    		}
+
+
+
 	    	}
 
 	    </script>
