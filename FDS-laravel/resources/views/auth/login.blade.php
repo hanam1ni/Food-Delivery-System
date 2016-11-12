@@ -23,6 +23,11 @@
             Password
           </label>
           <input type="password" id="password" name="password" required autocomplete="off"/>
+          @if ($errors->has('username'))
+            <span class="error-block">
+                <strong>{{ $errors->first('username') }}</strong>
+            </span>
+          @endif
         </div>
         <button class="button button-block"/>Login</button>
       </form>
