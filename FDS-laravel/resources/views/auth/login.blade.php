@@ -1,62 +1,31 @@
-@extends('layouts.app')
+@extends('layouts.user')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
+  <ul class="tab-group">
+    <li class="tab active"><a href="{{ url('/login') }}">Log In</a></li>
+    <li class="tab"><a href="{{ url('/register') }}">Sign Up</a></li>
+  </ul>
 
-                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="col-md-4 control-label">Username</label>
-
-                            <div class="col-md-6">
-                                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+  <div class="tab-content">
+    <div id="login">   
+      <h1>Welcome Back !</h1>
+      <form action="{{ url('/login') }}" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div class="field-wrap">
+          <label>
+            Username
+          </label>
+          <input type="text" id="username" name="username" required autocomplete="off"/>
         </div>
-    </div>
-</div>
+      
+        <div class="field-wrap">
+          <label>
+            Password
+          </label>
+          <input type="password" id="password" name="password" required autocomplete="off"/>
+        </div>
+        <button class="button button-block"/>Login</button>
+      </form>
+      </div>
+   </div>
 @endsection

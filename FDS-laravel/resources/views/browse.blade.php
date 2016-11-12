@@ -13,21 +13,21 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-		
+
 
 		<link href="{{ asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
-		
+
 		<link href="{{ asset('css/bootstrappage.css') }}" rel="stylesheet"/>
-		
+
 		<!-- global styles -->
 		<link href="{{ asset('css/flexslider.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/nav.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/browse.css') }}" rel="stylesheet"/>
 
 		<!-- scripts -->
-		<script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>			
-		<script src="{{ asset('js/superfish.js') }}"></script>	
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+		<script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>
+		<script src="{{ asset('js/superfish.js') }}"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
@@ -35,27 +35,27 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-		<!--[if lt IE 9]>			
+		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="js/respond.min.js"></script>
 		<![endif]-->
 	</head>
-    <body>		
+    <body>
 		<div class="top container">
 			<div id="trigger"></div>
-			<div class="navbar navbar-fixed-top">		
+			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner main-menu span12">
 					<a href="#"><img src="{{ asset('images/logo.png') }}" class="logo pull-left"></a>
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="{{ url('browse') }}">Browse</a></li>
-							<li><a href="#">Meal</a>					
+							<li><a href="#">Meal</a>
 								<ul>
-									<li><a href="{{ url('/browse/vegan') }}">Vegan</a></li>									
+									<li><a href="{{ url('/browse/vegan') }}">Vegan</a></li>
 									<li><a href="{{ url('/browse/islamic') }}">Isalmic</a></li>
-									<li><a href="{{ url('/browse/meal') }}">All Meal</a></li>								
+									<li><a href="{{ url('/browse/meal') }}">All Meal</a></li>
 								</ul>
-							</li>															
+							</li>
 							<li><a href="{{ url('/browse/dessert') }}">Dessert</a></li>
 							<li><a href="{{ url('/browse/drink') }}">Drink</a></li>
 							<li><a href="#">Search</a>
@@ -85,10 +85,10 @@
 		                                </form>
 							 		</li>
 							 	</ul>
-							 </li>	
+							 </li>
 							@else
 							 	<a href="{{ url('login') }}">Login</a></li>
-							@endif					
+							@endif
 						</ul>
 					</nav>
 				</div>
@@ -123,14 +123,13 @@
 							@endforeach
 						@else
 							@foreach ($foods as $food)
-								<a href="#">
 									<div class="span4 item-food">
 										<div class="img-contain-food">
 											<img src="{{ asset('images/food/food'.$food->food_id.'.jpg') }}">
 										</div>
 										<div class="img-contain-blur">
-											<span class="glyphicon glyphicon-shopping-cart"></span>
-											<span class="glyphicon glyphicon-plus-sign"></span>
+											<a href="{{ url('/basket/add/'.$res_id.'/'.$food->food_id) }}"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+											<a href="#"><span class="glyphicon glyphicon-plus-sign"></span></a>
 											<div class="img-contain-order">Order me</div>
 											<div class="img-contain-extra">Extra for {{ $food->price_extra }} &#3647</div>
 										</div>
@@ -139,7 +138,6 @@
 											<h2>{{ $food->price }} &#3647</h2>
 										</div>
 									</div>
-								</a>
 							@endforeach
 						@endif
 					</div>
