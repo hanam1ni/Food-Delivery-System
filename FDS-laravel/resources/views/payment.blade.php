@@ -442,7 +442,10 @@
 	    		else{
 	    			address = address1;
 	    		}
-
+	    		if(address == null){
+	    			alert("You must should you address!");
+	    			return;
+	    		}
 	    		console.log(address);
 
 	    		if(payOption){ //payOption1
@@ -461,9 +464,6 @@
 		    			}
 		    		);
 	    		}
-
-
-
 	    	}
 
 	    </script>

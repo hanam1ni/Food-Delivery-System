@@ -18,7 +18,7 @@ class bankAccountController extends Controller
      */
     public function index()
     {  
-        return view('bankAccout');
+        return view('bankAccout',['addess' => 'address is not real']);
         //return view('bankAccout',['address' => $request]);
     }
 

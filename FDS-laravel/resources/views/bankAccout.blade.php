@@ -69,38 +69,42 @@
 		</div>
 
 		<!-- content of payment page-->
-		<div class="container content payment"> <!--class payment-->
-			<form>
+		<form class="container content payment"> <!--class payment-->
+			<div>
 				<div class="payment-option">
 					<div class="payment-header">
-						<h2>Personal Infomation :</h2>
+						<h2>Pay :</h2>
 					</div>
-					<div>
-						<div class="row">
-							<h4 class="span4">username :</h4>
-							<h4 class="span8" id="username">{{Auth::user()->username}}</h4>
-						</div>
-						<div class="row">
-							<h4 class="span4">Accout number :</h4>
-							<input class="span8" id="accout"></input>
-						</div>
-						<div class="row">
-							<h4 class="span4">Amount :</h4>
-							<h4 class="span8" id="amount">123.45</h4>
-						</div>
-						<div class="row">
-							<h4 class="span4">Address :</h4>
-							<h4 class="span8" id="address">address</h4>
-						</div>						
+					<form>
+							<h4 >username :</h4>
+							<h5  style="margin-left: 50px;" id="username">{{Auth::user()->username}}</h5>
+						
+							<h4 >Amount :</h4>
+							<h5 style="margin-left: 50px;" id="amount">123.45 bath</h5>
+						
+							<h4>Address :</h4>
+							<h5  style="margin-left: 50px;" id="address">60 ถนน เจ้าคุณทหาร แขวง ลำปลาทิว เขต ลาดกระบัง กรุงเทพมหานคร 10520</h5>
+						
+							<h4>Bank :</h4>
+							<select style="margin-left: 50px;">
+								<option value="null">select Bank</option>
+								<option value="bank">bank1</option>
+							</select>
+
+							<h4 >Account number :</h4>
+							<input style="margin-left: 50px;" type="text" id="account" maxlength="10" size="10" placeholder="Account number"></input>
+							
+							<h4>Enter OTP :</h4>
+							<input  id="otp" maxlength="5" size="5" placeholder="OTP"  style="width:50px; margin-left: 50px;"></input>
 					</div>
 				</div>
-			</form>
+			</div>
 
 			<!-- Place Order btn-->
 			<div class="span4 btn-accept">
-	  			<button class="btn btn-block btn-lg btn-danger" id="placeOrder" onclick="placeOrder()">Place Order</button> 
+	  			<button type="submit" class="btn btn-block btn-lg btn-danger" id="placeOrder" onclick="placeOrder()">Pay now</button> 
 			</div>
-		</div>			
+		</form>			
 
 		<div class="footer container"></div>
 
