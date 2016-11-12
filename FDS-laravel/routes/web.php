@@ -7,7 +7,7 @@
 use Illuminate\Support\Facades\DB;
 use App\Restaurant;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 
 /*
@@ -184,6 +184,11 @@ Route::post('/payment/transfer','paymentController@transfer');
 Route::get('/bank',[
 	'uses'=>'bankAccountController@index',	
 	'as'=> 'bank',
+]);
+
+Route::get('/bank/{address}',[
+	'uses'=>'bankAccountController@index2',	
+	'as'=> 'pay',
 ]);
 
 Route::post('/Withdraw',[

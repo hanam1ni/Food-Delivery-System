@@ -17,8 +17,14 @@ class bankAccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {  
-        return view('bankAccout',['addess' => 'address is not real']);
+    {
+        return view('bankAccout',['addresses' => 'address']);
+        //return view('bankAccout',['address' => $request]);
+    }
+    
+    public function index2($address)
+    {
+        return view('bankAccout',['addresses' => $address]);
         //return view('bankAccout',['address' => $request]);
     }
 
