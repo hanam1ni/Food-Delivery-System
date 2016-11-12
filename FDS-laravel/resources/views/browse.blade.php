@@ -13,8 +13,6 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-
-
 		<link href="{{ asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
 
 		<link href="{{ asset('css/bootstrappage.css') }}" rel="stylesheet"/>
@@ -23,6 +21,7 @@
 		<link href="{{ asset('css/flexslider.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/nav.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/browse.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('css/basket.css') }}" rel="stylesheet"/>
 
 		<!-- scripts -->
 		<script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>
@@ -144,11 +143,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="basket-btn">
+			<span class="glyphicon glyphicon-shopping-cart"></span>
+		</div>
+		<div class="basket-container">
+
+		</div>
 		<div class="footer container">
 
 		</div>
 		<script src="{{ asset('js/common.js') }}"></script>
 		<script src="{{ asset('js/browse.js') }}"></script>
 		<script src="{{ asset('js/scroll.js') }}"></script>
+		<script src="{{ asset('js/basket.js') }}"></script>
     </body>
 </html>
