@@ -199,11 +199,19 @@ a:hover{
     height: 140px;
     bottom:0px;
     right: 0px;
+<<<<<<< HEAD
     background:url(../images/slideitmoo_forward.png) no-repeat center;
 }
 #SlideItMoo_outer .SlideItMoo_back {
     left:0px;
     background:url(../images/slideitmoo_back.png) no-repeat center;
+=======
+    background: url(../images/slideitmoo_forward.png) no-repeat center;
+}
+#SlideItMoo_outer .SlideItMoo_back {
+    left:0px;
+    background: url(../images/slideitmoo_back.png) no-repeat center;
+>>>>>>> checkout
 }
 
 /* the width is set to show the number of thumbnails that will be visible */
@@ -233,7 +241,10 @@ a:hover{
 }
 #SlideItMoo_items a { padding:0px; margin:3px 0px 3px; clear:both; display:block; background:#a791a2; padding: 4px; }
 #SlideItMoo_items a img{ border:none; }
+<<<<<<< HEAD
 
+=======
+>>>>>>> checkout
 /*-------TEMP------*/
 .header{
     height: 150px;
