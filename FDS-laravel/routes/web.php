@@ -150,6 +150,7 @@ Route::get('/browse/search/', function (Request $request) {
 
 Route::get('/basket/add/{restaurant_id}/{food_id}', 'BasketController@addBasketOrder');
 Route::get('/basket/show', 'BasketController@showBasket');
+Route::get('/basket/clear', 'BasketController@clearBasket');
 Route::get('/sessionAdd', 'SessionController@add');
 Route::get('/sessionShow', 'SessionController@show');
 

@@ -152,6 +152,7 @@
 		</div>
 		<div class="basket-btn">
 			<span class="glyphicon glyphicon-shopping-cart"></span>
+			
 		</div>
 		<div class="basket-container">
 

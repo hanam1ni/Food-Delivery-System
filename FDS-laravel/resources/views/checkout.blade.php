@@ -171,35 +171,45 @@
                                         Remove
                                 </button>
                             </div>
-                            <div class="product-price">12</div>
+                            <div class="product-price">{{ number_format($value['price'] , 2, '.', '')}}</div>
                             <div class="product-quantity">
                                 <input type="number" value="{{ $value['quantity']}}" min="1">
                             </div>
-                            <div class="product-line-price">00.00</div>
+                            <div class="product-line-price">{{ number_format($value['quantity'] * $value['price'], 2, '.', '')}}</div>
                         </div>
                     </table>
                 @endforeach
                     <div class="totals">
                         <div class="totals-item">
+                        <?php 
+                           $sum = 0;
+                        foreach ($values as $value)
+                            $sum += $value['price'];
+                        ?>
+                        
                             <label>Subtotal</label>
-                            <div class="totals-value" id="cart-subtotal">71.00</div>
+                            <div class="totals-value" id="cart-subtotal">{{ number_format($sum, 2, '.', '')}}</div>
                         </div>
                         <div class="totals-item">
                             <label>Service (10%)</label>
-                            <div class="totals-value" id="cart-tax">3.00</div>
+                            <div class="totals-value" id="cart-tax">{{ number_format($sum*0.1, 2, '.', '')}}</div>
                         </div>
                         <div class="totals-item">
                             <label>Shipping</label>
                             <div class="totals-value" id="cart-shipping">15.00</div>
                         </div>
+                        <?php 
+                            $total = ($sum)+($sum*0.1);
+                        ?>
                         <div class="totals-item totals-item-total">
                             <label>Grand Total</label>
-                            <div class="totals-value" id="cart-total">90.00</div>
+                            <div class="totals-value" id="cart-total">{{ number_format($total, 2, '.', '')}} </div>
                         </div>
                     </div>
                     <button class="checkout" style="vertical-align:middle">
                         <span>Checkout</span>
                     </button>
+                
                 </div>      
             </div>
         </div>
