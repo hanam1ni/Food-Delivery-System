@@ -1,8 +1,8 @@
 <html lang="en">
   <head>
-    <link href="css/bootstrap.min.css" rel="stylesheet">      
-    <link href="css/restaurant.css" rel="stylesheet"/>       
-
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/restaurant.css') }}" rel="stylesheet">
+    
     <meta charset="utf-8">
     <title>Software Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,8 +31,8 @@
     <script src="{{ asset('js/superfish.js') }}"></script>  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>  
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>  
     <!-- scorll magic -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
@@ -124,6 +124,8 @@
               </div>
             </div>
           </div>
+        </div>
+       </div>
 @endForeach
 <!--Start Menu and Comment-->
 
@@ -136,62 +138,27 @@
               <div class="tab-content">
                 <div class=" tab-pane fade in active" id="Menu">
 <!--Menu-->
-                	<div class="row">
-					<div id="list"  style="margin-left: 8%" class="span11">
-						<div class="span3 item">
-							<div class="img-contain">
-								<img src="images/menu/menu1.jpg">
-							</div>
-							<div class="span3 item-text">
-								<h1>Menu 1</h1>
-							</div>
-						</div>
-						<div class="span3 item">
-							<div class="img-contain">
-								<img src="images/menu/menu2.jpg">
-							</div>
-							<div class="span3 item-text">
-								<h1>Menu 2</h1>
-							</div>
-						</div>
-						<div class="span3 item">
-							<div class="img-contain">
-								<img src="images/menu/menu3.jpg">
-							</div>
-							<div class="span3 item-text">
-								<h1>Menu 3</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div id="list" style="margin-left: 8%" class="span11">
-						<div class="span3 item">
-							<div class="img-contain">
-								<img src="images/menu/menu4.jpg">
-							</div>
-							<div class="span3 item-text">
-								<h1>Menu 4</h1>
-							</div>
-						</div>
-						<div class="span3 item">
-							<div class="img-contain">
-								<img src="images/menu/menu5.jpg">
-							</div>
-							<div class="span3 item-text">
-								<h1>Menu 5</h1>
-							</div>
-						</div>
-						<div class="span3 item">
-							<div class="img-contain">
-								<img src="images/menu/menu6.jpg">
-							</div>
-							<div class="span3 item-text">
-								<h1>Menu 6</h1>
-							</div>
-						</div>
-					</div>
-				</div>
+<div id="menuList" class="span12">
+@foreach($foods as $food)
+					<a href="#">
+                  <div class="span4 item-food">
+                    <div class="img-contain-food">
+                      <img src="{{ asset('images/food/food'.$food->food_id.'.jpg') }}">
+                    </div>
+                    <div class="img-contain-blur">
+                      <span class="glyphicon glyphicon-shopping-cart"></span>
+                      <span class="glyphicon glyphicon-plus-sign"></span>
+                      <div class="img-contain-order">Order me</div>
+                      <div class="img-contain-extra">Extra for {{ $food->price_extra }} &#3647</div>
+                    </div>
+                    <div class="span4 item-text-food">
+                      <h1>{{ $food->food_name }}</h1>
+                      <h2>{{ $food->price }} &#3647</h2>
+                    </div>
+                  </div>
+                </a>
+@endForeach
+</div>
 <!--endMenu-->
                 </div>
                 <div class="tab-pane fade" id="Comment">
@@ -204,10 +171,10 @@
 					</div>
 
 				</form>
-        <div class="span6"></div>
-        <div class="span2">
+        <div class="span1"></div>
+        <div class="span5">
             <label>Rating
-                    <select class="form-control select2" name="Rating" style="width: 40%;">
+                    <select class="form-control select2" name="Rating" style="width: 100%;">
                     <option selected="selected">1</option>
                     <option>2</option>
                     <option>3</option>
@@ -267,14 +234,10 @@
                         </div><!-- /row -->
                     </div><!-- /container -->
 <!--End Comment-->
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-
+                </div><!--comment-->
+              </div><!--tabcontent-->
+          </div><!--nav-tab-->
       <script type="text/javascript">
-
       </script>
     </body>
   </html>
