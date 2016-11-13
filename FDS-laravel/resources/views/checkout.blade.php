@@ -130,7 +130,7 @@
                                 <img src="{{ url('images/food/food'.$value['food_id'].'.jpg') }}">
                             </div>
                             <div class="product-details">
-                                <div class="product-title">Dingo Dog Bones</div>
+                                <div class="product-title">{{ $value['food_name']}}</div>
                                 <div> 
                                     <div class="product-note"> 
                                         <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
@@ -173,9 +173,9 @@
                             </div>
                             <div class="product-price">12</div>
                             <div class="product-quantity">
-                                <input type="number" value="1" min="1">
+                                <input type="number" value="{{ $value['quantity']}}" min="1">
                             </div>
-                            <div class="product-line-price">12.00</div>
+                            <div class="product-line-price">00.00</div>
                         </div>
                     </table>
                 @endforeach
