@@ -175,23 +175,17 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/payment', 'paymentcontroller@index');
 
+Route::get('/payment/{cost}', 'paymentcontroller@indexWithCost');
+
 Route::post('/test', 'paymentController@testfunction');
 
 Route::post('/payment/addAddress2', 'paymentController@addAddress2');
 
 Route::post('/payment/transfer','paymentController@transfer');
 
-Route::post('/bank',[
-	'uses'=>'bankAccountController@index',	
-	'as'=> 'bank',
-]);
 
 Route::get('/bank/{cost}/{address}',[
 	'uses'=>'bankAccountController@index2',	
 	'as'=> 'pay',
 ]);
 
-Route::post('/Withdraw',[
-        'uses'=>'bankAccountController@index',
-        'as'=>'Withdraw',
-]);

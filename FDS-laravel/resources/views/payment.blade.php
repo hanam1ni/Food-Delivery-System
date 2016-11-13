@@ -29,12 +29,12 @@
 		<link href="{{ asset('css/nav.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/browse.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/payment.css') }}" rel="stylesheet"/>
-		<link href="css/flexslider.css" rel="stylesheet"/>
+		<link href="{{ asset('css/flexslider.css') }}" rel="stylesheet"/>
 
 		<!-- scripts -->
-		<script src="js/jquery-1.7.2.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>				
-		<script src="js/superfish.js"></script>	
+		<script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('js/superfish.js') }}"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
@@ -110,9 +110,9 @@
 				<!--	Address information	-->
 				<div style="padding-bottom:50px;">
 					<div class="payment-header" class="span12">
-						<h2>Choose Your Address</h2>
+					<h2>Choose Your Address</h2>
 					</div>
-
+				
 				    <!-- address1 -->
 				    <label class="row" id="divAddr1">
 				        <div class="mark-as-default span1">
@@ -187,7 +187,6 @@
 				                <a class="address-delete" onclick="toEditAddr('divEdit3','divAddr3','address3','editField3')">Edit Address</a>
 				                &emsp;
 				                <a class="address-delete" onclick="deleteAddr('divAddr3',3)">Delete Address</a>
-				                
 				            </div>
 				        </div>
 				    </label>
@@ -250,7 +249,8 @@
 					</div>
 				</div>
 
-				<!--	Payment information	-->
+
+				<!-- Payment option	-->
 				<div>
 					<div class="payment-header">
 						<h2>Payment Information :</h2>
@@ -279,11 +279,10 @@
 
 		<div class="footer container"></div>
 
-		<script src="js/common.js"></script>
-	    <script src="js/jquery.min.js"></script>
-		<script src="js/flat-ui.min.js"></script>
-	    <script src="js/application.js"></script>
-
+		<script src="{{ asset('js/common.js') }}"></script>
+		<script src="{{ asset('js/jquery.min.js') }}"></script>
+		<script src="{{ asset('js/flat-ui.min.js') }}"></script>
+		<script src="{{ asset('js/application.js') }}"></script>
 
 	    <!-- javascript -->
 	    <script type="text/javascript">
@@ -490,7 +489,7 @@
 	    		else{
 
 	    			console.log("option2"+'address');
-	    			window.location.replace('./bank/'+cost+'/'+address);
+	    			window.location.replace('../bank/'+{{$cost}}+'/'+address);
 		    		/*$.post('./bank',
 		    			{
 		    				address : address

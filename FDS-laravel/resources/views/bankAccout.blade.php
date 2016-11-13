@@ -104,7 +104,7 @@
 		</div>
 
 		<!-- content of payment page-->
-		<form class="container content payment"> <!--class payment-->
+		<form class="container content payment" > <!--class payment-->
 			<div>
 				<div class="payment-option">
 					<div class="payment-header">
@@ -115,22 +115,22 @@
 							<h5  style="margin-left: 50px;" id="username">{{Auth::user()->username}}</h5>
 						
 							<h4 >Amount :</h4>
-							<h5 style="margin-left: 50px;" id="amount">123.45 bath</h5>
+							<h5 style="margin-left: 50px;" id="amount">{{$cost}} Bath</h5>
 						
 							<h4>Address :</h4>
 							<h5  style="margin-left: 50px;" id="addresses">{{$addresses}}</h5>
 						
 							<h4>Bank :</h4>
-							<select style="margin-left: 50px;">
+							<select style="margin-left: 50px;" name="bank_name">
 								<option value="null">select Bank</option>
 								<option value="bank">bank1</option>
 							</select>
 
 							<h4 >Account number :</h4>
-							<input style="height: 27px;margin-left:50px;" type="text" id="account" maxlength="10" size="10" placeholder="Account number"></input>
+							<input style="height: 27px;margin-left:50px;" type="text" id="account" maxlength="10" size="10" placeholder="Account number" name="bank_account"></input>
 							
 							<h4>Enter OTP :</h4>
-							<input  id="otp" maxlength="5" size="5" placeholder=" OTP"  style="width:50px; margin-left: 50px;"></input>
+							<input  id="otp" maxlength="5" size="5" placeholder=" OTP"  style="width:50px; margin-left: 50px;" name="bank_otp"></input>
 					</div>
 				</div>
 			</div>
@@ -153,6 +153,9 @@
 			        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			    }
 			});
+
+
+
 	    </script>
 	    <!--
 			"from_Account"=> "1234567890",

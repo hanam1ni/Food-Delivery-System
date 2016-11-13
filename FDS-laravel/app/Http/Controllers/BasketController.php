@@ -43,7 +43,7 @@ class BasketController extends Controller
         if (is_array($values) || is_object($values)) {
             foreach ($values as $item) {
                 echo $item['food_id'] . ':' . $item['quantity'];
-                echo "\r\n";
+                echo "<br>";
             }
         } else {
             echo "empty";

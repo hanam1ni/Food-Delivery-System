@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
 use log;
+use back;
 
 class paymentController extends Controller
 {
@@ -16,17 +17,17 @@ class paymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $values = $request->session()->get('basket.menu', 'default');
-        return view('payment',['foods' => $values]);
-        /*$tasks = Task::orderBy('created_at', 'asc')->get();
 
-        return view('payment',[
-            'payment' => $tasks
-        ]);*/
+        //return view('payment',['foods' => $cars]);
+        //$tasks = Task::orderBy('created_at', 'asc')->get();
+        echo "illegal direct";
     }
 
+    public function indexWithCost($cost){
+        return view('payment',['cost' => $cost]);      
+    }
     /**
      * Show the form for creating a new resource.
      *
