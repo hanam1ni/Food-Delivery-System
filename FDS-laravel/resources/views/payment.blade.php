@@ -296,7 +296,7 @@
 			        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			    }
 			});
-
+			var cost = 150;
 			var username = document.getElementById("username").innerHTML;
 	    	var address1 = document.getElementById("address1").innerHTML;
 	    	var address2 = document.getElementById("address2").innerHTML;
@@ -491,8 +491,9 @@
 	    			console.log("option1");
 	    		}
 	    		else{
+
 	    			console.log("option2"+'address');
-	    			window.location.replace('./bank/'+'address');
+	    			window.location.replace('./bank/'+cost+'/'+address);
 		    		/*$.post('./bank',
 		    			{
 		    				address : address

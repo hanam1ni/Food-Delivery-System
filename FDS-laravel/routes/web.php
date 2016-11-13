@@ -186,7 +186,7 @@ Route::get('/bank',[
 	'as'=> 'bank',
 ]);
 
-Route::get('/bank/{address}',[
+Route::get('/bank/{cost}/{address}',[
 	'uses'=>'bankAccountController@index2',	
 	'as'=> 'pay',
 ]);

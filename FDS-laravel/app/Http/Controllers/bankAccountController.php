@@ -22,9 +22,9 @@ class bankAccountController extends Controller
         //return view('bankAccout',['address' => $request]);
     }
     
-    public function index2($address)
+    public function index2($cost ,$address)
     {
-        return view('bankAccout',['addresses' => $address]);
+        return view('bankAccout',['cost' => $cost,'addresses' => $address]);
         //return view('bankAccout',['address' => $request]);
     }
 
