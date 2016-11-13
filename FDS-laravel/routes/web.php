@@ -189,3 +189,9 @@ Route::get('/bank/{cost}/{address}',[
 	'as'=> 'pay',
 ]);
 
+
+Route::post('/bank/{cost}/bankSend',[
+	'uses'=>'bankAccountController@send',	
+	'as'=> 'pay',
+]);
+

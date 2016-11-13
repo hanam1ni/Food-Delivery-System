@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use log;
+use GuzzleHttp\Client;
 
 class bankAccountController extends Controller
 {
@@ -27,6 +28,16 @@ class bankAccountController extends Controller
     {
         return view('bankAccout',['cost' => $cost,'addresses' => $address]);
         //return view('bankAccout',['address' => $request]);
+    }
+
+    public function send(Request $request){
+        // Create a client with a base URI
+        $client = new Client([
+            // Base URI is used with relative requests
+            'base_uri' => 'http://httpbin.org',
+            // You can set any number of default request options.
+            'timeout'  => 2.0,
+        ]);
     }
 
     /**

@@ -104,13 +104,13 @@
 		</div>
 
 		<!-- content of payment page-->
-		<form class="container content payment" > <!--class payment-->
+		<div class="container content payment" > <!--class payment-->
 			<div>
 				<div class="payment-option">
 					<div class="payment-header">
 						<h2>Pay :</h2>
 					</div>
-					<form>
+					<div>
 							<h4 >username :</h4>
 							<h5  style="margin-left: 50px;" id="username">{{Auth::user()->username}}</h5>
 						
@@ -123,7 +123,7 @@
 							<h4>Bank :</h4>
 							<select style="margin-left: 50px;" name="bank_name">
 								<option value="null">select Bank</option>
-								<option value="bank">bank1</option>
+								<option value="bank">CESE BANK</option>
 							</select>
 
 							<h4 >Account number :</h4>
@@ -137,9 +137,10 @@
 
 			<!-- Place Order btn-->
 			<div class="span4 btn-accept">
-	  			<button type="submit" class="btn btn-block btn-lg btn-danger" id="placeOrder" onclick="placeOrder()">Pay now</button> 
+	  			<button class="btn btn-block btn-lg btn-danger" id="placeOrder" onclick="callBank()">Pay now</button> 
 			</div>
-		</form>			
+			<a href=""></a>
+		</div>			
 
 		<div class="footer container"></div>
 		<script src="{{ asset('js/common.js') }}"></script>
@@ -156,12 +157,45 @@
 
 
 
+	    	/*$data = array(
+				"shop_Account": "1327000003",
+			  	"cus_Account": "1327100002",
+			  	"Amount": cost,
+			  	"otp": "1072649"
+	    	);
+
+	    	$url_sent = "";
+	    	$str_data = json_encode($data);
+
+	    	function sendPostData($url,$post){
+	    		$ch = curl_init($url);
+	    	}
+*/
+		    function callBank(){
+		    	console.log("call bank");
+		    	var cost = 450.00;
+			   	$.post('./bankSend',
+	    			{
+						"shop_Account": "1327000003",
+					  	"cus_Account": "1327100002",
+					  	"Amount": cost,
+					  	"otp": "1072649"
+	    			},
+	    			function(){
+	    				console.log('response');
+	    			}
+	    		);
+			}
+			
+
+
 	    </script>
 	    <!--
-			"from_Account"=> "1234567890",
-			  "to_Account"=> "9876543210",
-			  "Amount"=> 123.56,
-			"opt"=>xxxxxx
+	    http://161.246.70.75:8080/cesebank/api/service.php
+			"shop_Account"=> "1327000003",
+		  	"cus_Account"=> "1327100002",
+		  	"Amount"=> 450.00,
+		  	"otp"=> "1072649"
 	    -->
     </body>
 </html>
