@@ -51,7 +51,7 @@
 }
 
 /*---- Food ----*/
-#menuList > a > .item-food{
+#menuList > .item-food{
 	position: relative;
 	height: 330px;
 	margin-top: 10px;
@@ -59,11 +59,16 @@
 	background: transparent;
 }
 
-#menuList > a > .item-food > .img-contain-food{
+#menuList > .item-food > .img-contain-food{
 	overflow: hidden;
 }
 
-#menuList > a > .item-food > .img-contain-blur{
+#menuList > .item-food > .img-contain-food > img{
+	height: 280px;
+	width: 100%;
+}
+
+#menuList > .item-food > .img-contain-blur{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -75,7 +80,7 @@
 	overflow: hidden;
 }
 
-#menuList > a > .item-food > .img-contain-blur > .glyphicon.glyphicon-shopping-cart{
+#menuList > .item-food > .img-contain-blur > a > .glyphicon.glyphicon-shopping-cart{
 	position: absolute;
 	top: 100px;
 	left: -20%;
@@ -83,7 +88,7 @@
 	color: #21B6A2;
 }
 
-#menuList > a > .item-food > .img-contain-blur > .glyphicon.glyphicon-plus-sign{
+#menuList > .item-food > .img-contain-blur > a > .glyphicon.glyphicon-plus-sign{
 	position: absolute;
 	top: 100px;
 	left: 120%;
@@ -91,12 +96,12 @@
 	color: #21B6A2;
 }
 
-#menuList > a > .item-food > .img-contain-blur > .img-contain-order{
+#menuList > .item-food > .img-contain-blur > .img-contain-order{
 	position: absolute;
 	width: 100%;
 	height: 50px;
 	top: 200px;
-	z-index: 15;
+	z-index: 20;
 	font-size: 40px;
 	font-weight: 600;
 	text-align: center;
@@ -104,13 +109,13 @@
 	opacity: 0;
 }
 
-#menuList > a > .item-food > .img-contain-blur > .img-contain-extra{
+#menuList > .item-food > .img-contain-blur > .img-contain-extra{
 	position: absolute;
 	width: 100%;
 	height: 50px;
 	top: 200px;
 	padding-top: 10px;
-	z-index: 15;
+	z-index: 20;
 	font-size: 30px;
 	font-weight: 600;
 	text-align: center;
@@ -118,12 +123,12 @@
 	opacity: 0;
 }
 
-#menuList > a > .item-food > .img-contain-food > img {
+#menuList > .item-food > .img-contain-food > img {
 	width: 100%;
 	height: 280px;
 }
 
-#menuList > a > .item-food > .item-text-food{
+#menuList > .item-food > .item-text-food{
 	margin: 0;
 	height: 50px;
 	padding: 15px 30px;
@@ -132,22 +137,17 @@
 	background: #432E41;
 }
 
-#menuList > a > .item-food > .item-text-food h1{
+#menuList > .item-food > .item-text-food h1{
 	font-size: 20px;
 	float: left;
 	margin: 0;
 }
 
-#menuList > a > .item-food > .item-text-food h2{
+#menuList > .item-food > .item-text-food h2{
 	font-size: 20px;
 	float: right;
 	font-weight: 100;
 	margin: 0;
-}
-
-.basket{
-	height: 100%;
-	background: blue;
 }
 
 .footer{
