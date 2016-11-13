@@ -11,9 +11,22 @@ class checkoutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showBasket(Request $request)
     {
-        //
+        $values = $request->session()->get('basket.list', 'default');
+        if (is_array($values) || is_object($values)) {
+            foreach ($values as $item) {
+                echo $item['food_id'] . ':' . $item['quantity'];
+                echo "\r\n";
+            }
+        } else {
+            echo "empty";
+        }
+    }
+    public function index(Request $request)
+    {
+        $foods = $request->session()->get('basket.list','default');
+        return view('checkout',['foods' => $foods]);
     }
 
     /**
