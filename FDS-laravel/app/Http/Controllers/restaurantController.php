@@ -7,7 +7,6 @@ use App\Restaurant;
 
 class restaurantController extends Controller
 {
-    //
     public function index(){
     	$restaurant = DB::table('restaurant')   -> where('restaurant_id',1)
                                                 -> get();

@@ -2,7 +2,7 @@
   <head>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/restaurant.css') }}" rel="stylesheet">
-    
+
     <meta charset="utf-8">
     <title>Software Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,7 @@
     <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/nav.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/browse.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/basket.css') }}" rel="stylesheet"/>
 
     <!-- scripts -->
     <script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>     
@@ -38,26 +39,26 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
 
   </head>
     <body>    
     <div class="top container">
       <div id="trigger"></div>
-      <div class="navbar navbar-fixed-top">   
+      <div class="navbar navbar-fixed-top">
         <div class="navbar-inner main-menu span12">
           <a href="#"><img src="{{ asset('images/logo.png') }}" class="logo pull-left"></a>
           <nav id="menu" class="pull-right">
             <ul>
               <li><a href="{{ url('browse') }}">Browse</a></li>
-              <li><a href="#">Meal</a>          
+              <li><a href="#">Meal</a>
                 <ul>
-                  <li><a href="{{ url('/browse/vegan') }}">Vegan</a></li>                 
+                  <li><a href="{{ url('/browse/vegan') }}">Vegan</a></li>
                   <li><a href="{{ url('/browse/islamic') }}">Isalmic</a></li>
-                  <li><a href="{{ url('/browse/meal') }}">All Meal</a></li>               
+                  <li><a href="{{ url('/browse/meal') }}">All Meal</a></li>
                 </ul>
-              </li>                             
+              </li>
               <li><a href="{{ url('/browse/dessert') }}">Dessert</a></li>
               <li><a href="{{ url('/browse/drink') }}">Drink</a></li>
               <li><a href="#">Search</a>
@@ -87,10 +88,10 @@
                                     </form>
                   </li>
                 </ul>
-               </li>  
+               </li>
               @else
                 <a href="{{ url('login') }}">Login</a></li>
-              @endif          
+              @endif
             </ul>
           </nav>
         </div>
@@ -140,14 +141,13 @@
 <!--Menu-->
 <div id="menuList" class="span12">
 @foreach($foods as $food)
-					<a href="#">
                   <div class="span4 item-food">
                     <div class="img-contain-food">
                       <img src="{{ asset('images/food/food'.$food->food_id.'.jpg') }}">
                     </div>
                     <div class="img-contain-blur">
-                      <span class="glyphicon glyphicon-shopping-cart"></span>
-                      <span class="glyphicon glyphicon-plus-sign"></span>
+                      <a href="{{ url('/basket/add/'.$food->restaurant_id.'/'.$food->food_id) }}"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                      <a href="#"><span class="glyphicon glyphicon-plus-sign"></span></a>
                       <div class="img-contain-order">Order me</div>
                       <div class="img-contain-extra">Extra for {{ $food->price_extra }} &#3647</div>
                     </div>
@@ -156,7 +156,6 @@
                       <h2>{{ $food->price }} &#3647</h2>
                     </div>
                   </div>
-                </a>
 @endForeach
 </div>
 <!--endMenu-->
@@ -237,7 +236,19 @@
                 </div><!--comment-->
               </div><!--tabcontent-->
           </div><!--nav-tab-->
-      <script type="text/javascript">
-      </script>
+        </div>
+    <div class="basket-btn">
+      <span class="glyphicon glyphicon-shopping-cart"></span>
+    </div>
+    <div class="basket-container">
+
+    </div>
+    <div class="footer container">
+
+    </div>
+    <script src="{{ asset('js/common.js') }}"></script>
+    <script src="{{ asset('js/browse.js') }}"></script>
+    <script src="{{ asset('js/scroll.js') }}"></script>
+    <script src="{{ asset('js/basket.js') }}"></script>
     </body>
   </html>
