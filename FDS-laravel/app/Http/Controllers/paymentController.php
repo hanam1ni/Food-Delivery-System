@@ -16,9 +16,10 @@ class paymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('payment');
+        $values = $request->session()->get('basket.menu', 'default');
+        return view('payment',['foods' => $values]);
         /*$tasks = Task::orderBy('created_at', 'asc')->get();
 
         return view('payment',[

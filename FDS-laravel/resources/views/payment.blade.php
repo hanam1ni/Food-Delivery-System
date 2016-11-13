@@ -15,11 +15,10 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 		<!-- bootstrap -->
-		<link href="css/bootstrap.css" rel="stylesheet">   
-		<link href="css/bootstrap.min.css" rel="stylesheet">      
-		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-		
-		<link href="css/bootstrappage.css" rel="stylesheet"/>
+		<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet"/> 
+		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/> 
+		<link href="{{ asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet"/> 
+		<link href="{{ asset('css/bootstrappage.css') }}" rel="stylesheet"/> 
 			
 	    <!-- Loading Flat UI -->
 	    <!--<link href="css/flat-ui.css" rel="stylesheet">-->
@@ -29,9 +28,8 @@
 		<link href="{{ asset('css/flexslider.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/nav.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/browse.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('css/payment.css') }}" rel="stylesheet"/>
 		<link href="css/flexslider.css" rel="stylesheet"/>
-		<link href="css/browse.css" rel="stylesheet"/>
-		<link href="css/payment.css" rel="stylesheet"/>
 
 		<!-- scripts -->
 		<script src="js/jquery-1.7.2.min.js"></script>
@@ -104,7 +102,6 @@
 					</nav>
 				</div>
 			</div>
-
 		</div>
 
 
