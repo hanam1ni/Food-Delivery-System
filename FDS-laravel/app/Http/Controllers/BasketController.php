@@ -48,5 +48,6 @@ class BasketController extends Controller
         } else {
             echo "empty";
         }
+        return view('checkout',['values'=>$values]);
     }
 }

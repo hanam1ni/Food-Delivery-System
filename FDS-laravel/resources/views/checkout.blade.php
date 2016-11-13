@@ -112,6 +112,8 @@
                     </div>
                 </div>
                 <div>
+                
+                @foreach ($values as $value)
                     <table>
                         <br>
                         <div class="column-labels">
@@ -125,7 +127,7 @@
 
                         <div class="product">
                             <div class="product-image">
-                                <img src="http://s.cdpn.io/3/dingo-dog-bones.jpg">
+                                <img src="{{ url('images/food/food'.$value['food_id'].'.jpg') }}">
                             </div>
                             <div class="product-details">
                                 <div class="product-title">Dingo Dog Bones</div>
@@ -173,62 +175,10 @@
                             <div class="product-quantity">
                                 <input type="number" value="1" min="1">
                             </div>
-                            <div class="product-line-price">12 .00</div>
-                        </div>
-                        <div class="product">
-                            <div class="product-image">
-                                <img src="http://s.cdpn.io/3/dingo-dog-bones.jpg">
-                            </div>
-                            <div class="product-details">
-                                <div class="product-title">Nutro Adult Lamb and Rice Dog Food</div>
-                                <div>
-                                    <div class="product-note">
-                                            <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
-                                                Notation
-                                            </button>
-                                    </div>
-
-                                    <div id="myContent">
-                                        
-                                    </div> 
-
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-                                      <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="exampleModalLabel">Notation</h4>
-                                          </div>
-                                          <div class="modal-body">
-                                            <form>
-                                              <div class="form-group">
-                                                <label for="message-text" class="control-label">Message:</label>
-                                                <textarea class="form-control" id="message-text"></textarea>
-                                              </div>
-                                            </form>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="add()">Send message</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-removal">
-                                <button class="remove-product">
-                                    Remove
-                                </button>
-                            </div>
-                            <div class="product-price">45</div>
-                            <div class="product-quantity">
-                            <input type="number" value="1" min="1">
-                            </div>
-                            
-                            <div class="product-line-price">45.00</div>
+                            <div class="product-line-price">12.00</div>
                         </div>
                     </table>
+                @endforeach
                     <div class="totals">
                         <div class="totals-item">
                             <label>Subtotal</label>

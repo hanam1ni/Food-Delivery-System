@@ -157,4 +157,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/checkout', 'checkoutController@index');
+Route::get('/checkout', 'BasketController@showBasket');
