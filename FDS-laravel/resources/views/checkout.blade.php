@@ -72,7 +72,9 @@
             <div class="content">
                 <div class="row">
                     <div id="content-header" style="margin-left: 3%">
-                        Shopping Cart
+                        <font color="#432E41">
+                            Shopping Cart
+                        </font>
                     </div>
                 </div>
                 <div>
@@ -93,10 +95,64 @@
                             </div>
                             <div class="product-details">
                                 <div class="product-title">Dingo Dog Bones</div>
-                                <div class="product-note">
-                                    <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
-                                        Notation
-                                    </button>
+                                <div> 
+                                    <div class="product-note"> 
+                                        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+                                            Notation
+                                        </button>
+                                    </div>
+                                    <div id="myContent">
+                                        
+                                    </div> 
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true" data-dismiss="modal">&times;</span>
+                                            </button>
+                                            <h4 class="modal-title">Notation</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                            <form>
+                                              <div class="form-group">
+                                                <label for="message-text" class="control-label">Message:</label>
+                                                <textarea class="form-control" id="message-text"></textarea>
+                                              </div>
+                                            </form>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="add()">Send message</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-removal">
+                                <button class="remove-product">
+                                        Remove
+                                </button>
+                            </div>
+                            <div class="product-price">12</div>
+                            <div class="product-quantity">
+                                <input type="number" value="1" min="1">
+                            </div>
+                            <div class="product-line-price">12.00</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">
+                                <img src="http://s.cdpn.io/3/dingo-dog-bones.jpg">
+                            </div>
+                            <div class="product-details">
+                                <div class="product-title">Nutro Adult Lamb and Rice Dog Food</div>
+                                <div>
+                                    <div class="product-note">
+                                            <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+                                                Notation
+                                            </button>
+                                    </div>
 
                                     <div id="myContent">
                                         
@@ -128,43 +184,25 @@
                             </div>
                             <div class="product-removal">
                                 <button class="remove-product">
-                                        Remove
-                                </button>
-                            </div>
-                            <div class="product-price">12.99</div>
-                            <div class="product-quantity">
-                                <input type="number" value="1" min="1">
-                            </div>
-                            <div class="product-line-price">25.98</div>
-                        </div>
-                        <div class="product">
-                            <div class="product-image">
-                                <img src="http://s.cdpn.io/3/dingo-dog-bones.jpg">
-                            </div>
-                            <div class="product-details">
-                                <div class="product-title">Nutro Adult Lamb and Rice Dog Food</div>
-                            </div>
-                            <div class="product-removal">
-                                <button class="remove-product">
                                     Remove
                                 </button>
                             </div>
-                            <div class="product-price">45.99</div>
+                            <div class="product-price">45</div>
                             <div class="product-quantity">
                             <input type="number" value="1" min="1">
                             </div>
                             
-                            <div class="product-line-price">45.99</div>
+                            <div class="product-line-price">45.00</div>
                         </div>
                     </table>
                     <div class="totals">
                         <div class="totals-item">
                             <label>Subtotal</label>
-                            <div class="totals-value" id="cart-subtotal">71.97</div>
+                            <div class="totals-value" id="cart-subtotal">71.00</div>
                         </div>
                         <div class="totals-item">
                             <label>Service (10%)</label>
-                            <div class="totals-value" id="cart-tax">3.60</div>
+                            <div class="totals-value" id="cart-tax">3.00</div>
                         </div>
                         <div class="totals-item">
                             <label>Shipping</label>
@@ -172,7 +210,7 @@
                         </div>
                         <div class="totals-item totals-item-total">
                             <label>Grand Total</label>
-                            <div class="totals-value" id="cart-total">90.57</div>
+                            <div class="totals-value" id="cart-total">90.00</div>
                         </div>
                     </div>
                     <button class="checkout" style="vertical-align:middle">

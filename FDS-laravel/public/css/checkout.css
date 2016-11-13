@@ -70,6 +70,10 @@
   /*comment baht  */
   content: ' '; 
 }
+
+.model-title{
+    color: blue;
+}
  
 /* Body/Header stuff */
 body {
@@ -299,7 +303,7 @@ label {
 body{
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
-    background: url(../images/browse_bg.jpg);
+    /*background: url(../images/browse_bg.jpg);*/
 }
  
 ul li a,a{
@@ -456,13 +460,13 @@ a:hover{
     color: #EB524A;
 }
  
-#content-header{
+/*#content-header{
     height: 100px;
     line-height: 100px;
     font-weight: 900;
     font-size: 48px;
     border-bottom: medium solid #EB524A;
-}
+}*/
  
 /*-------TEMP------*/
 .header{

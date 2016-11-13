@@ -79,5 +79,5 @@ function removeItem(removeButton)
 function add() {
   var input = document.getElementById('message-text')
   var div = document.getElementById('myContent');
-  div.innerHTML = input.value;
+  div.innerHTML = input.value;  
 }
