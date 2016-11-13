@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 });
+
+Route::get('/home',function () {
+	return view('home');
+});

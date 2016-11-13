@@ -1,0 +1,344 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i,800,800i');
+/* common
+----------------------------------------------------------------------------- */
+body{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    background: url(../images/browse_bg.jpg);
+}
+
+ul li a,a{
+    color:#333;
+    outline:0;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+a{
+    color:#eb4800;
+}
+a:hover{
+    color:#fd4004;
+    text-decoration:none;
+}
+
+/* top navigation
+----------------------------------------------------------------------------- */
+.top{
+    height: 600px;
+    width: 100%;
+    background: url(../images/top_bg.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+    box-shadow: inset 0px -14px 35px -11px rgba(84,84,84,1);
+}
+
+#trigger{
+    position: relative;
+    top: 0px;
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+}
+
+.navbar-inner.main-menu {
+    position: absolute;
+    height: 80px;
+    background: white;
+    padding: 0;
+    margin: 0 auto;
+    border: 0;
+    top: 10px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom:5px solid #EB524A;
+    border-radius: 0;
+    box-shadow: 0px 10px 17px -7px rgba(0,0,0,0.75);
+}
+.logo{
+    position: absolute;
+    height: 80px;
+    width: 150px;
+}
+#menu > ul{
+    display: block;
+    margin-left:0;
+}
+#menu > ul > li{
+    list-style: none;
+    float: left;
+    position: relative;
+    margin-right: 0px;
+}
+#menu > ul > li > a {
+    font-size: 15px;
+    color: #111;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px 40px;
+}
+#menu > ul > li.active{
+    background-color:#eb4800;
+}
+#menu > ul > li.active > a{
+    color:#fff;
+}
+#menu > ul a:hover{
+    color: #EB524A;
+    text-decoration:none;
+}
+#menu .current{color: #eb4800 !important;}
+
+#menu ul ul {
+    background: none repeat scroll 0 0 #eee;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    position: absolute;
+    min-width:170px;
+    display:none;
+}
+#menu > ul > li > ul{
+    margin-left:10px;
+    border:1px solid #ddd;
+    border-top:0;
+}
+#menu ul ul li {
+    list-style: none outside none;
+    position: relative;
+    border-top:1px solid #fff;
+    border-bottom:1px solid #ddd;
+}
+#menu ul ul li:last-child{
+    border-bottom: none !important
+}
+#menu ul ul li.menu-last{border-bottom: none;}
+#menu ul ul a{
+    display: block;
+    padding:7px 10px;
+    color: #333;
+    font-size: 12px;
+}
+#menu ul ul a:hover,#menu > ul > li:hover > a{color: #fff;background-color:#eb4800}
+#menu ul ul a:hover{background-color:#eb4800;}
+#menu > ul > li:hover {visibility: inherit;}
+#menu li:hover {visibility: inherit;}
+#menu li:hover ul,
+#menu li.sfHover ul {
+    left: -10px;
+    top: 52px;
+    z-index: 2299;
+}
+#menu li li:hover ul,
+#menu li li.sfHover ul {
+    left: 130px;
+    top: 0px;
+}
+#menu li.sfHover > a{
+    color:#eb4800;
+}
+#menu .sf-sub-indicator{
+    display:none;
+}
+
+#hightlight{
+    position: relative;
+    top: 35%;
+    left: 18%;
+}
+#hightlight > h1{
+    font-size: 62px;
+    line-height: 105px;
+}
+#hightlight >h2{
+    font-size: 24px;
+    word-wrap: break-word;
+    color: #EB524A;
+}
+
+#content-header{
+    height: 100px;
+    line-height: 100px;
+    font-weight: 900;
+    font-size: 48px;
+    border-bottom: medium solid #EB524A;
+}
+#newgallary {
+    width: 670px;
+    height: 182px;
+    padding: 25px 0;
+    margin-bottom: 25px;
+}
+#newgallary > h2{
+    color: #ffffff;
+    font-size: 28px;
+}
+#SlideItMoo_outer {
+    overflow: hidden;
+    width: 670px;
+    height: 140px;
+    margin: 0 auto;
+    background: none;
+    display:block;
+    position:relative;
+    padding: 0;
+}
+/* create custom forward-backward buttons for this container */
+#SlideItMoo_outer .SlideItMoo_forward,
+#SlideItMoo_outer .SlideItMoo_back{
+    display:block;
+    position:absolute;
+    cursor:pointer;
+    width:25px;
+    height: 140px;
+    bottom:0px;
+    right: 0px;
+    background: url(../images/slideitmoo_forward.png) no-repeat center;
+}
+#SlideItMoo_outer .SlideItMoo_back {
+    left:0px;
+    background: url(../images/slideitmoo_back.png) no-repeat center;
+}
+
+/* the width is set to show the number of thumbnails that will be visible */
+#SlideItMoo_inner{
+    position:relative ;
+    overflow:hidden ;
+    width: 650px ; /* set a display width to make the slider look good in case js is disabled */
+    margin:0px auto 0px;
+    padding:10px 0px 10px;
+}
+/* the thumbnails container; set a width on it so everything will be fine */
+#SlideItMoo_items {
+    display:block;
+    position:relative;
+}
+/* single element design */
+#SlideItMoo_items div.SlideItMoo_element {
+    display:block;
+    position:relative;
+    float:left;
+    margin:0px 15px 0px;
+    font-size:11px;
+    width:110px;
+    text-align:center;
+    font-family: Verdana, Geneva, sans-serif;
+    color:#000000;
+}
+#SlideItMoo_items a { padding:0px; margin:3px 0px 3px; clear:both; display:block; background:#a791a2; padding: 4px; }
+#SlideItMoo_items a img{ border:none; }
+/*-------TEMP------*/
+.header{
+    height: 150px;
+    background: red;
+}
+#menuList{
+
+}
+
+#menuList > .item{
+    position: relative;
+    height: 330px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: transparent;
+}
+
+#menuList > .item > .img-contain{
+    overflow: hidden;
+}
+
+#menuList > .item > .img-contain > img {
+    width: 100%;
+    height: 280px;
+}
+
+#menuList > .item > .item-text{
+    margin: 0;
+    padding: 5px 30px;
+    box-sizing: border-box;
+    color: white;
+    background: #432E41;
+}
+
+#menuList > .item > .triangle{
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    z-index: 1;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #432E41;
+}
+
+#menuList > .item > .item-text h1{
+    font-size: 20px;
+    float: left;
+    margin: 0;
+}
+
+.basket{
+    height: 100%;
+    background: blue;
+}
+
+.footer{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    background: #CCCCCC;
+    box-shadow: inset 0px 14px 20px -9px rgba(82,80,82,0.73);
+}
+
+@media (max-width: 767px){
+    #top-bar input{
+        *padding-right:0 !important;
+    }
+    .navbar-inner.main-menu{
+        border-bottom:0 !important;
+    }
+    section.homepage-slider{
+        display:none;
+    }
+    .account.pull-right{
+        width:100%;
+        text-align:center;
+    }
+    .myCarousel .thumbnails li{
+        border-bottom:1px solid #eee;
+        margin-bottom:0;
+    }
+    .product-box{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .product-box:hover{
+        background-color:#f8f8f8;
+    }
+    .product-box:hover a{
+        color:#333 !important;
+    }
+    #menu ul{display: none;}
+    .navbar-inner.main-menu a.logo{
+        left:50%;
+        margin-left:-99px;
+    }
+    #copyright,#footer-bar{
+        padding:0 10px;
+    }
+    #footer-bar .nav{overflow:hidden}
+    #footer-bar .nav li{float:left;}
+    #footer-bar  .nav a:hover{
+        background-color:transparent;
+        color:#eb4800;
+    }
+    .feature_box .service{
+        border-bottom:1px solid #eee;
+    }
+}
