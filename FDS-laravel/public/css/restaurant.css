@@ -28,15 +28,16 @@
 	border-bottom: medium solid #CCCCCC;
 }
 
-.commentBox{
-	margin-left: 10%;
-}
-.commentHead{
-	margin-left: 10%;
+.commentText{
+	margin-top: 5px;
 }
 .commentForm{
 	margin-top: 5px;
-	margin-left: 10%;
+	margin-left: 20%;
+}
+.commentBox{
+	margin-left: 15%;
+	margin-top: 10px;
 }
 
 .thumbnail {

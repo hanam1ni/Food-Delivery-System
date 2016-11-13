@@ -162,18 +162,17 @@
                 </div>
                 <div class="tab-pane fade" id="Comment">
 <!--Start Comment-->
-
-				<form>
+				
+        <form action="../restaurant/{{$restaurant_id}}/comment" method="POST">
+          {{ csrf_field() }}
 					<div class="form-group commentBox">
   						<label for="comment1">Comment:</label>
-  						<textarea class="form-control span10" rows="6" id="comment1"></textarea>
+  						<textarea class="form-control span10" rows="6" id="comment1" name="name"></textarea>
 					</div>
-
-				</form>
-        <div class="span1"></div>
-        <div class="span5">
-            <label>Rating
-                    <select class="form-control select2" name="Rating" style="width: 100%;">
+          <div class="span2"></div>
+            <div class="span5">
+              <label>Rating
+                  <select class="form-control select2" name="rating" style="width: 100%;">
                     <option selected="selected">1</option>
                     <option>2</option>
                     <option>3</option>
@@ -181,20 +180,27 @@
                     <option>5</option>
                     <option>No</option>
                   </select>
-            </label>
-        </div>
-        <div class="span2">
-					<button type="submit" id="submit" value="Send" class="btn btn-success span1">Submit</button>
-        </div>
+              </label>
+            </div>
+          <div class="span2">
+            @if (Auth::check())
+                   <button type="submit" id="submit" value="Send" class="btn btn-success span1">Submit</button>
+            @else
+                <a href="{{ url('login') }}">Login</a>
+            @endif
+          </div>
+				</form>
 
-
-                    <div class="container">
+                   <div class="commentForm">
                         <div class="row">
-                            <div class="span10 commentHead">
+                            <div class="span10">
                                 <h3>User Comment</h3>
                             </div><!-- /col-sm-12 -->
                         </div><!-- /row -->
-                        <div class="row commentForm">
+
+
+@foreach($comments as $comment)
+                        <div class="row">
                             <div class="span1">
                                 <div class="thumbnail">
                                     <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
@@ -202,38 +208,22 @@
                             </div><!-- /col-sm-1 -->
 
                             <div class="span5">
-                                <div class="panel panel-default">
-                                    <div >
-                                        <strong>myusername</strong> 
-                                    </div>
+                                <div class="panel">
                                     <div>
-                                        Panel content
+                                        <strong>{{$comment->username}}</strong> 
+                                        <p>Rating : {{$comment->rating}}</p>
+                                    </div>
+                                    <div class="commentText">
+                                        {{$comment->comment}}
                                     </div><!-- /panel-body -->
                                 </div><!-- /panel panel-default -->
                             </div><!-- /col-sm-5 -->
                         </div><!-- /row -->
+@endForeach
 
-                        <div class="row commentForm">
-                            <div class="span1">
-                                <div class="thumbnail">
-                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-                                </div><!-- /thumbnail -->
-                            </div><!-- /col-sm-1 -->
 
-                            <div class="span5">
-                                <div class="panel panel-default">
-                                    <div>
-                                        <strong>myusername</strong> 
-                                    </div>
-                                    <div>
-                                        Panel content
-                                    </div><!-- /panel-body -->
-                                </div><!-- /panel panel-default -->
-                            </div><!-- /col-sm-5 -->
-                        </div><!-- /row -->
-                    </div><!-- /container -->
-<!--End Comment-->
                 </div><!--comment-->
+<!--End Comment-->
               </div><!--tabcontent-->
           </div><!--nav-tab-->
         </div>
