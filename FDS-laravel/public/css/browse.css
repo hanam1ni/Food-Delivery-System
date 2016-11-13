@@ -24,11 +24,73 @@ a:hover{
 	color:#fd4004;
 	text-decoration:none;
 }
+.header{
+	height: 150px;
+	background: red;
+}
 
-/* top navigation
------------------------------------------------------------------------------ */
-.top{
-	height: 600px;
+#menuList{
+	
+}
+
+/*---- Restaurant ----*/
+#menuList > a > .item{
+	position: relative;
+	height: 330px;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: transparent;
+}
+
+#menuList > a > .item > .img-contain{
+	overflow: hidden;
+}
+
+#menuList > a > .item > .img-contain > img {
+	width: 100%;
+	height: 280px;
+}
+
+#menuList > a > .item > .item-text{
+	margin: 0;
+	height: 50px;
+	padding: 15px 30px;
+	box-sizing: border-box;
+	color: white;
+	background: #432E41;
+}
+
+#menuList > a > .item > .triangle{
+	position: absolute;
+	bottom: 50px;
+	left: 10px;
+	z-index: 1;
+	border-left: 20px solid transparent;
+ 	border-right: 20px solid transparent;
+  	border-bottom: 20px solid #432E41;
+}
+
+#menuList > a > .item > .item-text h1{
+	font-size: 20px;
+	float: left;
+	margin: 0;
+}
+
+/*---- Food ----*/
+#menuList > .item-food{
+	position: relative;
+	height: 330px;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: transparent;
+}
+
+#menuList > .item-food > .img-contain-food{
+	overflow: hidden;
+}
+
+#menuList > .item-food > .img-contain-food > img{
+	height: 280px;
 	width: 100%;
 	background: url(../images/top_bg.jpg);
 	background-size: cover;
@@ -46,105 +108,19 @@ a:hover{
 }
 
 .navbar-inner.main-menu {	
-	position: absolute;
-	height: 80px;
-	background: white;	
-	padding: 0;	
-	margin: 0 auto;
-	border: 0;
-	top: 10px;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	border-bottom:5px solid #EB524A;
-	border-radius: 0;
-	box-shadow: 0px 10px 17px -7px rgba(0,0,0,0.75);
-}
-.logo{
-	position: absolute;
-	height: 80px;
-	width: 150px;
-}
-#menu > ul{
-    display: block;
-    margin-left:0;	
-}
-#menu > ul > li{
-    list-style: none;
-    float: left;
-    position: relative;   
-	margin-right: 0px;
-}
-#menu > ul > li > a {
-	font-size: 15px;
-	color: #111;
-	display: block;
-	text-transform: uppercase;
-	font-weight: bold;
-	text-align: center;
-	padding: 30px 40px;
-	}
-#menu > ul > li.active{
-	background-color:#eb4800;
-}
-#menu > ul > li.active > a{
-	color:#fff;
-}
-#menu > ul a:hover{
-	color: #EB524A; 
-	text-decoration:none;
-}
-#menu .current{color: #eb4800 !important;}
 
-#menu ul ul {
-    background: none repeat scroll 0 0 #eee;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
-    padding: 0px;
-    position: absolute;
-    min-width:170px;
-	display:none;
 }
-#menu > ul > li > ul{
-    margin-left:10px;
-	border:1px solid #ddd;
-	border-top:0;
-}
-#menu ul ul li {
-    list-style: none outside none;
-    position: relative;
-	border-top:1px solid #fff;
-	border-bottom:1px solid #ddd;
-}
-#menu ul ul li:last-child{
-    border-bottom: none !important
-}
-#menu ul ul li.menu-last{border-bottom: none;}
-#menu ul ul a{
-    display: block;
-    padding:7px 10px;
-    color: #333;
-    font-size: 12px;
-}
-#menu ul ul a:hover,#menu > ul > li:hover > a{color: #fff;background-color:#eb4800}
-#menu ul ul a:hover{background-color:#eb4800;}
-#menu > ul > li:hover {visibility: inherit;}
-#menu li:hover {visibility: inherit;}
-#menu li:hover ul,
-#menu li.sfHover ul {
-    left: -10px;
-    top: 52px;
-    z-index: 2299;
-}
-#menu li li:hover ul,
-#menu li li.sfHover ul {
-    left: 130px;
-    top: 0px;
-}
-#menu li.sfHover > a{
-	color:#eb4800;
-}
-#menu .sf-sub-indicator{
-	display:none;
+
+#menuList > .item-food > .img-contain-blur{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background-color: #EBEBEB;
+	opacity: 0;
+	width: 100%;
+	height: 280px;
+	overflow: hidden;
 }
 
 #hightlight{
@@ -169,14 +145,33 @@ a:hover{
 	font-size: 48px;
 	border-bottom: medium solid #EB524A;
 }
-
-/*-------TEMP------*/
-.header{
-	height: 150px;
-	background: red;
+#menuList > .item-food > .img-contain-blur > a > .glyphicon.glyphicon-shopping-cart{
+	position: absolute;
+	top: 100px;
+	left: -20%;
+	font-size: 68px;
+	color: #21B6A2;
 }
-#menuList{
-	
+
+#menuList > .item-food > .img-contain-blur > a > .glyphicon.glyphicon-plus-sign{
+	position: absolute;
+	top: 100px;
+	left: 120%;
+	font-size: 68px;
+	color: #21B6A2;
+}
+
+#menuList > .item-food > .img-contain-blur > .img-contain-order{
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	top: 200px;
+	z-index: 20;
+	font-size: 40px;
+	font-weight: 600;
+	text-align: center;
+	color: #4F4E4E;
+	opacity: 0;
 }
 
 #menuList > .item{
@@ -191,17 +186,38 @@ a:hover{
 	overflow: hidden;
 }
 
-#menuList > .item > .img-contain > img {
+#menuList > .item > .img-contain > img {}
+
+#menuList > .item-food > .img-contain-blur > .img-contain-extra{
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	top: 200px;
+	padding-top: 10px;
+	z-index: 20;
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+	color: #4F4E4E;
+	opacity: 0;
+}
+
+#menuList > .item-food > .img-contain-food > img {
 	width: 100%;
 	height: 280px;
 }
 
 #menuList > .item > .item-text{
+}
+#menuList > .item-food > .item-text-food{
+
 	margin: 0;
-	padding: 5px 30px;
+	height: 50px;
+	padding: 15px 30px;
 	box-sizing: border-box;
 	color: white;
 	background: #432E41;
+
 }
 
 #menuList > .item > .triangle{
@@ -212,17 +228,20 @@ a:hover{
 	border-left: 20px solid transparent;
  	border-right: 20px solid transparent;
   	border-bottom: 20px solid #432E41;
+
 }
 
-#menuList > .item > .item-text h1{
+#menuList > .item-food > .item-text-food h1{
 	font-size: 20px;
 	float: left;
 	margin: 0;
 }
 
-.basket{
-	height: 100%;
-	background: blue;
+#menuList > .item-food > .item-text-food h2{
+	font-size: 20px;
+	float: right;
+	font-weight: 100;
+	margin: 0;
 }
 
 .footer{
