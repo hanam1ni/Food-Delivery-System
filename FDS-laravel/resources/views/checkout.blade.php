@@ -139,7 +139,7 @@
                             <div class="product-quantity">
                                 <input type="number" value="1" min="1">
                             </div>
-                            <div class="product-line-price">12.00</div>
+                            <div class="product-line-price">12 .00</div>
                         </div>
                         <div class="product">
                             <div class="product-image">
