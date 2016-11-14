@@ -238,7 +238,7 @@
                             <div class="totals-value" id="cart-total">{{ number_format($total, 2, '.', '')}}</div>
                         </div>
                     </div>
-                    <form action="{{ url('/payment/{{$total}}">
+                    <form action="{{route('payment',['total'=> $total])}}">
                         <button class="checkout" style="vertical-align:middle">
                             <span>Checkout</span>
                         </button>

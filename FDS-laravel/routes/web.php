@@ -1,8 +1,14 @@
 <?php
 
+
+
+
+
+use Illuminate\Support\Facades\DB;
 use App\Restaurant;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +69,8 @@ Route::get('/browse/vegan', function () {
     ]);
 });
 
+
+
 Route::get('/browse/islamic', function () {
     $restaurants = DB::table('restaurant')
         ->join('food_menu', 'food_menu.restaurant_id', '=', 'restaurant.restaurant_id')
@@ -103,6 +111,11 @@ Route::get('/browse/drink', function () {
         'type'        => 'drink',
         'restaurants' => $restaurants,
     ]);
+});
+
+Route::get('/foo', function () {
+	$email = DB::table('users')->where('username', 'test3')->value('email');
+	echo $email;
 });
 
 Route::get('/browse/filter/{restaurant_id}/{restaurant_name}/{type}', function ($restaurant_id, $restaurant_name, $type) {
@@ -148,18 +161,52 @@ Route::get('/browse/search/', function (Request $request) {
     ]);
 });
 
+Route::post('/payment/{total}',[
+    'uses' => 'paymentController@indexWithCost',
+    'as'   => 'payment'
+
+    ]);
+
 Route::get('/basket/add/{restaurant_id}/{food_id}', 'BasketController@addBasketOrder');
 Route::get('/basket/show', 'BasketController@showBasket');
 Route::get('/basket/clear', 'BasketController@clearBasket');
 Route::get('/sessionAdd', 'SessionController@add');
 Route::get('/sessionShow', 'SessionController@show');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
 
 Route::get('/checkout', 'BasketController@showBasket');
 
 Route::get('/browse/checkout', 'BasketController@showBasket');
 
 Route::get('/browse/checkout/clear', 'BasketController@clearBasket');
+
+//payment
+
+Route::get('/payment', 'paymentcontroller@index');
+
+Route::get('/payment/{cost}', 'paymentcontroller@indexWithCost');
+
+Route::post('/test', 'paymentController@testfunction');
+
+Route::post('/payment/addAddress2', 'paymentController@addAddress2');
+
+Route::post('/payment/transfer','paymentController@transfer');
+
+
+Route::get('/bank/{cost}',[
+	'uses'=>'bankAccountController@index2',	
+	'as'=> 'pay',
+]);
+
+
+Route::post('/bank/bankSend',[
+	'uses'=>'bankAccountController@send',	
+	'as'=> 'pay',
+]);
+
+

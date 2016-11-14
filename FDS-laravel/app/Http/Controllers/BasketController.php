@@ -81,6 +81,8 @@ class BasketController extends Controller
             foreach ($values as $item) {
                 // echo $item['food_id'] . ':' . $item['quantity'];
                 // echo "\r\n";
+                echo $item['food_id'] . ':' . $item['quantity'];
+                echo "<br>";
             }
         //dd("empty");
         } else {
