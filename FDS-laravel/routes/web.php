@@ -65,9 +65,9 @@ Route::get('/browse/checkout/clear', 'BasketController@clearBasket');
 
 //payment
 
-Route::get('/payment', 'paymentcontroller@index');
+Route::get('/payment', 'paymentController@index');
 
-Route::get('/payment/{cost}', 'paymentcontroller@indexWithCost');
+Route::get('/payment/{cost}', 'paymentController@indexWithCost');
 
 Route::post('/test', 'paymentController@testfunction');
 
