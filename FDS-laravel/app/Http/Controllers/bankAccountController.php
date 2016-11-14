@@ -10,7 +10,7 @@ use App\User;
 use log;
 use Ixudra\Curl\Facades\Curl;
 use Ixudra\Curl\CurlServiceProvider;
-
+use back;
 class bankAccountController extends Controller
 {
     /**
@@ -31,7 +31,7 @@ class bankAccountController extends Controller
         //return view('bankAccout',['address' => $request]);
     }
 
-    public function send(){
+    public function send(Request $request){
         // Create a client with a base URI
         $url = "http://161.246.70.75:8080/cesebank/api/service.php";
 
@@ -40,16 +40,24 @@ class bankAccountController extends Controller
         $from = "1327000003";
         $to = "1327100002";
 
+        $values = $request->session()->get('basket.list', 'default');
+        dd($values);
 
         $response = Curl::to('http://161.246.70.75:8080/cesebank/api/service.php')
-            ->withData( array(  'shop_Account'  => '1327000003', 
-                                'cus_Account'   => '1327100002',
-                                'Amount'        => 450.00,
-                                'otp'           => 575225
+            ->withData( array(  'shop_Account'  => '1327100009',
+                                'cus_Account'   => '1327000010',
+                                'Amount'        => 915.80,
+                                'otp'           => 376815
                 ))
             ->asJson()
             ->post();
-        dd($response->success);
+
+        if (is_array($response) || is_object($response)) {
+            dd($response);
+        }
+        else{
+            echo "string";
+        }
 
         /*                      
             "shop_Account"=> "1327000003",
@@ -65,9 +73,27 @@ class bankAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+
+        $response = Curl::to('http://161.246.70.75:8080/cesebank/api/service.php')
+            ->withData( array(  'shop_Account'  => '1327100009',
+                                'cus_Account'   => '1327000010',
+                                'Amount'        => 915.80,
+                                'otp'           => 376815
+                ))
+            ->asJson()
+            ->post();
+            
+        if (is_array($response) || is_object($response)) {
+            echo "transaction fail check your OTP";
+        }
+        else{
+            return redirect()->back();
+        }
+
+        
     }
 
     /**
