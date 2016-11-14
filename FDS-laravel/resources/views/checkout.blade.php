@@ -232,12 +232,17 @@
                             <label>
                                 <h4>Grand Total</h4>
                             </label>
-                            <div class="totals-value" id="cart-total">{{ number_format($sum+($sum*0.1)+$shipping, 2, '.', '')}}</div>
+                            <?php
+                                $total = $sum+($sum*0.1)+$shipping;
+                            ?>
+                            <div class="totals-value" id="cart-total">{{ number_format($total, 2, '.', '')}}</div>
                         </div>
                     </div>
-                    <button class="checkout" style="vertical-align:middle">
-                        <span>Checkout</span>
-                    </button>
+                    <form action="{{ url('/payment/{{$total}}">
+                        <button class="checkout" style="vertical-align:middle">
+                            <span>Checkout</span>
+                        </button>
+                    </form>
                 </div>      
             </div>
         </div>
