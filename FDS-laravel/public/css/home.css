@@ -171,39 +171,47 @@ a:hover{
 }
 #newgallary {
     width: 670px;
-    height: 182px;
-    padding: 25px 0;
-    margin-bottom: 25px;
+    height: 192px;
+    padding: 30px 0;
+    margin-bottom : 15px;
+    position: relative;
+    top : 38%;
+    left : 20%;
 }
 #newgallary > h2{
-    color: #ffffff;
+    color: #C70039;
     font-size: 28px;
 }
 #SlideItMoo_outer {
     overflow: hidden;
     width: 670px;
     height: 140px;
-    margin: 0 auto;
+    margin-left: 0 auto;
     background: none;
     display:block;
     position:relative;
     padding: 0;
 }
 /* create custom forward-backward buttons for this container */
-#SlideItMoo_outer .SlideItMoo_forward,
-#SlideItMoo_outer .SlideItMoo_back{
+
+.SlideItMoo_forward{ /*#SlideItMoo_outer */
     display:block;
     position:absolute;
     cursor:pointer;
-    width:25px;
-    height: 140px;
-    bottom:0px;
-    right: 0px;
+    width:25px; 
+	height: 140px; 
+	bottom:15px; 
+	right: 0px; 
     background:url(../images/slideitmoo_forward.png) no-repeat center;
 }
-#SlideItMoo_outer .SlideItMoo_back {
-    left:0px;
-    background:url(../images/slideitmoo_back.png) no-repeat center;
+.SlideItMoo_back { 
+	position:absolute;
+	cursor:pointer;
+    width:25px; 
+	height: 140px; 
+	bottom:15px; 
+	left:0px; 
+	background:url(../images/slideitmoo_back.png) no-repeat center;
 }
 
 /* the width is set to show the number of thumbnails that will be visible */
