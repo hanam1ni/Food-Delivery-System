@@ -169,8 +169,8 @@
   						<label for="comment1">Comment:</label>
   						<textarea class="form-control span10" rows="6" id="comment1" name="name"></textarea>
 					</div>
-          <div class="span2"></div>
-            <div class="span5">
+          <div class="span8"></div>
+            <div class="span1">
               <label>Rating
                   <select class="form-control select2" name="rating" style="width: 100%;">
                     <option selected="selected">1</option>

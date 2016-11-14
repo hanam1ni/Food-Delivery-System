@@ -159,8 +159,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-//Route::get('/restaurant','restaurantController@index');
-
 Route::get('/restaurant/{restaurant_id}','restaurantController@restaurant');
 Route::post('/restaurant/{restaurant_id}/comment','restaurantController@comment');
 

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Restaurant;
 use back;
+use Auth;
 
 class restaurantController extends Controller
 {
@@ -44,7 +45,7 @@ class restaurantController extends Controller
         }
 
         $comment = new \App\comment;
-        $comment->user_id = 1;
+        $comment->user_id =  Auth::user()->id;
         $comment->restaurant_id = $request->restaurant_id;
         $comment->comment = $request->name;
         $comment->rating = $request->rating;
