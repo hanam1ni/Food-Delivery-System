@@ -12,7 +12,9 @@ class browseController extends Controller
     {
         $restaurants = Restaurant::orderBy('restaurant_id', 'asc')->get();
         $values      = $request->session()->get('basket.list', 'default');
-
+        if (is_array($values) || is_object($values)) {}else{
+        	$values = "NULL";
+        }
         return view('browse', [
             'head'        => 'Browse Restaurant',
             'type'        => 'all',
@@ -30,6 +32,7 @@ class browseController extends Controller
             ->get();
 
         $values = $request->session()->get('basket.list', 'default');
+
         return view('browse', [
             'head'        => 'Main Meal',
             'type'        => 'meal',

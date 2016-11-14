@@ -124,9 +124,9 @@
 						@if ($type != 'filter')
 							@foreach ($restaurants as $restaurant)
 								@if ($type == 'all')
-									<a href="{{ url('/restaurant/'.$restaurant->restaurant_id) }}">
+								<a href="{{ url('/restaurant/'.$restaurant->restaurant_id) }}">
 								@else
-									<a href="{{ url('/browse/filter/'.$restaurant->restaurant_id.'/'.$restaurant->restaurant_name.'/'.$type) }}">
+								<a href="{{ url('/browse/filter/'.$restaurant->restaurant_id.'/'.$restaurant->restaurant_name.'/'.$type) }}">
 								@endif
 									<div class="span4 item">
 										<div class="img-contain">
@@ -201,58 +201,62 @@
                                 </label>
                             </div>
                         </div>
-                @foreach ($values as $value)
-                        <div class="product">
-                            <div class="product-image">
-                                <img src="{{ url('images/food/food'.$value['food_id'].'.jpg') }}">
-                            </div>
-                            <div class="product-details">
-                                <div class="product-title">
-                                    <h5> {{ $value['food_name']}} </h5>
-                                </div>
-                                <div> 
-                                    <div class="product-note"> 
-                                        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
-                                            Notation
-                                        </button>
-                                    </div>
-                                    <div id="myContent">
-                                        
-                                    </div> 
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-                                      <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true" data-dismiss="modal">&times;</span>
-                                            </button>
-                                            <h4 class="modal-title">Notation</h4>
-                                          </div>
-                                          <div class="modal-body">
-                                            <form>
-                                              <div class="form-group">
-                                                <label for="message-text" class="control-label">Message:</label>
-                                                <textarea class="form-control" id="message-text"></textarea>
-                                              </div>
-                                            </form>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="add()">Send message</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-price">{{ number_format($value['price'] , 2, '.', '')}}</div>
-                            <div class="product-quantity">
-                                <input type="number" value="{{ $value['quantity']}}" min="1">
-                            </div>
-                            <div class="product-line-price">{{ number_format($value['quantity'] * $value['price'], 2, '.', '')}}</div>
-                        </div>
-                    </table>
-                @endforeach
+                @if($values != "NULL")   
+	                @foreach ($values as $value)
+	                        <div class="product">
+	                            <div class="product-image">
+	                                <img src="{{ url('images/food/food'.$value['food_id'].'.jpg') }}">
+	                            </div>
+	                            <div class="product-details">
+	                                <div class="product-title">
+	                                    <h5> {{ $value['food_name']}} </h5>
+	                                </div>
+	                                <div> 
+	                                    <div class="product-note"> 
+	                                        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+	                                            Notation
+	                                        </button>
+	                                    </div>
+	                                    <div id="myContent">
+	                                        
+	                                    </div> 
+	                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	                                      <div class="modal-dialog" role="document">
+	                                        <div class="modal-content">
+	                                          <div class="modal-header">
+	                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                                                <span aria-hidden="true" data-dismiss="modal">&times;</span>
+	                                            </button>
+	                                            <h4 class="modal-title">Notation</h4>
+	                                          </div>
+	                                          <div class="modal-body">
+	                                            <form>
+	                                              <div class="form-group">
+	                                                <label for="message-text" class="control-label">Message:</label>
+	                                                <textarea class="form-control" id="message-text"></textarea>
+	                                              </div>
+	                                            </form>
+	                                          </div>
+	                                          <div class="modal-footer">
+	                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="add()">Send message</button>
+	                                          </div>
+	                                        </div>
+	                                      </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="product-price">{{ number_format($value['price'] , 2, '.', '')}}</div>
+	                            <div class="product-quantity">
+	                                <input type="number" value="{{ $value['quantity']}}" min="1">
+	                            </div>
+	                            <div class="product-line-price">{{ number_format($value['quantity'] * $value['price'], 2, '.', '')}}</div>
+	                        </div>
+	                    </table>
+	                @endforeach
+	            @else
+	            	Empty
+	            @endif    
                 </div>
                     <div class="removeall" >
                         <form action="{{ url('/browse/checkout/clear')}}">
@@ -263,9 +267,11 @@
                     </div>
                     <?php
                         $sum = 0;
-                        foreach ($values as $value) {
-                            $sum = $sum + ($value['quantity'] * $value['price']); 
-                        }
+                        if($values != "NULL"){
+                        	foreach ($values as $value) {
+                            	$sum = $sum + ($value['quantity'] * $value['price']); 
+                        	}
+                    	}
                     ?>
                     <div class="totals">
                         <div class="totals-item">
@@ -307,9 +313,7 @@
                 </div>      
             </div>
 		</div>
-		<div class="footer container">
-
-		</div>
+		
 
 		<script src="{{ asset('js/common.js') }}"></script>
 		<script src="{{ asset('js/browse.js') }}"></script>
