@@ -54,7 +54,7 @@
 			<div id="trigger"></div>
 			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner main-menu span12">
-					<a href="#"><img src="{{ asset('images/logo.png') }}" class="logo pull-left"></a>
+					<img src="{{ asset('images/logo.png') }}" class="logo pull-left">
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="{{ url('browse') }}">Browse</a></li>
