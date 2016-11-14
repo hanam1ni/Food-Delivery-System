@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
  */
+Auth::routes();
 
 Route::get('/', 'browseController@showRestaurant');
 Route::get('/browse', 'browseController@showRestaurant');
@@ -42,9 +43,6 @@ Route::get('/basket/show', 'BasketController@showBasket');
 Route::get('/basket/clear', 'BasketController@clearBasket');
 Route::get('/sessionAdd', 'SessionController@add');
 Route::get('/sessionShow', 'SessionController@show');
-
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 

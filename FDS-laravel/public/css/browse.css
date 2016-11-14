@@ -145,6 +145,12 @@ a:hover{
 	font-size: 48px;
 	border-bottom: medium solid #EB524A;
 }
+
+#content-subheader{
+	float: right;
+	font-size: 30px;
+	padding-top: 10px;
+}
 #menuList > .item-food > .img-contain-blur > a > .glyphicon.glyphicon-shopping-cart{
 	position: absolute;
 	top: 100px;
@@ -243,6 +249,8 @@ a:hover{
 	font-weight: 100;
 	margin: 0;
 }
+
+
 
 .footer{
 	width: 100%;

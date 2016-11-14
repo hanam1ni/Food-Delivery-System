@@ -110,6 +110,13 @@
 				<div class="row">
 					<div id="content-header" class="span12">
 						{{ $head }}
+						@if ($type == 'filter')
+						<a href=#>
+							<div id="content-subheader">
+								See All <span class="glyphicon glyphicon-chevron-right"></span></a>
+							</div>
+						</a>
+						@endif
 					</div>
 				</div>
 				<div class="row">
