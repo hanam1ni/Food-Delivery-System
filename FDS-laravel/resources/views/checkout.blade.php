@@ -179,14 +179,15 @@
                         </div>
                     </table>
                 @endforeach
+                <?php
+                    $sum = 0;
+                    foreach ($values as $value) {
+                        $sum = $sum + ($value['quantity'] * $value['price']); 
+                    }
+                   
+                ?>
                     <div class="totals">
                         <div class="totals-item">
-                        <?php 
-                           $sum = 0;
-                        foreach ($values as $value)
-                            $sum += $value['price'];
-                        ?>
-                        
                             <label>Subtotal</label>
                             <div class="totals-value" id="cart-subtotal">{{ number_format($sum, 2, '.', '')}}</div>
                         </div>
@@ -198,18 +199,14 @@
                             <label>Shipping</label>
                             <div class="totals-value" id="cart-shipping">15.00</div>
                         </div>
-                        <?php 
-                            $total = ($sum)+($sum*0.1);
-                        ?>
                         <div class="totals-item totals-item-total">
                             <label>Grand Total</label>
-                            <div class="totals-value" id="cart-total">{{ number_format($total, 2, '.', '')}} </div>
+                            <div class="totals-value" id="cart-total">{{ number_format($sum+($sum*0.1)+15, 2, '.', '')}}</div>
                         </div>
                     </div>
                     <button class="checkout" style="vertical-align:middle">
                         <span>Checkout</span>
                     </button>
-                
                 </div>      
             </div>
         </div>

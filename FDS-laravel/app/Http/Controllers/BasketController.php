@@ -58,7 +58,8 @@ class BasketController extends Controller
             if (!$inc) {
                 $item                   = array();
                 $item['food_name']      = DB::table('food_menu') ->where('food_id',$food_id) ->value('food_name');
-                $item['price']          = (DB::table('food_menu') ->where('food_id',$food_id) ->value('price')) + (DB::table('food_menu') ->where('food_id',$food_id) ->value('price_extra'));
+                $item['price_extra']    = (DB::table('food_menu') ->where('food_id',$food_id) ->value('price')) 
+                                            + (DB::table('food_menu') ->where('food_id',$food_id) ->value('price_extra'));
                 $item['food_id']        = $food_id;
                 $item['restaurant_id']  = $restaurant_id;
                 $item['quantity']       = 1;
@@ -81,7 +82,7 @@ class BasketController extends Controller
                 // echo $item['food_id'] . ':' . $item['quantity'];
                 // echo "\r\n";
             }
-        // dd($values);
+        //dd("empty");
         } else {
             echo "empty";
         }
