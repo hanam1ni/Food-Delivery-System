@@ -108,17 +108,17 @@
 			<div>
 				<div class="payment-option">
 					<div class="payment-header">
-						<h2>Pay :</h2>
+						<h2>Pay</h2>
 					</div>
 					<div>
 							<h4 >username :</h4>
 							<h5  style="margin-left: 50px;" id="username">{{Auth::user()->username}}</h5>
 						
 							<h4 >Amount :</h4>
-							<h5 style="margin-left: 50px;" id="amount">{{$cost}} Bath</h5>
+							<h5 style="margin-left: 50px;" id="amount">{{$cost}}</h5>
 						
 							<h4>Bank :</h4>
-							<select style="margin-left: 50px;" name="bank_name">
+							<select style="margin-left: 50px;" name="bank_name" id="bank">
 								<option value="null">select Bank</option>
 								<option value="bank">CESE BANK</option>
 							</select>
@@ -127,7 +127,7 @@
 							<input style="height: 27px;margin-left:50px;" type="text" id="account" maxlength="10" size="10" placeholder="Account number" name="bank_account"></input>
 							
 							<h4>Enter OTP :</h4>
-							<input  id="otp" maxlength="5" size="5" placeholder=" OTP"  style="width:50px; margin-left: 50px;" name="bank_otp"></input>
+							<input  id="otp" maxlength="6" size="6" placeholder=" OTP"  style="width:60px; margin-left: 50px;" name="bank_otp"></input>
 					</div>
 				</div>
 			</div>
@@ -168,17 +168,33 @@
 		    	}
 			*/
 		    function callBank(){
-		    	console.log("call bank");
 		    	//window.location.replace('../../bank/bankSend');
 		    	var cost = 450.00;
 		    	var otp = "";
-			   	
-			   	$.post('../bank/bankSend',{
+			   	var account = document.getElementById("account").value;
+			   	var amount = document.getElementById("amount").innerHTML;
+			   	amount = parseInt(amount);
+			   	var otp = document.getElementById("otp").value;
+			   	otp = parseInt(otp);
+			   	var bank = document.getElementById("bank").value;
+			   	if(bank == 'null'){
+			   		alert("select bank");
+			   		return;
+			   	}
+
+			   	console.log(bank);
+			   	console.log(otp);
+			   	console.log(amount);
+			   	console.log(account);
+
+		    	window.location.href = ('../bank/bankSend/test/'+account+'/'+amount+'/'+otp);
+
+			   /*	$.get('../bank/bankSend',{
 
     			},
     			function(){
     				console.log('response');
-    			});
+    			});*/
 			}
 			
 

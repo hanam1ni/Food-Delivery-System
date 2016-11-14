@@ -79,11 +79,16 @@ Route::get('/bank/{cost}',[
 ]);
 
 
-Route::post('/bank/bankSend',[
+Route::get('/bank/bankSend',[
 	'uses'=>'bankAccountController@send',	
 	'as'=> 'pay',
 ]);
 
+
 Route::get('/restaurant/{restaurant_id}','restaurantController@restaurant');
 Route::post('/restaurant/{restaurant_id}/comment','restaurantController@comment');
+Route::get('/bank/bankSend/test','bankAccountController@create');
+Route::get('/bank/bankSend/test/{account}/{amount}/{otp}','bankAccountController@create');
+Route::get('/banksend','bankAccountController@create');
+
 

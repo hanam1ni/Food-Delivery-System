@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use log;
-//use Ixudra\Curl\Facades\Curl;
-//use Ixudra\Curl\CurlServiceProvider;
+use Ixudra\Curl\Facades\Curl;
+use Ixudra\Curl\CurlServiceProvider;
+use back;
 
 class bankAccountController extends Controller
 {
@@ -31,43 +32,41 @@ class bankAccountController extends Controller
         //return view('bankAccout',['address' => $request]);
     }
 
-    public function send(){
-        // Create a client with a base URI
-        $url = "http://161.246.70.75:8080/cesebank/api/service.php";
-
-        $otp = "";
-        $amount = "";
-        $from = "1327000003";
-        $to = "1327100002";
-
-
-        /*$response = Curl::to('http://161.246.70.75:8080/cesebank/api/service.php')
-            ->withData( array(  'shop_Account'  => '1327000003', 
-                                'cus_Account'   => '1327100002',
-                                'Amount'        => 450.00,
-                                'otp'           => 575225
-                ))
-            ->asJson()
-            ->post();*
-        dd($response->success);*/
-
-        /*                      
-            "shop_Account"=> "1327000003",
-            "cus_Account"=> "1327100002",
-            "Amount"=> 450.00,
-            "otp"=> "1072649"
-        */
-
-    }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($account, $amount, $otp)
     {
         //
+        $amount = (float)$amount;
+        $otp    = (int)$otp;
+
+
+        $response = Curl::to('http://161.246.70.75:8080/cesebank/api/service.php')
+            ->withData( array(  'shop_Account'  => '1327100009',
+                                'cus_Account'   => $account,
+                                'Amount'        => $amount,
+                                'otp'           => $otp
+                ))
+            ->asJson()
+            ->post();
+            
+        if (is_array($response) || is_object($response)) {
+            echo "transaction fail check your OTP";
+            echo $amount;
+            echo $otp;
+            echo $account;
+            echo gettype($amount);
+            echo gettype($otp);
+            echo redirect()->back();
+        }
+        else{
+            return redirect()->back();
+        }
+
+        
     }
 
     /**

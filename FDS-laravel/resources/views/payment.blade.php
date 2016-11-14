@@ -489,7 +489,8 @@
 	    		else{
 
 	    			console.log("option2"+'address');
-	    			window.location.replace('../bank/'+{{$cost}});
+	    			window.location.href = ('../bank/'+{{$cost}});
+		    		alert("success!");
 		    		/*$.post('./bank',
 		    			{
 		    				address : address
