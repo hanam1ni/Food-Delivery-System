@@ -35,7 +35,6 @@ Route::get('/browse/search/', 'browseController@showSearch');
 Route::post('/payment/{total}',[
     'uses' => 'paymentController@indexWithCost',
     'as'   => 'payment'
-
     ]);
 
 Route::get('/basket/add/{restaurant_id}/{food_id}', 'BasketController@addBasketOrder');
@@ -85,4 +84,6 @@ Route::post('/bank/bankSend',[
 	'as'=> 'pay',
 ]);
 
+Route::get('/restaurant/{restaurant_id}','restaurantController@restaurant');
+Route::post('/restaurant/{restaurant_id}/comment','restaurantController@comment');
 
