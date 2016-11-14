@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Restaurant;
+use App\Comment;
 use Auth;
 use back;
 use Illuminate\Http\Request;
@@ -52,7 +53,7 @@ class restaurantController extends Controller
                 ->withErrors($validator);
         }
 
-        $comment                = new \App\comment;
+        $comment                = new Comment;
         $comment->user_id       = Auth::user()->id;
         $comment->restaurant_id = $request->restaurant_id;
         $comment->comment       = $request->name;
