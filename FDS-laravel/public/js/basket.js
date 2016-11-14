@@ -5,7 +5,7 @@ function toggleBasket() {
 
 	// Activate Basket
 	if(!basketAct){
-		TweenMax.to(target, 2, {top: '20%', ease:Elastic.easeOut});
+		TweenMax.to(target, 2, {top: '10%', ease:Elastic.easeOut});
 		$(this).css('background-color','#EB524A');
 		basketAct = true;
 	}
