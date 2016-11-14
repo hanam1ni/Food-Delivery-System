@@ -73,21 +73,30 @@ class bankAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create($account, $amount, $otp)
     {
         //
+        $amount = (float)$amount;
+        $otp    = (int)$otp;
+
 
         $response = Curl::to('http://161.246.70.75:8080/cesebank/api/service.php')
             ->withData( array(  'shop_Account'  => '1327100009',
-                                'cus_Account'   => '1327000010',
-                                'Amount'        => 915.80,
-                                'otp'           => 376815
+                                'cus_Account'   => $account,
+                                'Amount'        => $amount,
+                                'otp'           => $otp
                 ))
             ->asJson()
             ->post();
             
         if (is_array($response) || is_object($response)) {
             echo "transaction fail check your OTP";
+            echo $amount;
+            echo $otp;
+            echo $account;
+            echo gettype($amount);
+            echo gettype($otp);
+            echo redirect()->back();
         }
         else{
             return redirect()->back();

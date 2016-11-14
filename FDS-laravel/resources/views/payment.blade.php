@@ -490,6 +490,7 @@
 
 	    			console.log("option2"+'address');
 	    			window.location.href = ('../bank/'+{{$cost}});
+		    		alert("success!");
 		    		/*$.post('./bank',
 		    			{
 		    				address : address

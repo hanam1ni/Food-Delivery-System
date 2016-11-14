@@ -197,5 +197,7 @@ Route::get('/bank/bankSend',[
 
 Route::get('/bank/bankSend/test','bankAccountController@create');
 
+Route::get('/bank/bankSend/test/{account}/{amount}/{otp}','bankAccountController@create');
+
 Route::get('/banksend','bankAccountController@create');
 

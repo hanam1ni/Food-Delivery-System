@@ -108,7 +108,7 @@
 			<div>
 				<div class="payment-option">
 					<div class="payment-header">
-						<h2>Pay :</h2>
+						<h2>Pay</h2>
 					</div>
 					<div>
 							<h4 >username :</h4>
@@ -187,7 +187,7 @@
 			   	console.log(amount);
 			   	console.log(account);
 
-		    	//window.location.href = ('../bank/bankSend/test');
+		    	window.location.href = ('../bank/bankSend/test/'+account+'/'+amount+'/'+otp);
 
 			   /*	$.get('../bank/bankSend',{
 
