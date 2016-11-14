@@ -1,0 +1,197 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i,800,800i');
+/* common
+----------------------------------------------------------------------------- */
+body{
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	background: url(../images/browse_bg.jpg);
+}
+
+ul li a,a{
+	color:#333;
+	outline:0; 
+	-webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+a{
+	color:#eb4800;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover{
+	color:#fd4004;
+	text-decoration:none;
+}
+
+a:visited{
+	text-decoration: none;
+}
+
+a:active{
+	text-decoration: none;
+}
+
+/* top navigation
+----------------------------------------------------------------------------- */
+.top{
+	height: 600px;
+	width: 100%;
+	background: url(../images/top_bg.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+	overflow: hidden;
+	box-shadow: inset 0px -14px 35px -11px rgba(84,84,84,1);
+}
+
+#trigger{
+	position: relative;
+	top: 0px;
+	height: 10px;
+	width: 10px;
+	background-color: transparent;
+}
+
+.navbar-inner.main-menu {	
+	position: absolute;
+	height: 80px;
+	background: white;	
+	padding: 0;	
+	margin: 0 auto;
+	border: 0;
+	top: 10px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-bottom:5px solid #EB524A;
+	border-radius: 0;
+	box-shadow: 0px 10px 17px -7px rgba(0,0,0,0.75);
+}
+.logo{
+	position: absolute;
+	height: 70px;
+	width: 150px;
+}
+#menu > ul{
+    display: block;
+    margin-left:0;	
+}
+#menu > ul > li{
+    list-style: none;
+    float: left;
+    position: relative;   
+	margin-right: 0px;
+}
+#menu > ul > li > a {
+	font-size: 15px;
+	color: #111;
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	padding: 30px 40px;
+	}
+#menu > ul > li.active{
+	background-color:#eb4800;
+}
+#menu > ul > li.active > a{
+	color:#fff;
+}
+#menu > ul a:hover{
+	color: #EB524A; 
+	text-decoration:none;
+}
+#menu .current{color: #eb4800 !important;}
+
+#menu ul ul {
+    background: none repeat scroll 0 0 #F5F5F5;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    position: absolute;
+    min-width:170px;
+	display:none;
+}
+#menu > ul > li > ul{
+    margin-left:10px;
+	border:1px solid #CCCCCC;
+	border-top:0;
+}
+#menu ul ul li {
+    list-style: none outside none;
+    position: relative;
+	border-top:1px solid #fff;
+	border-bottom:1px solid #CCCCCC;
+}
+#menu ul ul li:last-child{
+    border-bottom: none !important
+}
+#menu ul ul li.menu-last{border-bottom: none;}
+#menu ul ul a{
+    display: block;
+    padding:7px 10px;
+    color: #333;
+    font-size: 12px;
+}
+#menu ul ul a:hover,#menu > ul > li:hover > a{color: #fff;background-color:#eb4800}
+#menu ul ul a:hover{background-color:#eb4800;}
+#menu > ul > li:hover {visibility: inherit;}
+#menu li:hover {visibility: inherit;}
+#menu li:hover ul,
+#menu li.sfHover ul {
+    left: -10px;
+    top: 80px;
+    z-index: 2299;
+}
+#menu li li:hover ul,
+#menu li li.sfHover ul {
+    left: 130px;
+    top: 0px;
+}
+#menu li.sfHover > a{
+	color:#eb4800;
+}
+#menu .sf-sub-indicator{
+	display:none;
+}
+
+#search {
+	margin: 0;
+	color: transparent;
+}
+
+#search input{
+	margin: 0;
+	color: black;
+}
+
+#hightlight{
+	position: relative;
+	top: 35%;
+	left: 18%;
+}
+#hightlight > h1{
+	font-size: 62px;
+	font-weight: 800;
+	line-height: 105px;
+}
+#hightlight >h2{
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 32px;
+	word-wrap: break-word;
+	color: #EB524A;
+}
+
+#content-header{
+	height: 100px;
+	line-height: 100px;
+	font-weight: 900;
+	font-size: 48px;
+	border-bottom: medium solid #EB524A;
+}
