@@ -56,20 +56,20 @@ class bankAccountController extends Controller
             ->post();
             
         if (is_array($response) || is_object($response)) {
-            echo "transaction fail check your OTP";
-            echo $amount;
-            echo $otp;
-            echo $account;
-            echo gettype($amount);
-            echo gettype($otp);
-            echo redirect()->back();
+           
+            foreach ($response as $item) {
+                if($item == 1){
+                    $request->session()->forget('basket.list');
+                    return redirect('/order/view');
+                }
+            }
+
+            return redirect()->back();
         }
         else{
             $request->session()->forget('basket.list');
             return redirect('/order/view');
         }
-
-        
     }
 
     /**
