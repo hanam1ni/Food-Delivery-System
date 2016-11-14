@@ -109,15 +109,15 @@
     <div class="container">
       <div class="content">
         <div class="row">
-          <div id="content-header" class="span12">
+          <div id="content-header" class="span11">
             {{$restaurant->restaurant_name}}
           </div>
-          <div class="span12 pic">
+          <div class="span11 pic">
             <div class="span4">
               <img src="{{ asset('images/restaurants/res'.$restaurant->restaurant_id.'.jpg') }}">
             </div>
             <div class="span4 header-detail">
-              <div class="span8">
+              <div class="span7">
                 <h3>Address </h3>
                 <p>{{$restaurant->restaurant_address}}</p>
                 <h3>Phone</h3>
@@ -139,19 +139,19 @@
               <div class="tab-content">
                 <div class=" tab-pane fade in active" id="Menu">
 <!--Menu-->
-<div id="menuList" class="span12">
+<div id="menuList" class="span11">
 @foreach($foods as $food)
-                  <div class="span4 item-food">
-                    <div class="img-contain-food">
+                  <div class="span3 item-food" style="margin-left:50px">
+                    <div class="img-contain-food" style="height:230px">
                       <img src="{{ asset('images/food/food'.$food->food_id.'.jpg') }}">
                     </div>
-                    <div class="img-contain-blur">
+                    <div class="img-contain-blur" style="height:230px">
                       <a href="{{ url('/basket/add/'.$food->restaurant_id.'/'.$food->food_id) }}"><span class="glyphicon glyphicon-shopping-cart"></span></a>
                       <a href="#"><span class="glyphicon glyphicon-plus-sign"></span></a>
-                      <div class="img-contain-order">Order me</div>
-                      <div class="img-contain-extra">Extra for {{ $food->price_extra }} &#3647</div>
+                      <div class="img-contain-order" style="top:10">Order me</div>
+                      <div class="img-contain-extra" style="top:10">Extra for {{ $food->price_extra }} &#3647</div>
                     </div>
-                    <div class="span4 item-text-food">
+                    <div class="span3 item-text-food">
                       <h1>{{ $food->food_name }}</h1>
                       <h2>{{ $food->price }} &#3647</h2>
                     </div>
@@ -169,7 +169,7 @@
   						<label for="comment1">Comment:</label>
   						<textarea class="form-control span10" rows="6" id="comment1" name="name"></textarea>
 					</div>
-          <div class="span8"></div>
+          <div class="span7"></div>
             <div class="span1">
               <label>Rating
                   <select class="form-control select2" name="rating" style="width: 100%;">
@@ -182,7 +182,7 @@
                   </select>
               </label>
             </div>
-          <div class="span2">
+          <div class="span1">
             @if (Auth::check())
                    <button type="submit" id="submit" value="Send" class="btn btn-success span1">Submit</button>
             @else
@@ -193,7 +193,7 @@
 
                    <div class="commentForm">
                         <div class="row">
-                            <div class="span10">
+                            <div class="span9">
                                 <h3>User Comment</h3>
                             </div><!-- /col-sm-12 -->
                         </div><!-- /row -->
