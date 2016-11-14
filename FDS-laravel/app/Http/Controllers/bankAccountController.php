@@ -63,7 +63,7 @@ class bankAccountController extends Controller
             echo redirect()->back();
         }
         else{
-            return redirect()->back();
+            return redirect('/');
         }
 
         
