@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use log;
-use GuzzleHttp\Client;
-
+use Ixudra\Curl\Facades\Curl;
 class bankAccountController extends Controller
 {
     /**
@@ -32,12 +31,30 @@ class bankAccountController extends Controller
 
     public function send(Request $request){
         // Create a client with a base URI
-        $client = new Client([
-            // Base URI is used with relative requests
-            'base_uri' => 'http://httpbin.org',
-            // You can set any number of default request options.
-            'timeout'  => 2.0,
-        ]);
+        /*$url = "http://161.246.70.75:8080/cesebank/api/service.php";
+
+        $otp = $request->otp;
+        $amount = $request->Amount;
+        $from = "1327000003";
+        $to = "1327100002";
+
+        $response = Curl::to($url)
+            ->withData( array(  'shop_Account'  => $from, 
+                                'cus_Account'   => $to,
+                                'Amount'        => $amount,
+                                'otp'           => $otp
+                ))
+            ->asJson()
+            ->post();*/
+
+
+        /*                      
+        * "shop_Account": "1327000003",
+        * "cus_Account": "1327100002",
+        * "Amount": cost,
+        * "otp": "1072649"
+        */
+
     }
 
     /**

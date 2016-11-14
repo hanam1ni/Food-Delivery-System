@@ -448,7 +448,7 @@
 	    	function updateAddress(addr1, addr2 ,addr3){
 	    		console.log(username);
 
-	    		$.post('./test',
+	    		$.post('../test',
 	    			{
 	    				username	: username,
 	    				address1 	: addr1,

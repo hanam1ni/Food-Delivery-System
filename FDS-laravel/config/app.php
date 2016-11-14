@@ -134,7 +134,19 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'providers'     => array(
 
+        //...
+        Ixudra\Curl\CurlServiceProvider::class,
+
+    ),
+    
+    'facades'       => array(
+
+        //...
+        'Curl'          => Ixudra\Curl\Facades\Curl::class,
+
+    ),
     'providers' => [
 
         /*

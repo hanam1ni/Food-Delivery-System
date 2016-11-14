@@ -174,8 +174,10 @@
 		    function callBank(){
 		    	console.log("call bank");
 		    	var cost = 450.00;
+		    	var otp = "";
 			   	$.post('./bankSend',
 	    			{
+	    				"url"		: "";
 						"shop_Account": "1327000003",
 					  	"cus_Account": "1327100002",
 					  	"Amount": cost,
