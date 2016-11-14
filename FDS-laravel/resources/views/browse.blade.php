@@ -102,6 +102,7 @@
 			<div id="hightlight" class="span6">
 				<h1>Food Delivery</h1>
 				<h2>We provide food that customers love, day after day after day. People just want more of it.</h2>
+				<h3>	<a href={{route('checkout')}}>Helllotest</a></h3>
 			</div>
 		</div>
 		<div class="container">

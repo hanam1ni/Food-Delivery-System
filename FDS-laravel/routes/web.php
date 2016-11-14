@@ -178,8 +178,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/checkoutpage',[
 
-Route::get('/checkout', 'BasketController@showBasket');
+    'uses' => 'BasketController@viewcheckout',
+    'as'   => 'checkoutpage'
+
+    ]);
+
+Route::get('/checkout', [
+    'uses' => 'BasketController@showBasket',
+    'as'   => 'checkout' 
+    ]);
 
 Route::get('/browse/checkout', 'BasketController@showBasket');
 
@@ -196,7 +205,6 @@ Route::post('/test', 'paymentController@testfunction');
 Route::post('/payment/addAddress2', 'paymentController@addAddress2');
 
 Route::post('/payment/transfer','paymentController@transfer');
-
 
 Route::get('/bank/{cost}',[
 	'uses'=>'bankAccountController@index2',	
