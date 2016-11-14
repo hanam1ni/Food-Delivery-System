@@ -212,6 +212,20 @@ a:hover{
 	bottom:15px; 
 	left:0px; 
 	background:url(../images/slideitmoo_back.png) no-repeat center;
+    width:25px;
+    height: 140px;
+    bottom:0px;
+    right: 0px;
+    background:url(../images/slideitmoo_forward.png) no-repeat center;
+}
+#SlideItMoo_outer .SlideItMoo_back {
+    left:0px;
+    background:url(../images/slideitmoo_back.png) no-repeat center;
+    background: url(../images/slideitmoo_forward.png) no-repeat center;
+}
+#SlideItMoo_outer .SlideItMoo_back {
+    left:0px;
+    background: url(../images/slideitmoo_back.png) no-repeat center;
 }
 
 /* the width is set to show the number of thumbnails that will be visible */
