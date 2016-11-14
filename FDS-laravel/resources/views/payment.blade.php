@@ -478,28 +478,17 @@
 	    			address = address1;
 	    		}
 	    		if(address == null){
-	    			alert("You must should you address!");
+	    			alert("You must choose you address!");
 	    			return;
 	    		}
 	    		console.log(address);
 
 	    		if(payOption){ //payOption1
-	    			console.log("option1");
+	    			window.location.href = ('../order/send');
 	    		}
 	    		else{
-
 	    			console.log("option2"+'address');
 	    			window.location.href = ('../bank/'+{{$cost}});
-		    		alert("success!");
-		    		/*$.post('./bank',
-		    			{
-		    				address : address
-		    			},
-		    			function(){
-		    				console.log("call bank controller");
-		    				//window.location.replace('./bank');
-		    			}
-		    		);*/
 	    		}
 	    	}
 

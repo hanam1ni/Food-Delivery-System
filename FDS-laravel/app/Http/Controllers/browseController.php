@@ -30,8 +30,10 @@ class browseController extends Controller
             ->where('food_menu.meal', '=', 1)
             ->groupBy('restaurant.restaurant_id')
             ->get();
-
         $values = $request->session()->get('basket.list', 'default');
+        if (is_array($values) || is_object($values)) {}else{
+            $values = "NULL";
+        }
 
         return view('browse', [
             'head'        => 'Main Meal',
@@ -50,6 +52,9 @@ class browseController extends Controller
             ->get();
 
         $values = $request->session()->get('basket.list', 'default');
+        if (is_array($values) || is_object($values)) {}else{
+            $values = "NULL";
+        }
         return view('browse', [
             'head'        => 'Vegetarian Food',
             'type'        => 'vegan',
@@ -67,6 +72,9 @@ class browseController extends Controller
             ->get();
 
         $values = $request->session()->get('basket.list', 'default');
+        if (is_array($values) || is_object($values)) {}else{
+            $values = "NULL";
+        }
         return view('browse', [
             'head'        => 'Islamic Food',
             'type'        => 'islamic',
@@ -84,6 +92,9 @@ class browseController extends Controller
             ->get();
 
         $values = $request->session()->get('basket.list', 'default');
+        if (is_array($values) || is_object($values)) {}else{
+            $values = "NULL";
+        }
         return view('browse', [
             'head'        => 'Dessert',
             'type'        => 'dessert',
@@ -101,6 +112,9 @@ class browseController extends Controller
             ->get();
 
         $values = $request->session()->get('basket.list', 'default');
+        if (is_array($values) || is_object($values)) {}else{
+            $values = "NULL";
+        }
         return view('browse', [
             'head'        => 'Drink',
             'type'        => 'drink',
@@ -112,6 +126,9 @@ class browseController extends Controller
     public function showFilter($restaurant_id, $restaurant_name, $type, Request $request)
     {
         $values = $request->session()->get('basket.list', 'default');
+        if (is_array($values) || is_object($values)) {}else{
+            $values = "NULL";
+        }
 
         if ($type != "all") {
             $foods = DB::table('food_menu')
@@ -144,6 +161,9 @@ class browseController extends Controller
     {
         $keyword = $request->input('search', 'Blank');
         $values = $request->session()->get('basket.list', 'default');
+        if (is_array($values) || is_object($values)) {}else{
+            $values = "NULL";
+        }
 
         $restaurants = DB::table('restaurant')
             ->join('food_menu', 'food_menu.restaurant_id', '=', 'restaurant.restaurant_id')

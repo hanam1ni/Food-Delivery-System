@@ -31,6 +31,8 @@ Route::get('/browse/dessert', 'browseController@showDessert');
 Route::get('/browse/drink', 'browseController@showDrink');
 Route::get('/browse/filter/{restaurant_id}/{restaurant_name}/{type}', 'browseController@showFilter');
 Route::get('/browse/search/', 'browseController@showSearch');
+Route::get('/order/view/', 'orderController@showOrder');
+Route::get('/order/send/', 'orderController@sendOrder');
 
 Route::post('/payment/{total}',[
     'uses' => 'paymentController@indexWithCost',

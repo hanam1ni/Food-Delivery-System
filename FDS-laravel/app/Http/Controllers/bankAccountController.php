@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
+use App\OrderFood;
 use log;
 use Ixudra\Curl\Facades\Curl;
 use Ixudra\Curl\CurlServiceProvider;
 use back;
+use Auth;
 
 class bankAccountController extends Controller
 {
@@ -37,12 +39,12 @@ class bankAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($account, $amount, $otp)
+    public function create($account, $amount, $otp, Request $request)
     {
         //
         $amount = (float)$amount;
         $otp    = (int)$otp;
-
+        $values = $request->session()->get('basket.list', 'default');
 
         $response = Curl::to('http://161.246.70.75:8080/cesebank/api/service.php')
             ->withData( array(  'shop_Account'  => '1327100009',
@@ -63,7 +65,16 @@ class bankAccountController extends Controller
             echo redirect()->back();
         }
         else{
-            return redirect('/');
+            foreach($values as $value){
+                $newOrder = new OrderFood;
+                $newOrder->food_id = $value['food_id'];
+                $newOrder->restaurant_id = $value['restaurant_id'];
+                $newOrder->user_id = Auth::user()->id;
+                $newOrder->order_status = 0;
+                $newOrder->save();
+            }
+            $request->session()->forget('basket.list');
+            return redirect('/order/view');
         }
 
         

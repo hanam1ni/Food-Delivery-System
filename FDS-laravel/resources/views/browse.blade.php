@@ -313,8 +313,6 @@
                 </div>      
             </div>
 		</div>
-		
-
 		<script src="{{ asset('js/common.js') }}"></script>
 		<script src="{{ asset('js/browse.js') }}"></script>
 		<script src="{{ asset('js/scroll.js') }}"></script>
