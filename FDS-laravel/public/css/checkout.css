@@ -172,14 +172,6 @@ label {
  
 .checkout {
   float: right;
-  /*border: 0;
-  margin-top: 20px;
-  padding: 6px 25px;
-  background-color: #6b6;
-  color: #FFFFFF;
-  font-size: 20px;
-  border-radius: 3px;*/
-
   display: inline-block;
   border-radius: 4px;
   background-color:#EB524A;
@@ -187,7 +179,7 @@ label {
   color: #FFFFFF;
   text-align: center;
   font-size: 28px;
-  padding: 20px;
+  padding: 5px;
   width: 200px;
   transition: all 0.5s;
   cursor: pointer;
