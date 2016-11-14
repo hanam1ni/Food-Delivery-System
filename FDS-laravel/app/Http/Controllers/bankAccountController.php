@@ -65,14 +65,6 @@ class bankAccountController extends Controller
             echo redirect()->back();
         }
         else{
-            foreach($values as $value){
-                $newOrder = new OrderFood;
-                $newOrder->food_id = $value['food_id'];
-                $newOrder->restaurant_id = $value['restaurant_id'];
-                $newOrder->user_id = Auth::user()->id;
-                $newOrder->order_status = 0;
-                $newOrder->save();
-            }
             $request->session()->forget('basket.list');
             return redirect('/order/view');
         }
