@@ -9,6 +9,8 @@ use App\Http\Requests;
 use App\User;
 use log;
 use Ixudra\Curl\Facades\Curl;
+use Ixudra\Curl\CurlServiceProvider;
+
 class bankAccountController extends Controller
 {
     /**
@@ -23,36 +25,37 @@ class bankAccountController extends Controller
         //return view('bankAccout',['addresses' => 'address']);
         //return view('bankAccout',['address' => $request]);
     }
-    public function index2($cost ,$address)
+    public function index2($cost)
     {
-        return view('bankAccout',['cost' => $cost,'addresses' => $address]);
+        return view('bankAccout',['cost' => $cost]);
         //return view('bankAccout',['address' => $request]);
     }
 
-    public function send(Request $request){
+    public function send(){
         // Create a client with a base URI
-        /*$url = "http://161.246.70.75:8080/cesebank/api/service.php";
+        $url = "http://161.246.70.75:8080/cesebank/api/service.php";
 
-        $otp = $request->otp;
-        $amount = $request->Amount;
+        $otp = "";
+        $amount = "";
         $from = "1327000003";
         $to = "1327100002";
 
-        $response = Curl::to($url)
-            ->withData( array(  'shop_Account'  => $from, 
-                                'cus_Account'   => $to,
-                                'Amount'        => $amount,
-                                'otp'           => $otp
+
+        $response = Curl::to('http://161.246.70.75:8080/cesebank/api/service.php')
+            ->withData( array(  'shop_Account'  => '1327000003', 
+                                'cus_Account'   => '1327100002',
+                                'Amount'        => 450.00,
+                                'otp'           => 575225
                 ))
             ->asJson()
-            ->post();*/
-
+            ->post();
+        dd($response->success);
 
         /*                      
-        * "shop_Account": "1327000003",
-        * "cus_Account": "1327100002",
-        * "Amount": cost,
-        * "otp": "1072649"
+            "shop_Account"=> "1327000003",
+            "cus_Account"=> "1327100002",
+            "Amount"=> 450.00,
+            "otp"=> "1072649"
         */
 
     }

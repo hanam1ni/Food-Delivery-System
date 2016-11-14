@@ -117,9 +117,6 @@
 							<h4 >Amount :</h4>
 							<h5 style="margin-left: 50px;" id="amount">{{$cost}} Bath</h5>
 						
-							<h4>Address :</h4>
-							<h5  style="margin-left: 50px;" id="addresses">{{$addresses}}</h5>
-						
 							<h4>Bank :</h4>
 							<select style="margin-left: 50px;" name="bank_name">
 								<option value="null">select Bank</option>
@@ -139,7 +136,6 @@
 			<div class="span4 btn-accept">
 	  			<button class="btn btn-block btn-lg btn-danger" id="placeOrder" onclick="callBank()">Pay now</button> 
 			</div>
-			<a href=""></a>
 		</div>			
 
 		<div class="footer container"></div>
@@ -149,44 +145,40 @@
 		<script src="{{ asset('js/application.js') }}"></script>
 
 	    <script type="text/javascript">
-	    	$.ajaxSetup({
+
+			$.ajaxSetup({
 			    headers: {
 			        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			    }
 			});
 
+	    	/*
+	    		$data = array(
+					"shop_Account": "1327000003",
+				  	"cus_Account": "1327100002",
+				  	"Amount": cost,
+				  	"otp": "1072649"
+		    	);
 
+		    	$url_sent = "";
+		    	$str_data = json_encode($data);
 
-	    	/*$data = array(
-				"shop_Account": "1327000003",
-			  	"cus_Account": "1327100002",
-			  	"Amount": cost,
-			  	"otp": "1072649"
-	    	);
-
-	    	$url_sent = "";
-	    	$str_data = json_encode($data);
-
-	    	function sendPostData($url,$post){
-	    		$ch = curl_init($url);
-	    	}
-*/
+		    	function sendPostData($url,$post){
+		    		$ch = curl_init($url);
+		    	}
+			*/
 		    function callBank(){
 		    	console.log("call bank");
+		    	//window.location.replace('../../bank/bankSend');
 		    	var cost = 450.00;
 		    	var otp = "";
-			   	$.post('./bankSend',
-	    			{
-	    				"url"		: "";
-						"shop_Account": "1327000003",
-					  	"cus_Account": "1327100002",
-					  	"Amount": cost,
-					  	"otp": "1072649"
-	    			},
-	    			function(){
-	    				console.log('response');
-	    			}
-	    		);
+			   	
+			   	$.post('../bank/bankSend',{
+
+    			},
+    			function(){
+    				console.log('response');
+    			});
 			}
 			
 

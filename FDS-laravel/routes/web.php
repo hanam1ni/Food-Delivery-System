@@ -184,13 +184,13 @@ Route::post('/payment/addAddress2', 'paymentController@addAddress2');
 Route::post('/payment/transfer','paymentController@transfer');
 
 
-Route::get('/bank/{cost}/{address}',[
+Route::get('/bank/{cost}',[
 	'uses'=>'bankAccountController@index2',	
 	'as'=> 'pay',
 ]);
 
 
-Route::post('/bank/{cost}/bankSend',[
+Route::post('/bank/bankSend',[
 	'uses'=>'bankAccountController@send',	
 	'as'=> 'pay',
 ]);

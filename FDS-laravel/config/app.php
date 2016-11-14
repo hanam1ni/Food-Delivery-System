@@ -134,24 +134,13 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
-    'providers'     => array(
 
-        //...
-        Ixudra\Curl\CurlServiceProvider::class,
-
-    ),
-    
-    'facades'       => array(
-
-        //...
-        'Curl'          => Ixudra\Curl\Facades\Curl::class,
-
-    ),
     'providers' => [
 
         /*
          * Laravel Framework Service Providers...
          */
+        Ixudra\Curl\CurlServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -242,4 +231,11 @@ return [
 
     ],
 
+    
+    'facades'       =>  [
+
+        //...
+        'Curl'          => Ixudra\Curl\Facades\Curl::class,
+
+    ],
 ];

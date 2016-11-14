@@ -448,7 +448,7 @@
 	    	function updateAddress(addr1, addr2 ,addr3){
 	    		console.log(username);
 
-	    		$.post('../test',
+	    		$.post('./test',
 	    			{
 	    				username	: username,
 	    				address1 	: addr1,
@@ -489,7 +489,7 @@
 	    		else{
 
 	    			console.log("option2"+'address');
-	    			window.location.replace('../bank/'+{{$cost}}+'/'+address);
+	    			window.location.replace('../bank/'+{{$cost}});
 		    		/*$.post('./bank',
 		    			{
 		    				address : address
