@@ -31,8 +31,6 @@ Route::get('/browse/dessert', 'browseController@showDessert');
 Route::get('/browse/drink', 'browseController@showDrink');
 Route::get('/browse/filter/{restaurant_id}/{restaurant_name}/{type}', 'browseController@showFilter');
 Route::get('/browse/search/', 'browseController@showSearch');
-Route::get('/order/view/', 'orderController@showOrder');
-Route::get('/order/send/', 'orderController@sendOrder');
 
 Route::post('/payment/{total}',[
     'uses' => 'paymentController@indexWithCost',
@@ -65,13 +63,13 @@ Route::get('/browse/checkout/clear', 'BasketController@clearBasket');
 
 //payment
 
-Route::get('/payment', 'paymentController@index');
+Route::get('/payment', 'paymentcontroller@index');
 
-Route::get('/payment/{cost}', 'paymentController@indexWithCost');
+Route::get('/payment/{cost}', 'paymentcontroller@indexWithCost');
 
 Route::post('/test', 'paymentController@testfunction');
 
-Route::post('/payment/addAddress2', 'paymentController@addAddress2');
+Route::get('/addAddress2', 'paymentController@addAddress2');
 
 Route::post('/payment/transfer','paymentController@transfer');
 

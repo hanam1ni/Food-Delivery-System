@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use App\User;
 use log;
 use back;
@@ -108,8 +108,8 @@ class paymentController extends Controller
     public function addAddress2(Request $request)
     {
         DB::table('users')
-            ->where('id', 1)
-            ->update(['phone' => "0812345678"]);
+            ->where('username', 'test7')
+            ->update(['phone' => "0809999999"]);
         //echo $request->name2;
     }
 
@@ -129,6 +129,12 @@ class paymentController extends Controller
                     'address3' => $request->address3]);
             return response()->json(['response' => 'This is post method']); 
         }
+        DB::table('users')
+            ->where('username', $request->username)
+            ->update([
+                'address' => $request->address1, 
+                'address2' => $request->address2,
+                'address3' => $request->address3]);
         
         return response()->json(['response' => 'This is get method']);
     }

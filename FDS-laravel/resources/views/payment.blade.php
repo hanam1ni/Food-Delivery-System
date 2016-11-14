@@ -446,9 +446,12 @@
 	    	}
 
 	    	function updateAddress(addr1, addr2 ,addr3){
-	    		console.log(username);
+	    		console.log("updata address");
+	    		console.log(addr1);
+	    		console.log(addr2);
+	    		console.log(addr3);
 
-	    		$.post('./test',
+	    		$.post('../test',
 	    			{
 	    				username	: username,
 	    				address1 	: addr1,
