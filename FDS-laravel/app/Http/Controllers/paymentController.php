@@ -129,9 +129,7 @@ class paymentController extends Controller
                     'address3' => $request->address3]);
             return response()->json(['response' => 'This is post method']); 
         }
-        DB::table('users')
-            ->where('id', 2)
-            ->update(['phone' => "0851234567"]);
+        
         return response()->json(['response' => 'This is get method']);
     }
     public function transfer(Request $request)
