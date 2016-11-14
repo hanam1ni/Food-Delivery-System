@@ -111,7 +111,7 @@
 					<div id="content-header" class="span12">
 						{{ $head }}
 						@if ($type == 'filter')
-						<a href=#>
+						<a href="{{ url('/restaurant/'.$res_id) }}">
 							<div id="content-subheader">
 								See All <span class="glyphicon glyphicon-chevron-right"></span></a>
 							</div>
@@ -123,7 +123,11 @@
 					<div id="menuList" class="span12">
 						@if ($type != 'filter')
 							@foreach ($restaurants as $restaurant)
-								<a href="{{ url('/browse/filter/'.$restaurant->restaurant_id.'/'.$restaurant->restaurant_name.'/'.$type) }}">
+								@if ($type == 'all')
+									<a href="{{ url('/restaurant/'.$restaurant->restaurant_id) }}">
+								@else
+									<a href="{{ url('/browse/filter/'.$restaurant->restaurant_id.'/'.$restaurant->restaurant_name.'/'.$type) }}">
+								@endif
 									<div class="span4 item">
 										<div class="img-contain">
 											<img src="{{ asset('images/restaurants/res'.$restaurant->restaurant_id.'.jpg') }}">
