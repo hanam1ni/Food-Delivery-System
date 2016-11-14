@@ -94,7 +94,7 @@ class BasketController extends Controller
     public function clearBasket(Request $request){
         $request->session()->forget('basket.list');
         
-        return redirect()->view('browse');
+        return redirect('browse');
     } 
 
 }
