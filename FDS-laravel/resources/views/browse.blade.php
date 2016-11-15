@@ -310,6 +310,7 @@
                             <span>Checkout</span>
                         </button>
                     </form>
+                    </div>
                 </div>      
             </div>
 		</div>
