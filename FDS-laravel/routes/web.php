@@ -69,7 +69,7 @@ Route::get('/payment', 'paymentController@index');
 
 Route::get('/payment/{cost}', 'paymentController@indexWithCost');
 
-Route::post('/payment/test', 'paymentController@testfunction');
+Route::post('/test', 'paymentController@testfunction');
 
 Route::get('/addAddress2', 'paymentController@addAddress2');
 
