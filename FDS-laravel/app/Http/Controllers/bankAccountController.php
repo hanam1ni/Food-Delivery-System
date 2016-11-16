@@ -67,7 +67,6 @@ class bankAccountController extends Controller
             return redirect()->back();
         }
         else{
-            $request->session()->forget('basket.list');
             return redirect()->back();
         }
     }
