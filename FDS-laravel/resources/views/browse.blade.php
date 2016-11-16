@@ -175,7 +175,6 @@
                         </font>
                     </div>
                 </div>
-                <div>
                 <div class="basket-content-container">
                     <table>
                         <br>
@@ -256,61 +255,61 @@
 	                @endforeach
 	            @else
 	            	Empty
+	            	</table>
 	            @endif    
                 </div>
-                    <div class="removeall" >
-                        <form action="{{ url('/browse/checkout/clear')}}">
-                            <button class ="btn btn-danger">
-                                    Remove All
-                            </button>
-                        </form>
-                    </div>
-                    <?php
-                        $sum = 0;
-                        if($values != "NULL"){
-                        	foreach ($values as $value) {
-                            	$sum = $sum + ($value['quantity'] * $value['price']); 
-                        	}
-                    	}
-                    ?>
-                    <div class="totals">
-                        <div class="totals-item">
-                            <label>
-                                <h4>Subtotal</h4>
-                            </label>
-                            <div class="totals-value" id="cart-subtotal">{{ number_format($sum, 2, '.', '')}}</div>
-                        </div>
-                        <div class="totals-item">
-                            <label>
-                                <h4>Service (10%)</h4>
-                            </label>
-                            <div class="totals-value" id="cart-tax">{{ number_format($sum*0.1, 2, '.', '')}}</div>
-                        </div>
-                        <div class="totals-item">
-                            <label>
-                                <h4>Shipping</h4>
-                            </label>
-                            <?php
-                                $shipping = 15;
-                            ?>
-                            <div class="totals-value" id="cart-shipping">{{ number_format($shipping, 2, '.', '')}}</div>
-                        </div>
-                        <div class="totals-item totals-item-total">
-                            <label>
-                                <h4>Grand Total</h4>
-                            </label>
-                            <?php
-                                $total = $sum+($sum*0.1)+$shipping;
-                            ?>
-                            <div class="totals-value" id="cart-total">{{ number_format($total, 2, '.', '')}}</div>
-                        </div>
-                    </div>
-                    <form action="{{route('payment',['total'=> $total])}}">
-                        <button class="checkout" style="vertical-align:middle">
-                            <span>Checkout</span>
-                        </button>
-                    </form>
-                    </div>
+	                    <div class="removeall" >
+	                        <form action="{{ url('/browse/checkout/clear')}}">
+	                            <button class ="btn btn-danger">
+	                                    Remove All
+	                            </button>
+	                        </form>
+	                    </div>
+	                    <?php
+	                        $sum = 0;
+	                        if($values != "NULL"){
+	                        	foreach ($values as $value) {
+	                            	$sum = $sum + ($value['quantity'] * $value['price']); 
+	                        	}
+	                    	}
+	                    ?>
+                    	<div class="totals">
+	                        <div class="totals-item">
+	                            <label>
+	                                <h4>Subtotal</h4>
+	                            </label>
+	                            <div class="totals-value" id="cart-subtotal">{{ number_format($sum, 2, '.', '')}}</div>
+	                        </div>
+	                        <div class="totals-item">
+	                            <label>
+	                                <h4>Service (10%)</h4>
+	                            </label>
+	                            <div class="totals-value" id="cart-tax">{{ number_format($sum*0.1, 2, '.', '')}}</div>
+	                        </div>
+	                        <div class="totals-item">
+	                            <label>
+	                                <h4>Shipping</h4>
+	                            </label>
+	                            <?php
+	                                $shipping = 15;
+	                            ?>
+	                            <div class="totals-value" id="cart-shipping">{{ number_format($shipping, 2, '.', '')}}</div>
+	                        </div>
+	                        <div class="totals-item totals-item-total">
+	                            <label>
+	                                <h4>Grand Total</h4>
+	                            </label>
+	                            <?php
+	                                $total = $sum+($sum*0.1)+$shipping;
+	                            ?>
+	                            <div class="totals-value" id="cart-total">{{ number_format($total, 2, '.', '')}}</div>
+	                        </div>
+                    	</div>
+                    	<form action="{{route('payment',['total'=> $total])}}">
+	                        <button class="checkout" style="vertical-align:middle">
+	                            <span>Checkout</span>
+	                        </button>
+                    	</form>
                 </div>      
             </div>
 		</div>
