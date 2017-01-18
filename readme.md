@@ -8,4 +8,7 @@
 
 # Food Delivery System
     Import .sql file from Database Folder before use
+    Database food_delivery_system
+    user: root
+    password:
 # Food Delivery System
